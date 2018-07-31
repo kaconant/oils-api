@@ -7,6 +7,7 @@ Back-end server for [myBlendology](https://github.com/kaconant/myBlendology).
 * Axios
 * Nodemailer
 * HandleBars
+* Nodemon
 
 ## Authors
 
