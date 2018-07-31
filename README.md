@@ -20,4 +20,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Our instructors, Adam Szaruga and Lachlan Haywood, at [DigitalCrafts](https://www.digitalcrafts.com/)
+Our instructors, Adam Szaruga and Lachlan Haywood, at [DigitalCrafts](https://www.digitalcrafts.com/)
