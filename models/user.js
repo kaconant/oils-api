@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
             isEmail: true
             }
         },
-        facebookid: DataTypes.STRING,
+        fbid: DataTypes.STRING,
         githubid: DataTypes.STRING,
         password: DataTypes.STRING,
 

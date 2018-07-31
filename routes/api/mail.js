@@ -23,8 +23,8 @@ router.post('/', (req, res, next) => {
     transporter.sendMail({
         from: `"${req.body.fromName}"`, // sender address
         to: `"${req.body.toEmail}"`, // list of receivers
-        subject: `Hey ${req.body.toName}, check out this ${req.body.blendName} blend! // Subject line
-        text: 'Hello world?', // plain text body
+        subject: `Hey ${req.body.toName}, check out this ${req.body.blendName} blend!`, // Subject line
+        text: '', // plain text body
         template: 'notification',
         context: {
             ...req.body
