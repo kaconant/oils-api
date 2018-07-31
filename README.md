@@ -4,7 +4,7 @@ Back-end server for [myBlendology](https://github.com/kaconant/myBlendology).
 
 ## NPM Install
 
-* Axois
+* Axios
 * Nodemailer
 * HandleBars
 
