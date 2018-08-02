@@ -4,20 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100, 300, 400, 700|Nunito+Sans:200,400|Hind+Siliguri:300,400,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Covered+By+Your+Grace|Julius+Sans+One|Montez|Pattaya|Syncopate" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Mr+Bedfort|Petit+Formal+Script" rel="stylesheet">
     <title>myBlendology Blend</title>
 </head>
+<style>
+body {
+    padding: 0px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    background-color: #f0ebf1;
+    height: 100%;
+    color: rgb(63, 63, 97);
+}
+</style>
+
 <body>
 
-<h2>Hey {{recName}}!</h2>
-<h3>{{userName}} has sent you their {{blendName}} blend.</h3>
+<h3>Hey {{recName}}!</h3>
+<h3>{{userName}} has sent you their {{blendName}} blend. This blend is based off of a {{oils.mood}} mood and is comprised of:</h3>
 
-<h3>This blend is based off of the {{oils.mood}} and is comprised of:</h3>
+<h4>* 5 drops of {{oils.base}}</h4>
+<h4>* 4 drops of {{oils.middle}}</h4>
+<h4>* 3 drops of {{oils.top}}</h4>
 
-<h4>5 drops of {{oils.base}}</h4>
-<h4>4 drops of {{oils.middle}}</h4>
-<h4>3 drops of {{oils.top}}</h4>
-
-</h3>Want to make your own blend? Check out myBlendology today!</h3>
+<h3>Want to create your own unique blend? Check out <a href="http://www.myblendology.com">myBlendology</a> today!</h3>
 
 </body>
 </html>
