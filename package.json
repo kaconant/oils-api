@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www"
+    "dev": "nodemon ./bin/www",
+    "postinstall": "cd client && npm install && npm run build"
   },
   "dependencies": {
     "cookie-parser": "^1.4.3",
@@ -19,6 +20,7 @@
     "nodemailer-express-handlebars": "^3.0.0",
     "nodemon": "^1.18.3",
     "passport": "^0.4.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "sequelize": "^4.38.0"
   }
 }
