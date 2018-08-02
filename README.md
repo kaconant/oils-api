@@ -20,9 +20,6 @@ The user begins the application by selecting one of three moods: Calm, Awaken, o
 
 After the user selects one oil from each carousel, they will be provided the essential oil amount needed per oil to create the right balance for their mood blend. 
 
-## Back-End
-
-[oils-api](https://github.com/kaconant/oils-api)
 
 ## Authors
 
