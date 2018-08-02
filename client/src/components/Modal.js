@@ -35,13 +35,17 @@ class Modal extends React.Component {
         .then((response) => {
             this.setState({
                 submitted: false,
-                isModalOpen: true
+                isModalOpen: false
             })
             console.log('the modal will close now');
             
         })
         .catch((error) => {
             alert('Try again later!')
+            this.setState({
+                submitted: false,
+                isModalOpen: true
+            })
             console.log(error);
         }); 
     
@@ -52,7 +56,7 @@ class Modal extends React.Component {
         return (
             <div>
                 <form action="/login" method="GET" id="modalDiv">
-                    <div className="modal fade" id="share" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div className={ this.state.isModalOpen ? "modal fade show" : "modal fade"} id="share" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel">
                         <div className="modal-dialog" role="document">
                             <div className="modal-content">
                                 <div className="modal-header">
@@ -81,7 +85,7 @@ class Modal extends React.Component {
                                             </div>  
                                         </div>  
                                         <p>By sharing my blends, I agree to Blendology's <a href="#">Terms of Service</a> & <a href="#">Privacy Policy</a>. </p>
-                                        {this.state.submitted && this.state.isModalOpen ? (
+                                        {this.state.submitted ? (
                                             <button type="submit" className="modalBtn" id="signup-button" disabled="disabled" >Submitted</button> 
                                         ) : (
                                             <button type="submit" className="modalBtn" id="signup-button" >Share Now</button>

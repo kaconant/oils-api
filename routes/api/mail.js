@@ -21,7 +21,7 @@ transporter.use('compile', hbs({
 
 router.post('/', (req, res, next) => {
     transporter.sendMail({
-        from: `"noreply@myBlendology.com"`, // sender address
+        from: `"noreply@mail.myBlendology.com"`, // sender address
         to: `"${req.body.recEmail}"`, // list of receivers
         subject: `Hey ${req.body.recName}, check out this ${req.body.blendName} blend from ${req.body.userName}!`, // Subject line
         text: '', // plain text body
