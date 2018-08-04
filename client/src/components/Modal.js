@@ -55,7 +55,7 @@ class Modal extends React.Component {
         return (
             <div>
                 <form action="/login" method="GET" id="modalDiv">
-                    <div className={ this.state.isModalOpen ? "modal fade show" : "modal fade"} id="share" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div className={ this.state.isModalOpen ? "modal fade show" : "modal fade"} id="share" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel" >
                         <div className="modal-dialog" role="document">
                             <div className="modal-content">
                                 <div className="modal-header">
