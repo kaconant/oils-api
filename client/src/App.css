@@ -110,7 +110,7 @@ body {
   }
 
   .icon {
-    height: 20px;
+    height: 20px !important;
     padding-bottom: 0 !important;
     margin-bottom: 0 !important;
   }
