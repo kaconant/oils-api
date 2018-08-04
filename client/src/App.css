@@ -100,23 +100,32 @@ body {
 /* Response Layout - iPhone */
 @media screen and (min-width: 0px) and (max-width: 450px){
 
-  .arrow {
+  /* .arrow {
     position: relative;
     top: 60px;
-  }
+  } */
 
   img.logo {
       display: none;
+  }
+
+  .icon {
+    height: 20px;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
   }
 
   div.msg-container {
       min-height: 500px; 
       max-height: 620px;
       background-position: center;
+      margin-bottom: 400px;
   }
 
   h4 {
-      font-size: 34px;
+      font-size: 28px;
+      margin: 0 !important;
+      padding: 0 !important;
   }
 
   div.headline {
@@ -128,6 +137,8 @@ body {
       height: 615px;
       flex-direction: column;
       align-items: center;
+      margin-bottom: 0px;
+      
   }
 
   h4, h3, h6 {
@@ -135,10 +146,14 @@ body {
   }
   
   h6 {
-      color: rgb(48, 45, 71) !important;
-      font-size: 18px !important;
-      margin-top: 18px !important;
+      color: rgb(117, 129, 83) !important;
+      font-size: 28px !important;
+      margin-top: 0px !important;
       margin-bottom: 20px !important;
+      position: relative;
+      top: 540px !important;
+      background-color: transparent!important;
+ 
   }
 
   #myFooter {
@@ -146,12 +161,21 @@ body {
   }
 
   .main-col {
-    width: 250px;
+    width: 300px;
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 18px;
-    padding: 0 10px 50px 10px;
+    font-size: 10px !important;
+    padding: 10px;
     text-align: center;
-    margin: 0px 25px;
+    margin: 10px 25px;
+    background-color: rgba(245, 245, 245, 0.74);
+    border-radius: 15px;
+
+  }
+
+  .info-header {
+    font-size: 18px !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
   div.row.justify-content-center.info {
@@ -159,9 +183,10 @@ body {
     margin: 0%;
     /* margin-bottom: 700px; */
     position: relative;
-    top: 650px;
+    top: 30px;
     display: flex;
     flex-direction: column;
+    /* margin-bottom: 300px; */
   }
 
   .buffer {
@@ -578,7 +603,16 @@ body {
     font-family: 'Julius Sans One', sans-serif;
     font-weight: 600;
     font-size: 16px;
-    margin: 20px 35px;
+    margin: 20px 35px 60px 35px;
+  }
+
+  .blendCalc:focus {
+    box-shadow: none;
+    outline: none;
+  }
+
+  .blendCalc:hover {
+    background-color: rgba(88, 109, 50, 0.863);
   }
 
   .shareBlend {
@@ -600,7 +634,12 @@ body {
     font-family: 'Julius Sans One', sans-serif;
     font-weight: 600;
     font-size: 16px;
-    margin: 20px 35px;
+    margin: 20px 35px 40px 35px;
+  }
+
+  .shareBlend:focus {
+    box-shadow: none;
+    outline: none;
   }
 
   .calcIntro {
@@ -609,6 +648,7 @@ body {
     font-size: 25px;
     margin-top: 20px;
     margin-bottom: 18px;
+    font-family: 'Julius Sans One', sans-serif;
   }
 
   .calcOils {
@@ -617,10 +657,15 @@ body {
     font-size: 20px;
     margin-top: 20px;
     margin-bottom: 18px;
+    background-color: whitesmoke;
+    border-radius: 15px;
+    padding: 20px;
+    font-family: 'Josefin Sans', sans-serif;
   }
 
   .calcColor {
-    color: rgba(132, 153, 104, 0.87)
+    color: rgba(132, 153, 104, 0.87);
+    font-family: 'Julius Sans One', sans-serif;
   }
 
 /* Modal */
@@ -768,4 +813,31 @@ body {
       font-family: 'Josefin Sans', sans-serif;
       font-weight: 200;
       font-size: 18px;
+  }
+
+  #formInfo {
+    display: flex;
+    justify-content: center;
+    height: 300px;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Josefin Sans", sans-serif;
+
+  }
+
+  .form-control-form {
+    width: 430px;
+    font-family: "Josefin Sans", sans-serif;
+    padding: 5px;
+    border-radius: 15px;
+    outline: none;
+    box-shadow: none;
+  }
+
+  .modal-header {
+    font-family: 'Julius Sans One', sans-serif;
+  }
+
+  .modal-content {
+    background-color: #f0ebf1;
   }
