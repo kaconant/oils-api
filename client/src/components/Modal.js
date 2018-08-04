@@ -9,8 +9,7 @@ class Modal extends React.Component {
     }
 
     clearModal() {
-        document.getElementById("formInfo").reset(),
-        window.close()
+        document.getElementById("formInfo").reset();
     }
 
     handleSubmit(e) {
