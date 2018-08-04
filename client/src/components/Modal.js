@@ -9,7 +9,8 @@ class Modal extends React.Component {
     }
 
     clearModal() {
-        document.getElementById("formInfo").reset()
+        document.getElementById("formInfo").reset(),
+        window.close()
     }
 
     handleSubmit(e) {
@@ -48,8 +49,7 @@ class Modal extends React.Component {
             })
             console.log(error);
         }); 
-    
-        setTimeout(this.close, 1000);
+
     }
 
     render() {
@@ -64,7 +64,7 @@ class Modal extends React.Component {
                                     <button type="button" className="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
                                 </div>
                                 <div className="modal-body">
-                                    <form onSubmit={this.handleSubmit.bind(this)} id="formInfo">
+                                    <form onSubmit={this.handleSubmit.bind(this)}id="formInfo">
                                         <div className="form-group">
                                             <input type="text" className="form-control-form " required id="userName" name="userName" placeholder="Your Name" />                                            
                                         </div>
@@ -86,7 +86,7 @@ class Modal extends React.Component {
                                         </div>  
                                         <p>By sharing my blends, I agree to Blendology's <a href="#">Terms of Service</a> & <a href="#">Privacy Policy</a>. </p>
                                         {this.state.submitted ? (
-                                            <button type="submit" className="modalBtn" id="signup-button" disabled="disabled" >Submitted</button> 
+                                            <button type="submit" className="modalBtn" id="signup-button" disabled="disabled" onClick={this.clearModal()}>Submitted</button> 
                                         ) : (
                                             <button type="submit" className="modalBtn" id="signup-button" >Share Now</button>
                                         )}
