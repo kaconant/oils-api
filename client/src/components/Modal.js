@@ -60,7 +60,7 @@ class Modal extends React.Component {
                         <div className="modal-dialog" role="document">
                             <div className="modal-content">
                                 <div className="modal-header">
-                                    <h2>Share Your Blend</h2>
+                                    <h2 className="modal-header">Share Your Blend</h2>
                                     <button type="button" className="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
                                 </div>
                                 <div className="modal-body">
