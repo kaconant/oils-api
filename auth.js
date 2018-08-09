@@ -3,7 +3,8 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const bcrypt = require('bcrypt');
 const LocalStrategy = require('passport-local').Strategy;
-const GitHubStrategy = require('passport-github').Strategy;
+const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+const FacebookStrategy = require('passport-facebook').Strategy;
 const models = require('./models');
 
 const setupAuth = (app) => {
@@ -15,19 +16,36 @@ const setupAuth = (app) => {
         saveUninitialized: true,
     }));
 
-    // add the github strategy
-    passport.use(new GitHubStrategy({
-        clientID: process.env.GITHUB_ID,
-        clientSecret: process.env.GITHUB_SECRET,
-        callbackURL: "http://localhost:3001/auth/github/login"
-    }, (accessToken, refreshToken, profile, done) => {
+    passport.use(new FacebookStrategy({
+        clientID: process.env.FACEBOOK_ID,
+        clientSecret: process.env.FACEBOOK_SECRET,
+        callbackURL: `${process.env.FB_APP_URL}/auth/facebook/callback`
+    }, 
+    function(accessToken, refreshToken, profile, done) {
+        User.findOrCreate({ facebookId: profile.id } , function(err, user) {
+            if (err) { return done(err); }
+                done(null, user);
+        })
+        .then(result => {
+            return done(null, result[0]);
+        })
+        .catch(done);
+    }
+    ));
+
+    passport.use(new GoogleStrategy({
+        clientID: process.env.GOOGLE_ID,
+        clientSecret: process.env.GOOGLE_SECRET,
+        callbackURL: `${process.env.GOOGLE_APP_URL}/auth/google/callback`
+    },
+    function(accessToken, refreshToken, profile, done) {
         models.User.findOrCreate({
             where: {
-                githubId: profile.id
+                googleId: profile.id
             },
             defaults: {
                 username: profile.login,
-                githubId: profile.id,
+                googleId: profile.id,
                 email: profile.email,
             }
         })
@@ -35,14 +53,16 @@ const setupAuth = (app) => {
             return done(null, result[0]);
         })
         .catch(done);
-    }));
+    }
+));
+
 
     // add the local (user/pass) strategy
     passport.use(new LocalStrategy({
         // options: https://github.com/jaredhanson/passport-local#parameters
         // change these if you want a different field name for username or password
-        // usernameField: 'username',
-        // passwordField: 'password',
+        usernameField: 'username',
+        passwordField: 'password',
     }, (username, password, done) => {
         // check if there is a user with the username given
         models.User.findOne({
@@ -89,16 +109,15 @@ const setupAuth = (app) => {
     })
 
     // use the github strategy
-    app.get('/auth/github', passport.authenticate('github'));
+    app.get('/auth/google', passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/plus.login'] }));
 
-    app.get('/auth/github/redirect',
-        passport.authenticate('github', {
-            // if this works, redirect back to the react app homepage
-            successRedirect: '/',
-            // otherwise, go to the react app login
-            failureRedirect: '/login',
-        })
-    );
+    app.get('/auth/google/callback',
+        passport.authenticate('google', { successRedirect: '/', failureRedirect: '/login' }));
+
+    app.get('/auth/facebook', passport.authenticate('facebook'));
+
+    app.get('/auth/google/callback',
+        passport.authenticate('facebook', { successRedirect: '/', failureRedirect: '/login' }));
 
     app.post('/auth/signup', (req, res) => {
         // destructure username and password off req.body into new constants

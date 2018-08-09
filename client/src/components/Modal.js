@@ -5,19 +5,18 @@ class Modal extends React.Component {
     
     state = {
         submitted: false,
-        isModalOpen: true
+        // isModalOpen: true
     }
 
     clearModal() {
-        document.getElementById("formInfo").reset(),
-        window.close()
+        document.getElementById("formInfo").reset()
     }
 
     handleSubmit(e) {
         e.preventDefault();
         this.setState({
             submitted: true,
-            isModalOpen: true,
+            // isModalOpen: true,
         })
         const oils = {
             top: this.props.selected.top,
@@ -36,16 +35,15 @@ class Modal extends React.Component {
         .then((response) => {
             this.setState({
                 submitted: false,
-                isModalOpen: false
+                // isModalOpen: false
             })
-            console.log('the modal will close now');
             
         })
         .catch((error) => {
             alert('Try again later!')
             this.setState({
                 submitted: false,
-                isModalOpen: true
+                // isModalOpen: true
             })
             console.log(error);
         }); 
@@ -56,12 +54,13 @@ class Modal extends React.Component {
         return (
             <div>
                 <form action="/login" method="GET" id="modalDiv">
-                    <div className={ this.state.isModalOpen ? "modal fade show" : "modal fade"} id="share" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel">
+                {/* <div className={ this.state.isModalOpen ? "modal fade show" : "modal fade"} id="share" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel"> */}
+                    <div className="modal" id="share" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel">
                         <div className="modal-dialog" role="document">
                             <div className="modal-content">
                                 <div className="modal-header">
                                     <h2>Share Your Blend</h2>
-                                    <button type="button" className="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                    <button type="button" className="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" >×</span></button>
                                 </div>
                                 <div className="modal-body">
                                     <form onSubmit={this.handleSubmit.bind(this)}id="formInfo">
