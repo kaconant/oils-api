@@ -110,7 +110,7 @@ body {
   }
 
   .icon {
-    height: 20px;
+    height: 20px !important;
     padding-bottom: 0 !important;
     margin-bottom: 0 !important;
   }
@@ -826,7 +826,7 @@ body {
   }
 
   .form-control-form {
-    width: 430px;
+    width: 380px;
     font-family: "Josefin Sans", sans-serif;
     padding: 5px;
     border-radius: 15px;
