@@ -1,23 +1,17 @@
 'use strict';
-
 module.exports = (sequelize, DataTypes) => {
-    var user = sequelize.define('user', {
-        username: {
-            type: DataTypes.STRING,
-            unique: true,
-            validate: {
-                is: /^[a-z0-9\_\-]+$/i,
-                }
-        },
-        email: {
-            type: DataTypes.STRING,
-            validate: {
-            isEmail: true
-            }
-        },
-        googleid: DataTypes.STRING,
-        password: DataTypes.STRING,
-
-    }, {});
-    return user;
+  var User = sequelize.define('User', {
+    firstname: DataTypes.STRING,
+    lastname: DataTypes.STRING,
+    email: DataTypes.STRING,
+    google_id: DataTypes.STRING,
+    password: DataTypes.STRING
+  }, {});
+  User.associate = function(models) {
+    // associations can be defined here
+    User.belongsToMany(models.Blend, {
+      through: 'BlendOil'
+    });
+  };
+  return User;
 };

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
-// const models = require ('../models')
+// const models = require ('../models');
 // const ensureAuthenticated = require('../auth').ensureAuthenticated;
 const bodyParser = require('body-parser');
 
