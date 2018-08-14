@@ -4,7 +4,7 @@ const cookieParser = require('cookie-parser');
 const bcrypt = require('bcrypt');
 const LocalStrategy = require('passport-local').Strategy;
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-const FacebookStrategy = require('passport-facebook').Strategy;
+// const FacebookStrategy = require('passport-facebook').Strategy;
 const models = require('./models');
 
 const setupAuth = (app) => {
@@ -16,27 +16,27 @@ const setupAuth = (app) => {
         saveUninitialized: true,
     }));
 
-    passport.use(new FacebookStrategy({
-        clientID: process.env.FACEBOOK_ID,
-        clientSecret: process.env.FACEBOOK_SECRET,
-        callbackURL: `${process.env.FB_APP_URL}/auth/facebook/callback`
-    }, 
-    function(accessToken, refreshToken, profile, done) {
-        User.findOrCreate({ facebookId: profile.id } , function(err, user) {
-            if (err) { return done(err); }
-                done(null, user);
-        })
-        .then(result => {
-            return done(null, result[0]);
-        })
-        .catch(done);
-    }
-    ));
+    // passport.use(new FacebookStrategy({
+    //     clientID: process.env.FACEBOOK_ID,
+    //     clientSecret: process.env.FACEBOOK_SECRET,
+    //     callbackURL: `${process.env.FB_APP_URL}/auth/facebook/callback`
+    // }, 
+    // function(accessToken, refreshToken, profile, done) {
+    //     User.findOrCreate({ facebookId: profile.id } , function(err, user) {
+    //         if (err) { return done(err); }
+    //             done(null, user);
+    //     })
+    //     .then(result => {
+    //         return done(null, result[0]);
+    //     })
+    //     .catch(done);
+    // }
+    // ));
 
     passport.use(new GoogleStrategy({
         clientID: process.env.GOOGLE_ID,
-        clientSecret: process.env.GOOGLE_SECRET,
-        callbackURL: `${process.env.GOOGLE_APP_URL}/auth/google/callback`
+        clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+        callbackURL: `${process.env.APP_URL}/auth/google/callback`
     },
     function(accessToken, refreshToken, profile, done) {
         models.User.findOrCreate({
@@ -108,16 +108,16 @@ const setupAuth = (app) => {
         }
     })
 
-    // use the github strategy
+
     app.get('/auth/google', passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/plus.login'] }));
 
     app.get('/auth/google/callback',
         passport.authenticate('google', { successRedirect: '/', failureRedirect: '/login' }));
 
-    app.get('/auth/facebook', passport.authenticate('facebook'));
+    // app.get('/auth/facebook', passport.authenticate('facebook'));
 
-    app.get('/auth/google/callback',
-        passport.authenticate('facebook', { successRedirect: '/', failureRedirect: '/login' }));
+    // app.get('/auth/google/callback',
+    //     passport.authenticate('facebook', { successRedirect: '/', failureRedirect: '/login' }));
 
     app.post('/auth/signup', (req, res) => {
         // destructure username and password off req.body into new constants
