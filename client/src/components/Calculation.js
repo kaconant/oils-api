@@ -15,6 +15,7 @@ class Calculation extends Component {
         } else {
             alert('You must select a base, middle, and top oil to calculate your blend!');
         }
+
     }
 
     // handleModalClick(e) {
@@ -24,12 +25,12 @@ class Calculation extends Component {
     render() {
         return (
         <div className="Calc">
-            {this.props.toShow === true && <button className="blendCalc" onClick={this.handleChange.bind(this)}>Time to Calculate</button>}
+            {this.props.toShow === true && <button id="button" className="blendCalc" onClick={this.handleChange.bind(this)}>Time to Calculate</button>}
             <div className="blendResults">
             {this.state.toShow === true && <h5 className="calcIntro">For this blend, you'll need:</h5>}
-            {this.state.toShow === true && <h5 className="calcOils">5 drops of <div className="calcColor">{ this.props.selected.base }</div></h5>}
-            {this.state.toShow === true && <h5 className="calcOils">4 drops of <div className="calcColor">{ this.props.selected.middle }</div></h5>}
-            {this.state.toShow === true && <h5 className="calcOils">3 drops of <div className="calcColor">{ this.props.selected.top }</div></h5>}
+            {this.state.toShow === true && <h5 className="calcOils">5 Drops:<div className="calcColor">{ this.props.selected.base} Essential Oil</div> </h5>}
+            {this.state.toShow === true && <h5 className="calcOils">4 Drops:<div className="calcColor">{ this.props.selected.middle} Essential Oil</div> </h5>}
+            {this.state.toShow === true && <h5 className="calcOils">3 Drops:<div className="calcColor">{ this.props.selected.top} Essential Oil</div></h5>}
             </div>
             {this.state.toShow === true && <a href="/"className="shareBlend transparent_btn" data-toggle="modal" data-target="#share">Share Your Blend</a>}
         </div>

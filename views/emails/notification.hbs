@@ -8,29 +8,41 @@
     <link href="https://fonts.googleapis.com/css?family=Covered+By+Your+Grace|Julius+Sans+One|Montez|Pattaya|Syncopate" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Mr+Bedfort|Petit+Formal+Script" rel="stylesheet">
     <title>myBlendology Blend</title>
-</head>
+
 <style>
 body {
     padding: 0px;
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Julius Sans One', sans-serif;
     font-weight: 400;
     font-size: 13px;
-    background-color: #f0ebf1;
+    background-color: #f9f4f8af;
     height: 100%;
     color: rgb(63, 63, 97);
+} 
+.oilName {
+    color: rgb(105, 121, 67);
+    font-size: 14px;
+    text-decoration: none;
+} 
+h4 {
+    font-family: "Josefin Sans", sans-serif;
 }
 </style>
+</head>
 
 <body>
-
+<img src="http://www.myblendology.com/img/logo.png" height="60" />
 <h3>Hey {{recName}}!</h3>
-<h3>{{userName}} has sent you their {{blendName}} blend. This blend is based off of a {{oils.mood}} mood and is comprised of:</h3>
+<h3>{{userName}} has sent you the recipe for their custom {{blendName}} blend.</h3>
+<h3>This blend is based off of a {{oils.mood}} mood and is comprised of:</h3>
 
-<h4>* 5 drops of {{oils.base}}</h4>
-<h4>* 4 drops of {{oils.middle}}</h4>
-<h4>* 3 drops of {{oils.top}}</h4>
+<h4>* 5 drops of<span class="oilName"> {{oils.base}}</span> essential oil.</h4>
+<h4>* 4 drops of<span class="oilName"> {{oils.middle}}</span> essential oil.</h4>
+<h4>* 3 drops of<span class="oilName"> {{oils.top}}</span> essential oil.</h4>
 
-<h3>Want to create your own unique blend? Check out <a href="http://www.myblendology.com">myBlendology</a> today!</h3>
+<h3>Combine these oils with the filtered water in your aromatherapy diffuser, and enjoy!</h3>
+
+<h4 class="oilName">Want to create your own unique blend? Check out <a href="http://www.myblendology.com">myBlendology</a> today!</h4>
 
 </body>
 </html>
