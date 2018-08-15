@@ -8,6 +8,7 @@ dotenv.load();
 
 const apiRouter = require('./routes/api');
 const apiMailRouter = require('./routes/api/mail');
+const apiOilRouter = require('./routes/api/oils');
 // const setupAuth = require('./auth');
 
 const app = express();
@@ -26,6 +27,7 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.use('/api', apiRouter);
 app.use('/api/mail', apiMailRouter);
+app.use('/api/oils', apiOilRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

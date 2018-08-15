@@ -2,8 +2,8 @@
 module.exports = (sequelize, DataTypes) => {
   var Oil = sequelize.define('Oil', {
     name: DataTypes.STRING,
-    desc: DataTypes.STRING,
-    url: DataTypes.STRING,
+    desc: DataTypes.TEXT('long'),
+    url: DataTypes.TEXT('long'),
     mood: DataTypes.STRING,
     level: DataTypes.STRING,
     pregnant: DataTypes.BOOLEAN,
