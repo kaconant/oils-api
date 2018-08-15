@@ -6,7 +6,7 @@ import Carousel from './Carousels.js';
 import Calculation from './Calculation.js'
 import Modal from './Modal';
 import Footer from './Footer.js';
-import { EssentialOils } from '../essentialOils';
+import Axios from 'axios';
 
 // Nav bar > Jumbotron > MoodSelector > Base > Middle > Top > Combine > Calculation > Footer
 // lets try to render with it all on one page and then break it out later
@@ -19,7 +19,7 @@ class App extends React.Component {
         baseLevel: [], 
         midLevel: [], 
         topLevel: [],
-        oilData: EssentialOils(),
+        oilData: [],
         selected: {
           base: '',
           middle: '',
@@ -28,6 +28,14 @@ class App extends React.Component {
         toShow: false,
     }
     this.handleMoodClick = this.handleMoodClick.bind(this);
+  }
+
+  componentDidMount() {
+    Axios.get('/api/oils').then((res) => {
+      this.setState({
+        oilData: res.data
+      })
+    })
   }
 
   handleMoodClick(e) {
