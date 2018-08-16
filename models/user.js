@@ -15,3 +15,7 @@ module.exports = (sequelize, DataTypes) => {
   };
   return User;
 };
+
+// models.Blend.create({
+//   // data for new blend goes here
+// })
