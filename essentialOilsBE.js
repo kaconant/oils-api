@@ -139,8 +139,6 @@ const oils = [
     //     pregnant: null,
     //     allergies: null,
     //     kid: null,
-    createdAt: new Date(),
-    updatedAt: new Date()
     // },
     { 
         name: 'Neroli',
