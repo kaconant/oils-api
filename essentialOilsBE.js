@@ -7,7 +7,9 @@ const oils = [
         level: "top",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: "Bergamont",
@@ -17,7 +19,9 @@ const oils = [
         level: "top",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: "Cajuput",
@@ -27,7 +31,9 @@ const oils = [
         level: "top",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: "Cinnamon",
@@ -37,7 +43,9 @@ const oils = [
         level: "top",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Clary Sage',
@@ -47,7 +55,9 @@ const oils = [
         level: "top",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Coriander',
@@ -57,7 +67,9 @@ const oils = [
         level: "top",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Eucalyptus',
@@ -67,7 +79,9 @@ const oils = [
         level: "top",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Grapefruit',
@@ -77,7 +91,9 @@ const oils = [
         level: "top",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Lemon',
@@ -87,7 +103,9 @@ const oils = [
         level: "top",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Lemongrass',
@@ -97,7 +115,9 @@ const oils = [
         level: "top",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Lime',
@@ -107,7 +127,9 @@ const oils = [
         level: "top",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     // { 
     //     name: 'Mandarin',
@@ -116,7 +138,9 @@ const oils = [
     //     level: "top",
     //     pregnant: null,
     //     allergies: null,
-    //     kid: null
+    //     kid: null,
+    createdAt: new Date(),
+    updatedAt: new Date()
     // },
     { 
         name: 'Neroli',
@@ -126,7 +150,9 @@ const oils = [
         level: "top",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Orange',
@@ -136,7 +162,9 @@ const oils = [
         level: "top",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Peppermint',
@@ -146,7 +174,9 @@ const oils = [
         level: "top",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Petitgrain',
@@ -156,7 +186,9 @@ const oils = [
         level: "top",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Sage',
@@ -166,7 +198,9 @@ const oils = [
         level: "top",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Spearmint',
@@ -176,7 +210,9 @@ const oils = [
         level: "top",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Tangerine',
@@ -186,7 +222,9 @@ const oils = [
         level: "top",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Tea Tree',
@@ -196,7 +234,9 @@ const oils = [
         level: "top",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Thyme',
@@ -206,7 +246,9 @@ const oils = [
         level: "top",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Lemon Verbena',
@@ -216,7 +258,9 @@ const oils = [
         level: "top",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Bay',
@@ -226,7 +270,9 @@ const oils = [
         level: "middle",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Black Pepper',
@@ -236,7 +282,9 @@ const oils = [
         level: "middle",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Cardamom',
@@ -246,7 +294,9 @@ const oils = [
         level: "middle",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Cypress',
@@ -256,7 +306,9 @@ const oils = [
         level: "middle",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Fennel',
@@ -266,7 +318,9 @@ const oils = [
         level: "middle",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Geranium',
@@ -276,7 +330,9 @@ const oils = [
         level: "middle",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Hyssop',
@@ -286,7 +342,9 @@ const oils = [
         level: "middle",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Juniper',
@@ -296,7 +354,9 @@ const oils = [
         level: "middle",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Lavender',
@@ -306,7 +366,9 @@ const oils = [
         level: "middle",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Marjoram',
@@ -316,7 +378,9 @@ const oils = [
         level: "middle",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Melissa',
@@ -326,7 +390,9 @@ const oils = [
         level: "middle",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Nutmeg',
@@ -336,7 +402,9 @@ const oils = [
         level: "middle",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Palma Rosa',
@@ -346,7 +414,9 @@ const oils = [
         level: "middle",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Pine',
@@ -356,7 +426,9 @@ const oils = [
         level: "middle",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Rosemary',
@@ -366,7 +438,9 @@ const oils = [
         level: "middle",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Spikenard',
@@ -376,7 +450,9 @@ const oils = [
         level: "middle",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Yarrow',
@@ -386,7 +462,9 @@ const oils = [
         level: "middle",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Cassia',
@@ -396,7 +474,9 @@ const oils = [
         level: "base",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Cedarwood',
@@ -406,7 +486,9 @@ const oils = [
         level: "base",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Clove',
@@ -416,7 +498,9 @@ const oils = [
         level: "base",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Frankincense',
@@ -426,7 +510,9 @@ const oils = [
         level: "base",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Ginger',
@@ -436,7 +522,9 @@ const oils = [
         level: "base",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Jasmine',
@@ -446,7 +534,9 @@ const oils = [
         level: "base",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Myrrh',
@@ -456,7 +546,9 @@ const oils = [
         level: "base",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Patchouli',
@@ -466,7 +558,9 @@ const oils = [
         level: "base",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Rose',
@@ -476,7 +570,9 @@ const oils = [
         level: "base",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Rosewood',
@@ -486,7 +582,9 @@ const oils = [
         level: "base",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Sandalwood',
@@ -496,7 +594,9 @@ const oils = [
         level: "base",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Vanilla',
@@ -506,7 +606,9 @@ const oils = [
         level: "base",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Vetiver',
@@ -516,7 +618,9 @@ const oils = [
         level: "base",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     { 
         name: 'Ylang Ylang',
@@ -526,7 +630,9 @@ const oils = [
         level: "base",
         pregnant: null,
         allergies: null,
-        kid: null
+        kid: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
     }
 ]
 
