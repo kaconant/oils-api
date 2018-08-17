@@ -42,20 +42,20 @@ const setupAuth = (app) => {
     passport.use(new LocalStrategy({
         // options: https://github.com/jaredhanson/passport-local#parameters
         // change these if you want a different field name for username or password
-        usernameField: 'username',
+        usernameField: 'email',
         passwordField: 'password',
     }, (username, password, done) => {
         // check if there is a user with the username given
         models.User.findOne({
             where: {
-                'username': username
+                'email': email
             }
         })
         .then((currentUser) => {
             // if there isn't a current User
             if (!currentUser) {
                 // return an error
-                return done(null, false, { message: 'Incorrect username' })
+                return done(null, false, { message: 'Incorrect email' })
             }
             // If the password doesn't match
             if (!bcrypt.compareSync(password, currentUser.password)) {
@@ -70,7 +70,7 @@ const setupAuth = (app) => {
 
     passport.serializeUser((user, done) => {
         done(null, {
-            name: user.user_name,
+            email: user.email,
             start_date: user.user_create_date
         }
         )
@@ -93,11 +93,13 @@ const setupAuth = (app) => {
         }
     })
 
-
-    app.get('/auth/google', passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/plus.login'] }));
+    app.get('/auth/google', 
+        passport.authenticate('google', 
+        { scope: ['https://www.googleapis.com/auth/plus.login'] }));
 
     app.get('/auth/google/callback',
-        passport.authenticate('google', { successRedirect: '/', failureRedirect: '/login' }));
+        passport.authenticate('google', 
+        { successRedirect: '/', failureRedirect: '/login' }));
 
     // app.get('/auth/facebook', passport.authenticate('facebook'));
 
@@ -118,12 +120,12 @@ const setupAuth = (app) => {
             if (currentUser) {
                 // return an error
                 return res.json({
-                    error: `Sorry, already a username '${username}' is already taken`
+                    error: `Sorry, already a username '${email}' is already taken`
                 });
             }
             // otherwise, create a new user and encrypt the password
             models.User.create({
-                'username': username,
+                'email': email,
                 'password': bcrypt.hashSync(password, 10)
             })
             .then((newUser) => {
