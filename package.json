@@ -15,6 +15,7 @@
     "hbs": "~4.0.1",
     "http-errors": "~1.6.2",
     "logger": "0.0.1",
+    "ls": "^0.2.1",
     "morgan": "^1.9.0",
     "nodemailer": "^4.6.7",
     "nodemailer-express-handlebars": "^3.0.0",
