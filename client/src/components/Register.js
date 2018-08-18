@@ -11,10 +11,11 @@ class Register extends Component {
     Axios.post('/auth/signup', {
       email: document.getElementById('signup-email').value,
       password: document.getElementById('signup-password').value
-    // }).then(({data}) => {
+    }).then(({data}) => {
+      console.log("registered")
     //   // if successfully login > react router to login page
     //   // else alert user taken on screen
-    // }).catch((err) => {
+    }).catch((err) => {
     //   // alert message that something went wrong
     //   // sowwy
     })

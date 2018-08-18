@@ -7,6 +7,38 @@ class LogIn extends React.Component {
 
   signIn(e) {
     e.preventDefault();
+    Axios.get('/api/user', {
+      user: document.getElementById('signup-email').value,
+      // password: document.getElementById('signup-password').value
+    }).then(({data}) => {
+      console.log(data);
+
+    //   // destructuring the data allows us not to type res.data
+    //   // if successfully login > react router to user page
+    //   // else alert login taken on screen
+    }).catch((err) => {
+      console.log(err)
+    //   // alert message that something went wrong
+    //   // sowwy
+    })
+    Axios.post('/auth/login', {
+      email: document.getElementById('signup-email').value,
+      password: document.getElementById('signup-password').value
+    }).then(({data}) => {
+      console.log("logged in");
+    //   // destructuring the data allows us not to type res.data
+    //   // if successfully login > react router to user page
+    //   // else alert login taken on screen
+    }).catch((err) => {
+      console.log(err)
+    //   // alert message that something went wrong
+    //   // sowwy
+    })
+  }
+
+
+  google(e) {
+    e.preventDefault();
     console.log(e.target);
     Axios.post('/auth/login', {
       email: document.getElementById('signup-email').value,
@@ -27,7 +59,7 @@ class LogIn extends React.Component {
     return (
       <div>
         <div className="login" id="login" >
-          <form action="/login" method="GET">
+          <form onSubmit={this.google.bind(this)}>
             <button className="btn-gp"> <i className="fa fa-fw fa-google-plus pull-left" aria-hidden="false"></i>
               Login with Google  </button> <br />  
             <div className="signup-or-separator">

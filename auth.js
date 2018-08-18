@@ -44,7 +44,7 @@ const setupAuth = (app) => {
         // change these if you want a different field name for username or password
         usernameField: 'email',
         passwordField: 'password',
-    }, (username, password, done) => {
+    }, (email, password, done) => {
         // check if there is a user with the username given
         models.User.findOne({
             where: {
@@ -148,6 +148,7 @@ const setupAuth = (app) => {
     app.post('/auth/login',
         passport.authenticate('local'),
         (req, res) => {
+            console.log(req)
             // req.user will have been deserialized at this point, so we need
             // to get the values and remove any sensitive ones
             const cleanUser = {...req.user.get()};
