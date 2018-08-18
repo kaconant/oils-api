@@ -7,7 +7,7 @@ class Jumbotron extends Component {
         <div>
           <div className="container-fluid msg-container">
             <div className="headline">
-              <h4>our oils. your blends.</h4>  
+              <h4>your oils. our blends.</h4>  
               <div className="row flex-row justify-content-center info">
                 <div className="main-col">
                   <img className="icon" src='./img/click2.png' height="40" />
@@ -29,9 +29,9 @@ class Jumbotron extends Component {
             </div>
             <h6>what's your vibe today?</h6>
             <div className="row flex-row justify-content-center buttons">
-              <a href="#base" onClick={this.props.handleMoodClick} className="transparent_btn"   data-mood="calm">CALM</a>
-              <a href="#base" onClick={this.props.handleMoodClick} className="transparent_btn"   data-mood="awaken">AWAKEN</a>
-              <a href="#base" onClick={this.props.handleMoodClick} className="transparent_btn"   data-mood="sensual">SENSUAL</a>
+              <a href="#" onClick={this.props.handleMoodClick} className="transparent_btn"   data-mood="calm">CALM</a>
+              <a href="#" onClick={this.props.handleMoodClick} className="transparent_btn"   data-mood="awaken">AWAKEN</a>
+              <a href="#" onClick={this.props.handleMoodClick} className="transparent_btn"   data-mood="sensual">SENSUAL</a>
             </div>
           </div>
         </div>

@@ -195,7 +195,7 @@ body {
 
   .slider-btn {
     font-size: 30px;
-    width: 15px;
+    width: 35px;
   }
 }
 
@@ -793,18 +793,20 @@ body {
   }
 
   #myFooter .google:hover {
-      color: #ef1a1a;
-  }
-
-  #myFooter .twitter:hover {
       color: #00aced;
   }
 
-  #myFooter .btn {
-      color: white;
-      background-color: #4d4d66;
-      border-radius: 0px;
-      border: none;
+  #myFooter .twitter:hover {
+
+      color: #DD2A7B;
+
+  }
+
+.btn.btn-default {
+      color: #4d4d66 !important;
+      background-color: #4d4d66 !important;
+      border-radius: 15px !important;
+      border: none !important;
       width: 150px;
       display: block;
       margin: 0 auto;
@@ -814,7 +816,10 @@ body {
       font-weight: 200;
       font-size: 18px;
   }
-
+Link {
+  border-radius: 15px !important;
+  border: none !important;
+}
   #formInfo {
     display: flex;
     justify-content: center;

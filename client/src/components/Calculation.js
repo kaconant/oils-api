@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+var smoothScroll = require('smoothscroll');
 
 class Calculation extends Component {
     constructor(props) {
@@ -15,18 +16,17 @@ class Calculation extends Component {
         } else {
             alert('You must select a base, middle, and top oil to calculate your blend!');
         }
+        let moveTo = document.getElementById('results')
+        smoothScroll(moveTo)
 
     }
 
-    // handleModalClick(e) {
-    //     e.preventDefault();
-    // }
 
     render() {
         return (
         <div className="Calc">
             {this.props.toShow === true && <button id="button" className="blendCalc" onClick={this.handleChange.bind(this)}>Time to Calculate</button>}
-            <div className="blendResults">
+            <div className="blendResults" id="results">
             {this.state.toShow === true && <h5 className="calcIntro">For this blend, you'll need:</h5>}
             {this.state.toShow === true && <h5 className="calcOils">5 Drops:<div className="calcColor">{ this.props.selected.base} Essential Oil</div> </h5>}
             {this.state.toShow === true && <h5 className="calcOils">4 Drops:<div className="calcColor">{ this.props.selected.middle} Essential Oil</div> </h5>}

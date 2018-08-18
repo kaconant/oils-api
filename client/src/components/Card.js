@@ -1,10 +1,22 @@
 import React from 'react';
+var smoothScroll = require('smoothscroll');
 
 class Card extends React.Component {
   handleOilClick(e) {
     e.preventDefault();
     const oil = this.props.content.name;
     this.props.toggleOil(oil);
+    let moveTo = ''
+    if (this.props.level === 'base' ) {
+      moveTo = document.getElementById("middle");
+    } 
+    if (this.props.level === "middle") {
+      moveTo = document.getElementById("top");
+    } 
+    if (this.props.level === "top") {
+      moveTo = document.getElementById("calculate");
+    } 
+    smoothScroll(moveTo)
   }
 
   render() {

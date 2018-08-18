@@ -16,17 +16,16 @@ class Footer extends Component {
                     <div className="col-sm-2">
                         <h5>Get started</h5>
                         <ul>
-                            <li><Link to='/home' href="#" >Home</Link></li>
-                            <li><Link to='/login' href="#" >Sign Up | Log In</Link></li>
-                            {/* <li><a href="#">Home</a></li>
-                            <li><a href="#">Sign Up | Log In</a></li> */}
+                            <li><Link to='/' href="#" >Home</Link></li>
+                            <li><Link to='/login' href="#" >Log In</Link></li>
+                            <li><Link to='/register' href="#" >Sign Up</Link></li>
                         </ul>
                     </div>
                     <div className="col-sm-2">
                         <h5>About Us</h5>
                         <ul>
                             <li><Link to='/about' href="#" >Who We Are</Link></li>
-                            <li><Link to='/about' href="#" >Contact Us</Link></li>
+                            <li><a href="mailto:hello@myblendology.com" >Contact Us</a></li>
                             {/* <li><a href="#">Who We Are</a></li>
                             <li><a href="#">Contact Us</a></li> */}
                         </ul>
@@ -42,12 +41,10 @@ class Footer extends Component {
                     </div>
                     <div className="col-sm-3">
                         <div className="social-networks">
-                            <a href="#" className="twitter"><i className="fa fa-twitter"></i></a>
-                            <a href="#" className="facebook"><i className="fa fa-facebook"></i></a>
-                            {/* instagram */}
+                            <a href="https://www.instagram.com/myblendology" target="_blank" className="twitter"><i className="fa fa-instagram"></i></a>
                             <a href="#" className="google"><i className="fa fa-google-plus"></i></a>
                         </div>
-                        <Link to='/about' type="button" className="btn btn-default">Contact Us</Link>
+                        <a href='mailto:hello@myblendology.com' type="button" className="btn btn-default">Contact Us</a>
                     </div>
                 </div>
             </div>

@@ -8,10 +8,8 @@ class User extends React.Component {
 
     return (
       <div>
-        <Navbar />
         <div className="user" id="user" >
         </div>
-        <Footer />
       </div>
     )
   }
