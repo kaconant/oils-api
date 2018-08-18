@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Axios from 'axios';
 
-
-class LogIn extends React.Component {
+class LogIn extends Component {
 
   signIn(e) {
     e.preventDefault();
@@ -43,23 +42,43 @@ class LogIn extends React.Component {
     Axios.post('/auth/login', {
       email: document.getElementById('signup-email').value,
       password: document.getElementById('signup-password').value
-    // }).then(({data}) => {
-    //   // destructuring the data allows us not to type res.data
-    //   // if successfully login > react router to user page
-    //   // else alert login taken on screen
-    // }).catch((err) => {
-    //   // alert message that something went wrong
-    //   // sowwy
+    }).then(({data}) => {
+      console.log(data)
+      window.location = "/";
+      // alert('This login is taken!')
+      // destructuring the data allows us not to type res.data
+      // if successfully login > react router to user page
+      // else alert login taken on screen
+    }).catch((err) => {
+      console.log(err.res)
+      alert('Try again later!')
     })
   }
 
+  googleSubmit(e) {
+    e.preventDefault();
+    console.log(e.target);
+    Axios.post('/auth/google/callback', {
+      email: document.getElementById('signup-email').value,
+      password: document.getElementById('signup-password').value
+    }).then(({data}) => {
+      console.log(data)
+      window.location = "/"
+      // if successfully login > react router to login page
+      // else alert user taken on screen
+      // alert('This login is taken!')
+    }).catch((err) => {
+      console.log(err)
+      alert('Try again later!')
+    })
+  }
 
   render() {
 
     return (
       <div>
         <div className="login" id="login" >
-          <form onSubmit={this.google.bind(this)}>
+          <form onSubmit={this.googleSubmit.bind(this)}>
             <button className="btn-gp"> <i className="fa fa-fw fa-google-plus pull-left" aria-hidden="false"></i>
               Login with Google  </button> <br />  
             <div className="signup-or-separator">

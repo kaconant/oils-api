@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Axios from 'axios';
 
-
 class Register extends Component {
 
   signUp(e) {
@@ -12,12 +11,12 @@ class Register extends Component {
       email: document.getElementById('signup-email').value,
       password: document.getElementById('signup-password').value
     }).then(({data}) => {
-      console.log("registered")
-    //   // if successfully login > react router to login page
-    //   // else alert user taken on screen
+      console.log(data)
+      window.location = "/login"
+      // if successfully login > react router to login page
+      // else alert user taken on screen
     }).catch((err) => {
-    //   // alert message that something went wrong
-    //   // sowwy
+      console.log(err)
     })
   }
 

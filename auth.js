@@ -26,6 +26,8 @@ const setupAuth = (app) => {
                 google_id: profile.id
             },
             defaults: {
+                firstName: profile.name, givenName,
+                lastName: profile.name, familyName,
                 username: profile.login,
                 google_id: profile.id,
                 email: profile.email,
@@ -53,8 +55,10 @@ const setupAuth = (app) => {
         })
         .then((currentUser) => {
             // if there isn't a current User
+            console.log("hi")
             if (!currentUser) {
                 // return an error
+                console.log(currentUser)
                 return done(null, false, { message: 'Incorrect email' })
             }
             // If the password doesn't match
@@ -72,8 +76,7 @@ const setupAuth = (app) => {
         done(null, {
             email: user.email,
             start_date: user.user_create_date
-        }
-        )
+        })
     });
 
     passport.deserializeUser((userId, done) => {
@@ -99,12 +102,11 @@ const setupAuth = (app) => {
 
     app.get('/auth/google/callback',
         passport.authenticate('google', 
-        { successRedirect: '/', failureRedirect: '/login' }));
-
-    // app.get('/auth/facebook', passport.authenticate('facebook'));
-
-    // app.get('/auth/google/callback',
-    //     passport.authenticate('facebook', { successRedirect: '/', failureRedirect: '/login' }));
+        { successRedirect: '/', failureRedirect: '/login' }),
+        function(req,res) {
+            console.log(req.user);
+            res.redirect('/')
+        });
 
     app.post('/auth/signup', (req, res) => {
         // destructure username and password off req.body into new constants
