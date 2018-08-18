@@ -1,11 +1,26 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Axios from 'axios';
 
 
-class Register extends React.Component {
+class Register extends Component {
+
+  signUp(e) {
+    e.preventDefault();
+    // console.log(e.target);
+    Axios.post('/auth/signup', {
+      email: document.getElementById('signup-email').value,
+      password: document.getElementById('signup-password').value
+    // }).then(({data}) => {
+    //   // if successfully login > react router to login page
+    //   // else alert user taken on screen
+    // }).catch((err) => {
+    //   // alert message that something went wrong
+    //   // sowwy
+    })
+  }
 
   render() {
-
     return (
       <div>
         <div className="register" id="register" >
@@ -17,7 +32,7 @@ class Register extends React.Component {
               <hr />
             </div>
           </form>
-          <form>
+          <form onSubmit={this.signUp.bind(this)}>
             <div className="form-group">
               <input type="firstName" className="form-control-form " id="firstName" placeholder="First Name" />
             </div>
@@ -31,7 +46,7 @@ class Register extends React.Component {
               <input type="password" className="form-control-form " id="signup-password" placeholder="Password" />
             </div>  
             <button type="submit" className="btn-lgin" data-toggle="modal"  data-dismiss="modal" data-target="#at-signup-filling">Signup with Email</button> <hr />   
-            <p>    By signing up, I agree to Tagged's <a href="#">Terms of Service</a> & <a href="#">Privacy Policy</a>. </p>
+            <p> By signing up, I agree to myBlendology's <a href="#">Terms of Service</a> & <a href="#">Privacy Policy</a>. </p>
             <div className="modal-footer">
               <div className="row">   
                 <div className="col-md-6">

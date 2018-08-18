@@ -18,9 +18,19 @@ class Calculation extends Component {
         }
         let moveTo = document.getElementById('results')
         smoothScroll(moveTo)
-
     }
 
+    // // saveBlend() {
+    //     e.preventDefault();
+    //     Axios.get() 
+    //         // getting api/users to see if logged in?
+    //         // if logged in, get id back - need for blends table
+    //         // hey log in you loser - bamboozling
+    //     Axios.post()
+    //         // will hit up end point that will - backend to create new row in blends table
+    //         // describe the three oils 
+    //         // need to add three oils to our blends table 
+    // // }
 
     render() {
         return (
