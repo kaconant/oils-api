@@ -23,11 +23,11 @@ const setupAuth = (app) => {
     function(accessToken, refreshToken, profile, done) {
         models.User.findOrCreate({
             where: {
-                googleId: profile.id
+                google_id: profile.id
             },
             defaults: {
                 username: profile.login,
-                googleId: profile.id,
+                google_id: profile.id,
                 email: profile.email,
             }
         })
@@ -108,11 +108,11 @@ const setupAuth = (app) => {
 
     app.post('/auth/signup', (req, res) => {
         // destructure username and password off req.body into new constants
-        const { username, password } = req.body;
-        // Check if there is a user with the given username
+        const { email, password } = req.body;
+        // Check if there is a user with the given email
         models.User.findOne({
             where: {
-                'username': username
+                'email': email
             }
         })
         .then((currentUser) => {
@@ -120,7 +120,7 @@ const setupAuth = (app) => {
             if (currentUser) {
                 // return an error
                 return res.json({
-                    error: `Sorry, already a username '${email}' is already taken`
+                    error: `Sorry, already a email '${email}' is already taken`
                 });
             }
             // otherwise, create a new user and encrypt the password
@@ -152,7 +152,7 @@ const setupAuth = (app) => {
             // to get the values and remove any sensitive ones
             const cleanUser = {...req.user.get()};
             if (cleanUser.password) {
-                console.log(`Removing password from user:`, cleanUser.username);
+                console.log(`Removing password from user:`, cleanUser.email);
                 delete cleanUser.password
             }
             res.json({ user: cleanUser });

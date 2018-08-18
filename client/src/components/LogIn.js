@@ -1,8 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Axios from 'axios';
 
 
 class LogIn extends React.Component {
+
+  signIn(e) {
+    e.preventDefault();
+    console.log(e.target);
+    Axios.post('/auth/login', {
+      email: document.getElementById('signup-email').value,
+      password: document.getElementById('signup-password').value
+    // }).then(({data}) => {
+    //   // destructuring the data allows us not to type res.data
+    //   // if successfully login > react router to user page
+    //   // else alert login taken on screen
+    // }).catch((err) => {
+    //   // alert message that something went wrong
+    //   // sowwy
+    })
+  }
+
 
   render() {
 
@@ -17,7 +35,7 @@ class LogIn extends React.Component {
               <hr />
             </div>
           </form>
-          <form>
+          <form onSubmit={this.signIn.bind(this)}>
             <div className="form-group">
               <input type="email" className="form-control-form " id="signup-email" placeholder="Email" />
             </div>
