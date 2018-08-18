@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Card from './Card.js';
 
+
 class Carousel extends Component {
     constructor(props) {
       super(props);
@@ -56,6 +57,7 @@ class Carousel extends Component {
       })
     }
 
+
     render() {
         var infoLabel = " "
         var infoBlurb = " "
@@ -70,7 +72,7 @@ class Carousel extends Component {
           infoBlurb = "Top oils provide your first impression of your blend. These oils are often described as light and fresh, but tend to fade quickly."
         }
       return (
-        <div id="base">
+        <div id={this.props.levelLabel}>
             {this.props.toShow === true && <div className="info-label">{infoLabel}</div>}
             {this.props.toShow === true && <div className="info-blurb-level">{infoBlurb}</div>}
           <div className="cards-slider">
@@ -81,7 +83,7 @@ class Carousel extends Component {
           <section style={this.state.slider.cardStyle}>
           {
             this.props.currentLevel.map((card, i) => (
-              <Card content={card} checked={this.state.currentOil === card.name} toggleOil={this.toggleOil.bind(this)} key={i} />
+              <Card content={card} checked={this.state.currentOil === card.name} toggleOil={this.toggleOil.bind(this)} key={i} level={this.props.levelLabel}/>
             ))
           }
           </section>

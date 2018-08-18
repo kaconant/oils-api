@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const dotenv = require('dotenv');
+// const smoothScroll = require('smoothscroll');
 dotenv.load();
 
 const apiRouter = require('./routes/api');

@@ -15,12 +15,12 @@ class Navbar extends Component {
                 <span className="sr-only">Toggle navigation</span>
             </button>
 
-            <Link to='/home' className="navbar-brand" href="#"><img className="logo" src="./img/logo.png" height='55' /><img className="logo-small" src="./img/drop.png" height='40' /></Link>
+            <Link to='/' className="navbar-brand" href="#"><img className="logo" src="./img/logo.png" height='55' /><img className="logo-small" src="./img/drop.png" height='40' /></Link>
             {/* <a className="navbar-brand" href="#"><img className="logo" src="./img/logo.png" height='55' /><img className="logo-small" src="./img/drop.png" height='40' /></a>  */}
             <div className="collapse navbar-collapse" id="navbarResponsive">
                 <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
-                    <Link to='/about' className="nav-link hvr-hang" href="#"  data-target="#about">ABOUT</Link>
+                    <Link to='/register' className="nav-link hvr-hang" href="#"  data-target="#register">SIGN UP</Link>
                     {/* <a className="nav-link hvr-hang" href="#"  data-target="#about">ABOUT</a> */}
                 </li>
                 <li className="nav-item">

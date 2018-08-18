@@ -23,7 +23,7 @@ router.post('/', (req, res, next) => {
     transporter.sendMail({
         from: `"noreply@mail.myBlendology.com"`, // sender address
         to: `"${req.body.recEmail}"`, // list of receivers
-        subject: `Hey ${req.body.recName}, check out this ${req.body.blendName} blend from ${req.body.userName}!`, // Subject line
+        subject: `Hey ${req.body.recName}, check out this ${req.body.blendName} essential oil blend from ${req.body.userName}!`, // Subject line
         text: '', // plain text body
         template: 'notification',
         context: {
