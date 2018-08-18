@@ -83,10 +83,8 @@ this.setState(state);
   render() {
     return (
       <div>
-            <Navbar/>
+          <Navbar/>
           <Switch>
-            {/* <Route path="/" component={ Jumbotron } /> */}
-
             <Route exact path='/'render={ () => {return (
               <div>
                 <Jumbotron handleMoodClick={this.handleMoodClick}/>
@@ -107,7 +105,7 @@ this.setState(state);
             <Route path='/register' component={ Register } />
             <Route path='/users/:id' component={ User } />
           </Switch>
-            <Footer /> 
+          <Footer /> 
         </div>
     )
   }

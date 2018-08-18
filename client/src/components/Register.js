@@ -9,7 +9,7 @@ class Register extends React.Component {
     return (
       <div>
         <div className="register" id="register" >
-          <form action="/login" method="GET"> 
+          <form action="/register" method="GET"> 
             <button className="btn-gp"> <i className="fa fa-fw fa-google-plus pull-left" aria-hidden="false"></i>
               Signup with Google  </button> <br />  
             <div className="signup-or-separator">
@@ -18,6 +18,12 @@ class Register extends React.Component {
             </div>
           </form>
           <form>
+            <div className="form-group">
+              <input type="firstName" className="form-control-form " id="firstName" placeholder="First Name" />
+            </div>
+            <div className="form-group">
+              <input type="lastName" className="form-control-form " id="lastName" placeholder="Last Name" />
+            </div>
             <div className="form-group">
               <input type="email" className="form-control-form " id="signup-email" placeholder="Email" />
             </div>
