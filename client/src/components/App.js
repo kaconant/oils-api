@@ -83,7 +83,7 @@ this.setState(state);
   render() {
     return (
       <div>
-            <Navbar/>
+          <Navbar />
           <Switch>
             {/* <Route path="/" component={ Jumbotron } /> */}
 
@@ -107,7 +107,7 @@ this.setState(state);
             <Route path='/register' component={ Register } />
             <Route path='/users/:id' component={ User } />
           </Switch>
-            <Footer /> 
+          <Footer /> 
         </div>
     )
   }

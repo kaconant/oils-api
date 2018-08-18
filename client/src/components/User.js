@@ -1,6 +1,4 @@
 import React from 'react';
-import Navbar from './Navbar.js';
-import Footer from './Footer.js';
 
 class User extends React.Component {
 
@@ -9,6 +7,7 @@ class User extends React.Component {
     return (
       <div>
         <div className="user" id="user" >
+          <h1>Welcome!</h1>
         </div>
       </div>
     )
