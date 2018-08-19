@@ -48,10 +48,10 @@ class Calculation extends Component {
             </div>
             <div className="share-row">
             {/* <div className="row flex-row justify-content-center buttons"> */}
-            {this.state.toShow === true && <a href="/" className="shareBlend transparent_btn" data-toggle="modal" data-target="#share">share your blend</a>}
-            {this.state.toShow === true && <a href="/" className="shareBlend transparent_btn" data-target="#save">save your blend</a>}
-            {this.state.toShow === true && <a href="/" className="shareBlend transparent_btn" data-target="#new" onClick={this.refreshPage.bind(this)}>make a new blend</a>}
-            </div>
+            {this.state.toShow === true && <a href="/" className="shareBlend transparent_btn" data-toggle="modal" data-target="#share">Share Your Blend</a>}
+            {this.state.toShow === true && <a href="/login" className="shareBlend transparent_btn" data-target="#save">Save Your Blend</a>}
+            {this.state.toShow === true && <a href="/" className="shareBlend transparent_btn" data-target="#new" onClick={this.refreshPage.bind(this)}>Make a New Blend</a>}
+            {/* </div> */}
         </div>
         )
     }

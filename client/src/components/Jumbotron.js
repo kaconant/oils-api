@@ -7,7 +7,7 @@ class Jumbotron extends Component {
         <div>
           <div className="container-fluid msg-container">
             <div className="headline">
-              <h4>your oils. our blends.</h4>  
+              <h4>blends made for you, by you</h4>  
               <div className="row flex-row justify-content-center info">
                 <div className="main-col">
                   <img className="icon" src='./img/click2.png' height="40" />
