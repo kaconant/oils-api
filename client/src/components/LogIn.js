@@ -72,10 +72,10 @@ class LogIn extends Component {
           </form>
           <form onSubmit={this.signIn.bind(this)}>
             <div className="form-group">
-              <input type="email" className="form-control-form " id="signup-email" placeholder="Email" />
+              <input type="email" className="form-control-forms " id="signup-email" placeholder="Email" />
             </div>
             <div className="form-group">
-              <input type="password" className="form-control-form " id="signup-password" placeholder="Password" />
+              <input type="password" className="form-control-forms " id="signup-password" placeholder="Password" />
             </div> 
             <button type="submit" className="btn-lgin" data-toggle="modal"  data-dismiss="modal" data-target="#at-signup-filling">Login</button> <hr />  
             <div className="modal-footer">

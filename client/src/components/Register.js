@@ -57,16 +57,16 @@ class Register extends Component {
           </form>
           <form onSubmit={this.signUp.bind(this)}>
             <div className="form-group">
-              <input type="firstName" className="form-control-form " id="firstName" placeholder="First Name" />
+              <input type="firstName" className="form-control-forms " id="firstName" placeholder="First Name" />
             </div>
             <div className="form-group">
-              <input type="lastName" className="form-control-form " id="lastName" placeholder="Last Name" />
+              <input type="lastName" className="form-control-forms " id="lastName" placeholder="Last Name" />
             </div>
             <div className="form-group">
-              <input type="email" className="form-control-form " id="signup-email" placeholder="Email" />
+              <input type="email" className="form-control-forms " id="signup-email" placeholder="Email" />
             </div>
             <div className="form-group">
-              <input type="password" className="form-control-form " id="signup-password" placeholder="Password" />
+              <input type="password" className="form-control-forms " id="signup-password" placeholder="Password" />
             </div>  
             <button type="submit" className="btn-lgin" data-toggle="modal"  data-dismiss="modal" data-target="#at-signup-filling">Signup with Email</button> <hr />   
             <p> By signing up, I agree to myBlendology's <a href="#">Terms of Service</a> & <a href="#">Privacy Policy</a>. </p>
