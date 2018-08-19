@@ -49,7 +49,7 @@ const oils = [
     },
     { 
         name: 'Clary Sage',
-        desc: 'This sweet, somewhat herbaceous oil has great benefits - not only for easing depression  and nervous burn-out, but for a host of female complaints and for relieving congested complexions.',
+        desc: 'This sweet, somewhat herbaceous oil has great benefits - not only for easing depression and nervous burn-out, but for a host of female complaints and for relieving congested complexions.',
         url: './img/oil-img/clary-sage.jpg',
         mood: 'calm',
         level: "top",
@@ -73,7 +73,7 @@ const oils = [
     },
     { 
         name: 'Eucalyptus',
-        desc: 'This clear, sharp essential oil helps to clear the mind and focus concentration, while reducing swelling in the mucus membranes. It is very valuable in fighting respiratory problems, fighting inflammation and sore muscles, rheumatism, headaches and nervous exhaustion, while boosting wound and ulcer healing and soothing skin eruptions.',
+        desc: 'This clear, sharp essential oil helps to clear the mind and focus concentration, while reducing swelling in the mucus membranes. It is very valuable in fighting respiratory problems, inflammation and sore muscles, headaches and nervous exhaustion.',
         url: './img/oil-img/eucalyptus.jpg',
         mood: 'calm',
         level: "top",
@@ -97,7 +97,7 @@ const oils = [
     },
     { 
         name: 'Lemon',
-        desc: 'This clean smelling citrus essential oil is not only good for helping you make decisions and to improve your concentration, but cuts down on acidity in the body - thereby assisting the digestion, as well as with rheumatism, arthritis and gout, while also sorting out cellulite, abscesses, boils, carbuncles and acne.',
+        desc: 'This clean smelling citrus essential oil is not only good for helping you make decisions and to improve your concentration. It also cuts down on acidity in the body, assisting with digestion, rheumatism, arthritis, gout, and acne.',
         url: './img/oil-img/lemon.jpg',
         mood: 'awaken',
         level: "top",
@@ -154,7 +154,7 @@ const oils = [
     },
     { 
         name: 'Orange',
-        desc: 'This unpretentious, citrusy essential oil is used in aromatherapy to create the feeling of happiness and warmth, while calming nervous digestive problems. It deals very well with colds and flu, eliminates toxins and stimulates the lymphatic system, while supporting collagen formation in the skin.',
+        desc: 'This unpretentious, citrusy essential oil is used to create the feeling of happiness and warmth, while calming nervous digestive problems. It deals well with colds and flu, eliminates toxins and stimulates the lymphatic system, while supporting collagen formation in the skin.',
         url: './img/oil-img/orange.jpg',
         mood: 'calm',
         level: "top",
@@ -166,7 +166,7 @@ const oils = [
     },
     { 
         name: 'Peppermint',
-        desc: 'This cooling and refreshing essential oil is used in aromatherapy to stimulate the mind, increase mental agility and to increase focus, while cooling the skin, reducing redness and calming irritation and itchiness. It furthermore helps to ease spastic colon, migraine, headaches, sinus and chest congestion and boosts the digestive system.',
+        desc: 'This cooling and refreshing essential oil is used in aromatherapy to stimulate the mind, increase mental agility and to increase focus. It also cools the skin, reducing redness and calming irritation and itchiness as well as boosts the digestive system.',
         url: './img/oil-img/peppermint.jpg',
         mood: 'awaken',
         level: "top",
@@ -226,7 +226,7 @@ const oils = [
     },
     { 
         name: 'Tea Tree',
-        desc: 'No house should be without this medicinal-smelling essential oil, as it is one of the most powerful immune system stimulants and sorts out most viral, bacterial and fungal infections in a snap, while it is great to clean wounds and also relieves muscle aches and pains.'        ,
+        desc: 'No house should be without this medicinal-smelling essential oil, as it is one of the most powerful immune system stimulants and sorts out most viral, bacterial and fungal infections in a snap, while it is great to clean wounds and also relieves muscle aches and pains.',
         url: './img/oil-img/tea-tree.jpg',
         mood: 'awaken',
         level: "top",
@@ -238,7 +238,7 @@ const oils = [
     },
     { 
         name: 'Thyme',
-        desc: 'This sweet yet strongly herbal essential oil can cause skin irritation, yet has great value to help with concentration and to focus, as well as being an excellent bronchial and lung stimulant, making it valuable in bronchitis, coughs, colds, asthma and the like, while the warming qualities are great for rheumatism, sciatica, arthritis and gout.',
+        desc: 'This sweet yet strongly herbal essential oil can cause skin irritation, yet has great value to help with concentration and to focus. It is also an excellent lung stimulant, making it valuable in bronchitis, coughs, colds, and asthma. It also has warming qualities that are great for arthritis and gout.',
         url: './img/oil-img/thyme.jpg',
         mood: 'awaken',
         level: "top",
@@ -262,7 +262,7 @@ const oils = [
     },
     { 
         name: 'Bay',
-        desc: 'This warming essential oil is often used in aromatherapy since it is a good antiseptic for the respiratory system, perks up the digestive system, settles stomach pain and expels wind, while promoting confidence, courage and insight. Topically, it is most often used to combat hair loss and to improve the health of the scalp in general.',
+        desc: 'This warming essential oil is a good antiseptic for the respiratory system, perks up the digestive system, settles stomach pain and expels wind. It also helps to promote confidence, courage and insight. Topically, it is most often used to combat hair loss.',
         url: './img/oil-img/bay.jpg',
         mood: 'calm',
         level: "middle",
@@ -298,7 +298,7 @@ const oils = [
     },
     { 
         name: 'Cypress',
-        desc: 'This clear and fresh smelling essential oil is a great boon to use during times of major upheavals and changes in your life, as it restores calm, sooths anger and making your life flow better. It has a positive effect on excess fluids in general, thereby improving circulation, sorting out coughs and bronchitis.',
+        desc: 'This clear and fresh smelling essential oil is a great boon to use during times of major upheavals and changes in your life, as it restores calm, sooths anger and making your life flow better. It has a positive effect on excess fluids in general, sorting out coughs and bronchitis.',
         url: './img/oil-img/cypress.jpg',
         mood: 'awaken',
         level: "middle",
@@ -322,7 +322,7 @@ const oils = [
     },
     { 
         name: 'Geranium',
-        desc: 'This fresh essential oil has a firm place in aromatherapy, as it helps to balance the mind and emotions, while stimulating the adrenal cortex and balancing the hormonal system and stimulating the lymphatic system. On the other hand, it balances the production of sebum in the skin, while keeping it supple and helping with the healing of wounds.',
+        desc: 'This fresh essential oil helps to balance the mind and emotions, while stimulating the adrenal cortex and balancing the hormonal system. It also  balances the production of sebum in the skin, while keeping it supple and helping with the healing of wounds.',
         url: './img/oil-img/geranium.jpg',
         mood: 'awaken',
         level: "middle",
@@ -334,7 +334,7 @@ const oils = [
     },
     { 
         name: 'Hyssop',
-        desc: 'This sweet, warm essential oil is effective in helping to treat female disorders and to relieve monthly water retention, while being excellent to help the respiratory system get rid of mucus and bronchial spasms. It can be used to treat bronchitis, asthma, influenza and colds, while helping wounds heal and dispersing bruises on the skin.',
+        desc: 'This sweet, warm essential oil is effective in helping to treat female disorders and to relieve monthly water retention. It also helps the respiratory system get rid of mucus and bronchial spasms. It can be used to help wounds heal and dispersing bruises on the skin.',
         url: './img/oil-img/hyssop.jpg',
         mood: 'calm',
         level: "middle",
@@ -346,7 +346,7 @@ const oils = [
     },
     { 
         name: 'Juniper',
-        desc: 'This crisp essential oil is used in aromatherapy to help stimulate and strengthen the nerves and bolster the spirits in challenging situations, while helping to relieve urine retention. It is used for treating rheumatism, arthritis and gout, as well as cellulite, acne, dermatitis, blocked pores, psoriasis and weeping eczemas.',
+        desc: 'This crisp essential oil is used to help stimulate and strengthen the nerves and bolster the spirits in challenging situations. It also is used to treat rheumatism, arthritis and gout, cellulite, acne, dermatitis, and blocked pores.',
         url: './img/oil-img/juniper.jpg',
         mood: 'awaken',
         level: "middle",
@@ -358,7 +358,7 @@ const oils = [
     },
     { 
         name: 'Lavender',
-        desc: 'This calming, relaxing essential oil, which combats stress and crisis, while the antiseptic properties helps with cold, flu and other ailments. It is excellent for asthma and migraines. Apart from that it supports female health and on the skin it has a healing effect, while preventing scarring and balancing the skin.',
+        desc: 'This calming, relaxing essential oil, which combats stress and crisis, also has antiseptic properties that helps with cold, flu and other ailments. It is excellent for asthma and migraines and supports female health. On the skin it has a healing effect, while preventing scarring and balancing the skin.',
         url: './img/oil-img/lavender.jpg',
         mood: 'calm',
         level: "middle",
@@ -430,7 +430,7 @@ const oils = [
     },
     { 
         name: 'Rosemary',
-        desc: 'This crisp and clean smelling essential oil is great for stimulating the brain, improving memory and mental clarity, while helping with a variety of congested respiratory tract problems, stiff muscles, coldness as well as boosting the liver and gall bladder. It is also used for improving hair and scalp health.',
+        desc: 'This crisp and clean smelling essential oil is great for stimulating the brain, improving memory and mental clarity. It also helps with a variety of congested respiratory tract problems, stiff muscles, coldness as well as boosting the liver and gall bladder. It is also used for improving hair.',
         url: './img/oil-img/rosemary.jpg',
         mood: 'awaken',
         level: "middle",
@@ -478,7 +478,7 @@ const oils = [
     },
     { 
         name: 'Cedarwood',
-        desc: 'This clean smelling, balsamic essential oil does not only help calm and balance energy, but also promotes spirituality, while helping to clear the respiratory system of excess phlegm and catarrh. It sorts out urinary tract infections, as well as bladder and kidney disorders, while improving oily skin and clearing up dandruff.',
+        desc: 'This clean smelling, balsamic essential oil does not only help calm and balance energy, but also promotes spirituality. It also helps to clear the respiratory system of excess phlegm and sorts out urinary tract infections, as well as bladder and kidney disorders. It also improves oily skin and clears up dandruff.',
         url: './img/oil-img/cedarwood.jpg',
         mood: 'calm',
         level: "base",
@@ -490,7 +490,7 @@ const oils = [
     },
     { 
         name: 'Clove',
-        desc: 'Although this warm, spicy essential oil is a very potent oil that should be used with great care in aromatherapy, it does have wonderful properties - from stimulating the mind and lifting depression, to aiding digestion, relieving pain in arthritis and rheumatism, easing respiratory problems and assisting leg ulcers.',
+        desc: 'Although this warm, spicy essential oil is a very potent oil that should be used with great care, it does have wonderful properties - from stimulating the mind and lifting depression, to aiding digestion, relieving pain in arthritis and rheumatism, easing respiratory problems and assisting leg ulcers.',
         url: './img/oil-img/clove.jpg',
         mood: 'awaken',
         level: "base",
@@ -502,7 +502,7 @@ const oils = [
     },
     { 
         name: 'Frankincense',
-        desc: 'This woody, spicy essential oil has a wonderfully calming effect on the mind and helps to create inner peace, while helping to sooth the respiratory and urinary tract and relieve pain associated with rheumatism and muscular aches, while having a rejuvenating, balancing and healing action on the skin.',
+        desc: 'This woody, spicy essential oil has a wonderfully calming effect on the mind and helps to create inner peace. It also helps to sooth the respiratory and urinary tract and relieve pain associated with rheumatism and muscular aches',
         url: './img/oil-img/frankincense.jpg',
         mood: 'calm',
         level: "base",
@@ -538,7 +538,7 @@ const oils = [
     },
     { 
         name: 'Myrrh',
-        desc: 'If you talk about a magical essential oil in aromatherapy, then this warm, slightly-musty oil must surely be it, as it not only works on increasing your spiritual self, but produce wonderful results when used to treat female complaints, skin ailments, as well as detoxifying the body and expelling mucus and phlegm from the body.',
+        desc: 'If you talk about a magical essential oil in aromatherapy, then this warm, slightly-musty oil must surely be it. It not only works on increasing your spiritual self, but produce wonderful results when used to treat female complaints, skin ailments, as well as detoxifying the body and expelling mucus from the body.',
         url: './img/oil-img/myrrh.jpg',
         mood: 'awaken',
         level: "base",
@@ -610,7 +610,7 @@ const oils = [
     },
     { 
         name: 'Vetiver',
-        desc: 'This earthy essential oil has a wonderful effect on the mind and body and is useful to dispel irritability, anger and hysteria, while having a balancing effect on the hormonal system and is a great boon for the skin. It is used to reduce wrinkles and stretch marks while nourishing and moisturizing the skin and helping wounds heal.',
+        desc: 'This earthy essential oil has a wonderful effect on the mind and body and is useful to dispel irritability while having a balancing effect on the hormonal system. It is also used to reduce wrinkles and stretch marks while nourishing and moisturizing the skin and helping wounds heal.',
         url: './img/oil-img/vetiver.jpg',
         mood: 'calm',
         level: "base",
