@@ -69,7 +69,7 @@ class Register extends Component {
               <input type="password" className="form-control-forms " id="signup-password" placeholder="Password" />
             </div>  
             <button type="submit" className="btn-lgin" data-toggle="modal"  data-dismiss="modal" data-target="#at-signup-filling">Signup with Email</button> <hr />   
-            <p> By signing up, I agree to myBlendology's <a href="#">Terms of Service</a> & <a href="#">Privacy Policy</a>. </p>
+            <p className="sue"> By signing up, I agree to myBlendology's <a href="#">Terms of Service</a> & <a href="#">Privacy Policy</a>. myBlendology is not offering any medical advice and recommends consulting a doctor before use. </p>
             <div className="modal-footer">
               <div className="row">   
                 <div className="col-md-6">
