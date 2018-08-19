@@ -9,20 +9,21 @@ class LogIn extends Component {
   }
 
   signIn(e) {
+
     e.preventDefault();
     Axios.get('/api/user', {
       user: document.getElementById('signup-email').value,
-      // password: document.getElementById('signup-password').value
+    // password: document.getElementById('signup-password').value
     }).then(({data}) => {
       console.log(data);
-    //   // destructuring the data allows us not to type res.data
-    //   // if successfully login > react router to user page
-    //   // else alert login taken on screen
+    // destructuring the data allows us not to type res.data
+    // if successfully login > react router to user page
+    // else alert login taken on screen
     }).catch((err) => {
       console.log(err)
-    //   // alert message that something went wrong
-    //   // sowwy
+    // alert message that something went wrong
     })
+
     Axios.post('/auth/login', {
       email: document.getElementById('signup-email').value,
       password: document.getElementById('signup-password').value
@@ -30,15 +31,14 @@ class LogIn extends Component {
       localStorage.setItem('username', data.user.firstname)
       this.props.loggedIn();
       this.props.history.replace('/');
-    //   // destructuring the data allows us not to type res.data
-    //   // if successfully login > react router to user page
-    //   // else alert login taken on screen
+    // destructuring the data allows us not to type res.data
+    // if successfully login > react router to user page
+    // else alert login taken on screen
     }).catch((err) => {
       console.log(err)
-    //   // alert message that something went wrong
-    //   // sowwy
+    // alert message that something went wrong
+    // sowwy
     })
-
   }
 
 
@@ -48,16 +48,15 @@ class LogIn extends Component {
     .then((res) => {
       console.log("google logged in")
       
-      // alert('This login is taken!')
-      // destructuring the data allows us not to type res.data
-      // if successfully login > react router to user page
-      // else alert login taken on screen
+    // alert('This login is taken!')
+    // destructuring the data allows us not to type res.data
+    // if successfully login > react router to user page
+    // else alert login taken on screen
     }).catch((err) => {
       console.log(err)
       alert('Try again later!')
     })
   }
-
 
   render() {
     return (

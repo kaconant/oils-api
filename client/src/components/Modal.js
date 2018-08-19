@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
 
-class Modal extends React.Component {
+class Modal extends Component {
     
     state = {
         submitted: false,
@@ -70,11 +70,6 @@ class Modal extends React.Component {
                                         <div className="form-group">
                                             <input type="text" className="form-control-form " required id="blendName" name="blendName" placeholder="Name of Your Blend" />
                                         </div>
-                                        {/* <div className="checkbox">
-                                            <label>
-                                                <input id="remember-me" type="checkbox" />Remember Me? 
-                                            </label>
-                                        </div>    */}
                                         <div className="form-group">
                                             <input type="text" className="form-control-form " required id="recName" name="recName" placeholder="Recepient's Name" />
                                         </div>

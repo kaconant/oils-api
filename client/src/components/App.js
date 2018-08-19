@@ -91,7 +91,6 @@ handleMoodClick(e) {
   smoothScroll(base)
 }
 
-
 componentDidMount() {
 Axios.get('/api/oils').then((res) => {
   this.setState({
