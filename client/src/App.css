@@ -669,7 +669,6 @@ body {
     font-family: 'Julius Sans One', sans-serif;
   }
 
-
 /* Modal */
 
   .modal-content {
@@ -989,6 +988,8 @@ body {
     margin-top: 0px;
   }
 
+/* Register */
+
   .signup-or-separator {
     background: none;
     height: 34px;
@@ -1002,6 +1003,10 @@ body {
     padding: 8px;
   }
   
+  .sue {
+    text-align: center;
+  }
+
   .h6 {
     font-size: 14px;
     font-weight: bold;
