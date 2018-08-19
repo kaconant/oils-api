@@ -20,7 +20,7 @@ constructor(props) {
         let username = localStorage.getItem('username')
         return(
         <div>
-            <nav className="navbar navbar-expand-sm sticky-top">
+            <nav className="navbar navbar-expand-sm sticky-top" id="navbar">
             <button className="navbar-toggler collapsed mr-auto" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>

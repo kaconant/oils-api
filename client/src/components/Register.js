@@ -14,9 +14,12 @@ class Register extends Component {
       password: document.getElementById('signup-password').value
     }).then(({data}) => {
       console.log(data)
-      window.location = "/login"
-      // if successfully login > react router to login page
-      // else alert user taken on screen
+      if (data.error) {
+        alert(`Sorry, that email is already registered.`);
+        return;
+      } else {
+      this.props.history.replace('/login');
+      }
     }).catch((err) => {
       console.log(err)
     })

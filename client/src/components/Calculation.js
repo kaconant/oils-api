@@ -9,8 +9,18 @@ class Calculation extends Component {
         }
     }
 
-    refreshPage() {
-        window.location.reload();
+    refreshPage(e) {
+        e.preventDefault();
+        this.setState({
+            toShow: false
+        })
+        this.props.setOil("base", '');
+        this.props.setOil("middle", '');
+        this.props.setOil("top", '');
+        let navbar = document.getElementById('navbar');
+        smoothScroll(navbar);
+        console.log("reset");
+
     }
 
     handleChange(e) {
@@ -40,17 +50,18 @@ class Calculation extends Component {
         return (
         <div className="Calc">
             {this.props.toShow === true && <button id="button" className="blendCalc" onClick={this.handleChange.bind(this)}>Calculate My Blend</button>}
-            <div className="blendResults" id="results">
             {this.state.toShow === true && <h5 className="calcIntro">For this blend, you'll need:</h5>}
-            {this.state.toShow === true && <h5 className="calcOils">5 Drops:<div className="calcColor">{ this.props.selected.base} Essential Oil</div> </h5>}
-            {this.state.toShow === true && <h5 className="calcOils">4 Drops:<div className="calcColor">{ this.props.selected.middle} Essential Oil</div> </h5>}
-            {this.state.toShow === true && <h5 className="calcOils">3 Drops:<div className="calcColor">{ this.props.selected.top} Essential Oil</div></h5>}
+            <div className="blendResults" id="results">
+            {this.state.toShow === true && <h5 className="calcOils">5 Drops of <span className="calcColor">{ this.props.selected.base}</span> for your base oil</h5>}
+            {this.state.toShow === true && <h5 className="calcOils">4 Drops of <span className="calcColor">{ this.props.selected.middle}</span> for your middle oil</h5>}
+            {this.state.toShow === true && <h5 className="calcOils">3 Drops of <span className="calcColor">{ this.props.selected.top}</span> for your top oil</h5>}
             </div>
+            <div className="share-row">
             {/* <div className="row flex-row justify-content-center buttons"> */}
-            {this.state.toShow === true && <a href="/" className="shareBlend transparent_btn" data-toggle="modal" data-target="#share">Share Your Blend</a>}
-            {this.state.toShow === true && <a href="/login" className="shareBlend transparent_btn" data-target="#save">Save Your Blend</a>}
-            {this.state.toShow === true && <a href="/" className="shareBlend transparent_btn" data-target="#new" onClick={this.refreshPage.bind(this)}>Make a New Blend</a>}
-            {/* </div> */}
+            {this.state.toShow === true && <a href="/" className="shareBlend transparent_btn" data-toggle="modal" data-target="#share">share your blend</a>}
+            {this.state.toShow === true && <a href="/login" className="shareBlend transparent_btn" data-target="#save">save your blend</a>}
+            {this.state.toShow === true && <a href="/" className="shareBlend transparent_btn"  onClick={this.refreshPage.bind(this)}>make a new blend</a>}
+            </div>
         </div>
         )
     }

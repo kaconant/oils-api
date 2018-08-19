@@ -658,6 +658,8 @@ body {
     font-size: 20px;
     margin-top: 20px;
     margin-bottom: 18px;
+    margin-left: 25px;
+    margin-right: 25px;
     background-color: whitesmoke;
     border-radius: 15px;
     padding: 20px;
@@ -1091,4 +1093,19 @@ body {
 
   .blue-bg-nav {
     background-color:#acd6ebaf;
+  }
+
+  .share-row {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+
+  .blendResults {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+    flex-wrap: wrap;
   }
