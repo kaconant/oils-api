@@ -1092,3 +1092,10 @@ body {
   .blue-bg-nav {
     background-color:#acd6ebaf;
   }
+
+  .share-row {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+    flex-wrap: wrap;
+  }

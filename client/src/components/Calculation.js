@@ -46,11 +46,12 @@ class Calculation extends Component {
             {this.state.toShow === true && <h5 className="calcOils">4 Drops:<div className="calcColor">{ this.props.selected.middle} Essential Oil</div> </h5>}
             {this.state.toShow === true && <h5 className="calcOils">3 Drops:<div className="calcColor">{ this.props.selected.top} Essential Oil</div></h5>}
             </div>
+            <div className="share-row">
             {/* <div className="row flex-row justify-content-center buttons"> */}
             {this.state.toShow === true && <a href="/" className="shareBlend transparent_btn" data-toggle="modal" data-target="#share">Share Your Blend</a>}
             {this.state.toShow === true && <a href="/" className="shareBlend transparent_btn" data-target="#save">Save Your Blend</a>}
             {this.state.toShow === true && <a href="/" className="shareBlend transparent_btn" data-target="#new" onClick={this.refreshPage.bind(this)}>Make a New Blend</a>}
-            {/* </div> */}
+            </div>
         </div>
         )
     }
