@@ -9,6 +9,10 @@ class Calculation extends Component {
         }
     }
 
+    refreshPage() {
+        window.location.reload();
+    }
+
     handleChange(e) {
         e.preventDefault();
         if (this.props.selected.base !== "" && this.props.selected.middle !== '' && this.props.selected.top !== "") {
@@ -42,11 +46,13 @@ class Calculation extends Component {
             {this.state.toShow === true && <h5 className="calcOils">4 Drops:<div className="calcColor">{ this.props.selected.middle} Essential Oil</div> </h5>}
             {this.state.toShow === true && <h5 className="calcOils">3 Drops:<div className="calcColor">{ this.props.selected.top} Essential Oil</div></h5>}
             </div>
-            {this.state.toShow === true && <a href="/" className="shareBlend transparent_btn" data-toggle="modal" data-target="#share">Share Blend</a>}
-            {this.state.toShow === true && <a href="/" className="shareBlend transparent_btn" data-toggle="modal" data-target="#share">Save Blend</a>}
-            {/* {this.props.toShow === true && <button id="refreshButton" className="refreshBtn" onClick="window.location.reload()">Make A New Blend</button>} */}
+            {/* <div className="row flex-row justify-content-center buttons"> */}
+            {this.state.toShow === true && <a href="/" className="shareBlend transparent_btn" data-toggle="modal" data-target="#share">Share Your Blend</a>}
+            {this.state.toShow === true && <a href="/" className="shareBlend transparent_btn" data-target="#save">Save Your Blend</a>}
+            {this.state.toShow === true && <a href="/" className="shareBlend transparent_btn" data-target="#new" onClick={this.refreshPage.bind(this)}>Make a New Blend</a>}
+            {/* </div> */}
         </div>
         )
-}
+    }
 }
 export default Calculation;

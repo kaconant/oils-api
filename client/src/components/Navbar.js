@@ -17,7 +17,7 @@ constructor(props) {
 
     render() {
         let isLoggedIn = this.props.isLoggedIn
-        let username = localStorage.getItem('username').toUpperCase()
+        let username = localStorage.getItem('username')
         return(
         <div>
             <nav className="navbar navbar-expand-sm sticky-top">
@@ -36,7 +36,7 @@ constructor(props) {
                 {!isLoggedIn ? 
                     <Link to='/register' className="nav-link hvr-hang" href="#"  data-target="#register">SIGN UP</Link>
                     : 
-                    <Link to='/user' className="nav-link hvr-hang"  >{username}'S BLENDS</Link>
+                    <Link to='/user' className="nav-link hvr-hang"  >{username}'s BLENDS</Link>
                 }
                     {/* <a className="nav-link hvr-hang" href="#"  data-target="#about">ABOUT</a> */}
                 </li>
