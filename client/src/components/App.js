@@ -33,7 +33,11 @@ class App extends Component {
       top: '',
     },
     toShow: false,
-    isLoggedIn: false
+    isLoggedIn: false,
+    firstname: '',
+    lastname: '',
+    email: '',
+    savedBlends: []
   }
   this.handleMoodClick = this.handleMoodClick.bind(this);
   this.loggedIn = this.loggedIn.bind(this)
@@ -63,6 +67,8 @@ signOut(e) {
   })
 
 }
+
+
 
 handleMoodClick(e) {
   e.preventDefault();
@@ -104,13 +110,14 @@ setOil(level, oil) {
 let state = { ...this.state };
 state.selected[level] = oil;
 this.setState(state);
+console.log("setOil hit");
 }
 
   render() {
     let { history } = this.props;
     return (
       <div>
-          <Navbar isLoggedIn={this.state.isLoggedIn} signOut={this.signOut} />
+          <Navbar isLoggedIn={this.state.isLoggedIn} signOut={this.signOut} getInfo={this.getInfo}/>
           <Switch>
             <Route exact path='/'render={ () => {return (
               <div>
@@ -122,7 +129,7 @@ this.setState(state);
                 <div id='top'></div>
                 {this.state.toShow !== false && <Carousel mood={this.state.mood} setOil={this.setOil.bind(this)} levelLabel="top" currentLevel={this.state.topLevel} toShow={this.state.toShow} />}
                 <div id="calculate"></div>
-                <Calculation selected={this.state.selected} toShow={this.state.toShow} />
+                <Calculation selected={this.state.selected} toShow={this.state.toShow} setOil={this.setOil.bind(this)} isLoggedIn={this.state.isLoggedIn}/>
                 <Modal selected={this.state.selected} mood={this.state.mood}/>
               </div>
             )}} />
