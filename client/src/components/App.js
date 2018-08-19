@@ -33,10 +33,36 @@ class App extends Component {
       top: '',
     },
     toShow: false,
+    isLoggedIn: false
   }
   this.handleMoodClick = this.handleMoodClick.bind(this);
+  this.loggedIn = this.loggedIn.bind(this)
+  this.signOut = this.signOut.bind(this)
+
 }
 
+loggedIn() {
+  this.setState({isLoggedIn: !this.state.isLoggedIn});
+}
+
+signOut(e) {
+  e.preventDefault();
+  Axios.get('/auth/logout', {
+  }).then(({data}) => {
+    localStorage.setItem('username', '')
+    this.loggedIn();
+    console.log('signed out')
+    this.props.history.replace('/');
+  //   // destructuring the data allows us not to type res.data
+  //   // if successfully login > react router to user page
+  //   // else alert login taken on screen
+  }).catch((err) => {
+    console.log(err)
+  //   // alert message that something went wrong
+  //   // sowwy
+  })
+
+}
 
 handleMoodClick(e) {
   e.preventDefault();
@@ -72,6 +98,7 @@ Axios.get('/api/oils').then((res) => {
     oilData: res.data
   })
 })
+console.log("app says: " +this.state.isLoggedIn)
 }
 
 setOil(level, oil) {
@@ -81,9 +108,10 @@ this.setState(state);
 }
 
   render() {
+    let { history } = this.props;
     return (
       <div>
-          <Navbar/>
+          <Navbar isLoggedIn={this.state.isLoggedIn} signOut={this.signOut} />
           <Switch>
             <Route exact path='/'render={ () => {return (
               <div>
@@ -101,7 +129,7 @@ this.setState(state);
             )}} />
             <Route path='/about' component={ About } />
             <Route path='/FAQ' component={ FAQ } />
-            <Route path='/login' component={ LogIn } />
+            <Route path='/login' render={() => {return( <LogIn loggedIn={this.loggedIn} isLoggedIn={this.state.isLoggedIn} history={history} /> ) }}/>
             <Route path='/register' component={ Register } />
             <Route path='/users/:id' component={ User } />
           </Switch>

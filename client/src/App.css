@@ -846,3 +846,242 @@ Link {
   .modal-content {
     background-color: #f0ebf1;
   }
+
+  .aboutwrapper {
+    background-image: url("/img/oils2.jpg"); 
+    background-position: center;
+    background-size: cover;
+  }
+
+  .about {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .profile {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgb(73, 65, 85);
+    border-radius: 10px;
+    padding: 10px 30px 30px 40px;
+    margin: 20px 50px 50px 50px;
+    background-color: #655e6e98;
+  }
+
+  .photo {
+    width: 200px;
+    padding-bottom: 20px;
+    margin-right: 20px;
+  }
+
+  .profile-name {
+    font-size: 33px;
+    width: 350px;
+    color: rgb(239, 239, 240);
+    padding-bottom: 20px !important;
+  }
+
+  .likes {
+    font-size: 16px;
+    font-family: "Josefin Sans", sans-serif;
+    padding-bottom: 10px;
+    color: rgb(253, 241, 252);
+  }
+
+  .title-text {
+    font-size: 40px;
+    padding: 20px 0 0 0 ;
+  }
+
+  .comments{
+    font-size: 20px;
+    padding-bottom: 0px;
+  }
+
+  .reach {
+    font-size: 14px;
+    text-align: center;
+    font-family: "Josefin Sans", sans-serif;
+  }
+
+  .faq {
+    padding: 20px;
+  }
+
+  .question {
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 18px;
+    text-align: left;
+    padding-left: 20px;
+
+  }
+
+  .answer {
+    font-family: "Josefin Sans", sans-serif;
+    text-align: left;
+    font-size: 14px;
+  }
+
+
+  .btn-gp
+  {
+      display: inline-block;
+      padding: 18px 20px;
+      margin-bottom: 0;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.42857143;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      -ms-touch-action: manipulation;
+      touch-action: manipulation;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      background-image: none;
+      border: 1px solid #eee;
+      border-radius: 0px;
+      background-color: rgb(86, 169, 247);
+      width: 95%;
+      color:rgb(255, 255, 255);
+      margin: 30px;
+      margin-top: 10px;
+  }
+
+
+  .btn-lgin
+  {
+      display: inline-block;
+      padding: 18px 20px;
+      margin-bottom: 0;
+      font-size: 14px;
+      font-family: "Josefin Sans", sans-serif;
+      font-weight: 400;
+      line-height: 1.42857143;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      -ms-touch-action: manipulation;
+      touch-action: manipulation;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      background-image: none;
+      border: 1px solid #eee;
+      border-radius: 0px;
+      background-color: #a1af92;
+      width: 95%;
+      color:#fff;
+      margin: 30px;
+      margin-top: 0px;
+  }
+  .signup-or-separator {
+      background: none;
+      height: 34px;
+      position: relative;
+      text-align: center;
+  }
+  .signup-or-separator--text {
+      background-color: #f0ebf1;
+      display: inline-block;
+      padding: 8px;
+  }
+  
+  .h6 {
+      font-size: 14px;
+      font-weight: bold;
+      color: #757575;
+      line-height: 1.1;
+      text-rendering: optimizelegibility;
+  }
+  
+  .signup-or-separator hr {
+      margin: -25px auto 10px;
+      width: 100%;	
+   }
+   
+  .form-control-form {
+      display: block;
+      width: 95%;
+      height: 54px;
+      padding: 15px 12px;
+      margin: 30px;
+      font-size: 14px;
+      line-height: 1.42857143;
+      color: #555;
+      background-color: whitesmoke;
+      background-image: none;
+      border: 1px solid #ccc;
+      border-radius: 0px;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+      box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+      -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+      -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+      transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+      margin-top: 3px;
+  }   
+  .frgt-pswd
+  {
+      margin: 5px 0 10px;
+  color: rgb(139, 46, 46);
+  }
+  
+  .btn-gst
+  {
+  display: inline-block;
+  padding: 6px 18px;
+  margin-bottom: 0;
+  /* margin-top: 7px; */
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid #000;
+  border-radius: 0px;
+  background-color: transparent;
+  }
+  
+  
+  .ta-l
+  {
+      text-align:left;
+      margin-top: 5px;
+  }
+  
+  .modal-dialog {
+      width: 500px;
+      margin: 30px auto;
+  }
+  
+  .modal-content
+  {
+      padding: 0px 10px;
+  }
+  
+   .modal-header {
+      padding: 10px 10px;
+      border-bottom: 0px solid #e5e5e5;
+  }
+  .blue-bg-nav
+  {
+      background-color:#acd6ebaf;
+  }

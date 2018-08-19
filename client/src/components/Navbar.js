@@ -3,8 +3,21 @@ import { Link } from 'react-router-dom';
 // import logo from '../img/logo.png'
 // import drop from '../img/drop.png'
 class Navbar extends Component {
+constructor(props) {
+    super(props);
+    this.state = {
+        isLoggedIn: this.props.isLoggedIn
+    }
+}
+
+    componentDidMount() {
+        this.forceUpdate();
+        console.log("navbar says: " + this.props.isLoggedIn)
+    }
 
     render() {
+        let isLoggedIn = this.props.isLoggedIn
+        let username = localStorage.getItem('username').toUpperCase()
         return(
         <div>
             <nav className="navbar navbar-expand-sm sticky-top">
@@ -20,7 +33,11 @@ class Navbar extends Component {
             <div className="collapse navbar-collapse" id="navbarResponsive">
                 <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
+                {!isLoggedIn ? 
                     <Link to='/register' className="nav-link hvr-hang" href="#"  data-target="#register">SIGN UP</Link>
+                    : 
+                    <Link to='/user' className="nav-link hvr-hang"  >{username}'S BLENDS</Link>
+                }
                     {/* <a className="nav-link hvr-hang" href="#"  data-target="#about">ABOUT</a> */}
                 </li>
                 <li className="nav-item">
@@ -28,8 +45,12 @@ class Navbar extends Component {
                     {/* <a className="nav-link hvr-hang" href="#">FAQ</a> */}
                 </li>
                 <li className="nav-item">
-                    <Link to='/login' className="nav-link hvr-hang" href="#" >LOGIN</Link>
-                    {/* <a className="nav-link hvr-hang" href="#" data-toggle="modal" data-target="#at-login">LOGIN</a> */}
+                {!isLoggedIn ? 
+                    <Link to='/login' className="nav-link hvr-hang" >LOGIN</Link>
+                    : 
+                    <Link onClick={this.props.signOut} to='/logout' className="nav-link hvr-hang"  >LOG OUT</Link>
+                }
+                {/* <a className="nav-link hvr-hang" href="#" data-toggle="modal" data-target="#at-login">LOGIN</a> */}
                 </li>
                 </ul>
             </div>

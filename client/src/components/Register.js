@@ -8,6 +8,8 @@ class Register extends Component {
     e.preventDefault();
     // console.log(e.target);
     Axios.post('/auth/signup', {
+      firstname: document.getElementById('firstName').value,
+      lastname: document.getElementById('lastName').value,
       email: document.getElementById('signup-email').value,
       password: document.getElementById('signup-password').value
     }).then(({data}) => {
@@ -20,11 +22,32 @@ class Register extends Component {
     })
   }
 
+  googleSubmit(e) {
+    e.preventDefault();
+    Axios({
+    method: 'get',
+    url: '/auth/google',
+    // headers: {
+    //   'Access-Control-Allow-Origin': '*',
+    // }
+    }).then((res) => {
+      console.log("google logged in")
+      window.location = "/";
+      // alert('This login is taken!')
+      // destructuring the data allows us not to type res.data
+      // if successfully login > react router to user page
+      // else alert login taken on screen
+    }).catch((err) => {
+      console.log(err)
+      alert('Try again later!')
+    })
+  }
+
   render() {
     return (
       <div>
         <div className="register" id="register" >
-          <form action="/register" method="GET"> 
+          <form onSubmit={this.googleSubmit.bind(this)}> 
             <button className="btn-gp"> <i className="fa fa-fw fa-google-plus pull-left" aria-hidden="false"></i>
               Signup with Google  </button> <br />  
             <div className="signup-or-separator">

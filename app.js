@@ -24,6 +24,41 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'client/build')));
 
+
+app.all('*', (req, res, next) => {
+  res.header("Access-Control-Allow-Origin", '*');
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.header("Access-Control-Allow-Credentials", true);
+
+  next();
+
+})
+
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+//auth
+var corsOption = {
+  origin: true,
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  exposedHeaders: ['x-auth-token', 'authorization']
+};
+// app.use(cors(corsOption));
+
+// Make sure all request return CORS headers
+app.use(function (req, res, next) {
+    var origin = req.get('origin');
+    if (!origin || origin === 'undefined' || origin.length == 0) {
+        origin = req.get('host');
+    }
+    res.header('Access-Control-Allow-Origin', origin);
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, authorization, token');
+
+    next();
+});
+
 setupAuth(app);
 
 app.use('/api', apiRouter);

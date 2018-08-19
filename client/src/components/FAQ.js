@@ -7,6 +7,7 @@ class FAQ extends React.Component {
 
     return (
       <div>
+        <h4 className="title-text">Frequently Asked Questions</h4>
         <div className="faq" id="faq" >
           <h2 className="question" >Why did you start myBlendology?</h2>
           <h3 className="answer" >Frankly, we love essential oils and believe that everyone should have the ability to create basic blends without having to memorize all of the knowledge behind each oils. We hope this application can help beginners figure out what works for them and get creative!</h3>
@@ -21,7 +22,7 @@ class FAQ extends React.Component {
           <h3 className="answer">While this is currently the first version of myBlendology, we have big plans in the future. Keep an eye out to see our future versions soon!</h3>
 
           <h2 className="question">I have a cool idea for myBlendology! How do I contact you? </h2>
-          <h3 className="answer">Feel free to reach out to our email at hello@myblendology.com or check out our instagram page today. </h3>
+          <h3 className="answer">Feel free to reach out to our email at <a href="mailto:hello@myblendology.com">hello@myblendology.com</a> or check out our instagram page today. </h3>
         </div>
       </div>
     )
