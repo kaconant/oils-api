@@ -2,47 +2,64 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Axios from 'axios';
 
+
 class LogIn extends Component {
+  constructor(props) {
+    super(props)
+  }
 
   signIn(e) {
     e.preventDefault();
-    console.log(e.target);
+    Axios.get('/api/user', {
+      user: document.getElementById('signup-email').value,
+      // password: document.getElementById('signup-password').value
+    }).then(({data}) => {
+      console.log(data);
+    //   // destructuring the data allows us not to type res.data
+    //   // if successfully login > react router to user page
+    //   // else alert login taken on screen
+    }).catch((err) => {
+      console.log(err)
+    //   // alert message that something went wrong
+    //   // sowwy
+    })
     Axios.post('/auth/login', {
       email: document.getElementById('signup-email').value,
       password: document.getElementById('signup-password').value
     }).then(({data}) => {
-      console.log(data)
-      window.location = "/";
+      localStorage.setItem('username', data.user.firstname)
+      this.props.loggedIn();
+      this.props.history.replace('/');
+    //   // destructuring the data allows us not to type res.data
+    //   // if successfully login > react router to user page
+    //   // else alert login taken on screen
+    }).catch((err) => {
+      console.log(err)
+    //   // alert message that something went wrong
+    //   // sowwy
+    })
+
+  }
+
+
+  googleSubmit(e) {
+    e.preventDefault();
+    Axios.get('/auth/google')
+    .then((res) => {
+      console.log("google logged in")
+      
       // alert('This login is taken!')
       // destructuring the data allows us not to type res.data
       // if successfully login > react router to user page
       // else alert login taken on screen
-    }).catch((err) => {
-      console.log(err.res)
-      alert('Try again later!')
-    })
-  }
-
-  googleSubmit(e) {
-    e.preventDefault();
-    console.log(e.target);
-    Axios.post('/auth/google/callback', {
-      email: document.getElementById('signup-email').value,
-      password: document.getElementById('signup-password').value
-    }).then(({data}) => {
-      console.log(data)
-      window.location = "/"
-      // if successfully login > react router to login page
-      // else alert user taken on screen
-      // alert('This login is taken!')
     }).catch((err) => {
       console.log(err)
       alert('Try again later!')
     })
   }
 
-  render() {
 
+  render() {
     return (
       <div>
         <div className="login" id="login" >

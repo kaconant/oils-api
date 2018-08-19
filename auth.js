@@ -5,6 +5,7 @@ const bcrypt = require('bcrypt');
 const LocalStrategy = require('passport-local').Strategy;
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const models = require('./models');
+var cors = require('cors')
 
 const setupAuth = (app) => {
     app.use(cookieParser());
@@ -86,7 +87,6 @@ const setupAuth = (app) => {
     app.use(passport.initialize());
 
     app.use(passport.session());
-
     // this is a simple API to check if there is a user
     app.get('/api/user', (req, res, next) => {
         if (req.user) {
@@ -95,7 +95,8 @@ const setupAuth = (app) => {
             return res.json({ user: null })
         }
     })
-
+    
+    app.options('*', cors());
     app.get('/auth/google', 
         passport.authenticate('google', 
         { scope: ['https://www.googleapis.com/auth/plus.login'] }));
@@ -110,7 +111,7 @@ const setupAuth = (app) => {
 
     app.post('/auth/signup', (req, res) => {
         // destructure username and password off req.body into new constants
-        const { email, password } = req.body;
+        const { firstname, lastname, email, password } = req.body;
         // Check if there is a user with the given email
         models.User.findOne({
             where: {
@@ -127,6 +128,8 @@ const setupAuth = (app) => {
             }
             // otherwise, create a new user and encrypt the password
             models.User.create({
+                'firstname': firstname,
+                'lastname': lastname,
                 'email': email,
                 'password': bcrypt.hashSync(password, 10)
             })
@@ -150,6 +153,7 @@ const setupAuth = (app) => {
     app.post('/auth/login',
         passport.authenticate('local'),
         (req, res) => {
+            console.log(req)
             // req.user will have been deserialized at this point, so we need
             // to get the values and remove any sensitive ones
             const cleanUser = {...req.user.get()};
@@ -159,6 +163,7 @@ const setupAuth = (app) => {
             }
             res.json({ user: cleanUser });
         }
+
     )
 
     app.get('/auth/logout', (req, res, next) => {
@@ -173,7 +178,7 @@ const setupAuth = (app) => {
 
 const ensureAuthenticated = (req, res, next) => {
     if (req.isAuthenticated()) {
-        return next();
+        res.redirect('/');
     }
     res.redirect('/login');
 }
