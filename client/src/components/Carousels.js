@@ -66,7 +66,7 @@ class Carousel extends Component {
           infoBlurb = "Base oils provide the lasting impression of your blend. These oils are typically heavy and will provide the final note of your blend."
       } else if (this.props.levelLabel === "middle") {
           infoLabel = `Choose your ${this.props.mood} middle oil:`
-          infoBlurb = "Middle oils are considered the heart of your blend and will emerge after your top oil has faded. These oils often balance your blend and are typically well-rounded."
+          infoBlurb = "Middle oils are the heart of your blend and will emerge after your top oil has faded. These oils will help balance your blend."
       } else if (this.props.levelLabel === "top") {
           infoLabel = `Choose your ${this.props.mood} top oil:`
           infoBlurb = "Top oils provide your first impression of your blend. These oils are often described as light and fresh, but tend to fade quickly."

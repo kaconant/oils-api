@@ -36,7 +36,7 @@ body {
     }
 
     div.msg-container {
-        min-height: 730px;
+        min-height: 665px;
         top: 0;  
         background-position: right; 
     }
@@ -46,7 +46,7 @@ body {
     }
 
     div.headline {
-        padding-top: 7%;
+        padding-top: 5%;
         width: 100%;
         position: absolute;
         left: 0px;
@@ -63,9 +63,9 @@ body {
       color: rgb(93, 109, 72) !important;
       font-size: 28px !important;
       margin-top: 0px !important;
-      margin-bottom: 20px !important;
+      margin-bottom: 10px !important;
       position: relative;
-      top: 550px;
+      top: 500px;
   }
 
     .main-col {
@@ -149,7 +149,7 @@ body {
       color: rgb(117, 129, 83) !important;
       font-size: 28px !important;
       margin-top: 0px !important;
-      margin-bottom: 20px !important;
+      margin-bottom: 10px !important;
       position: relative;
       top: 540px !important;
       background-color: transparent!important;
@@ -179,8 +179,8 @@ body {
   }
 
   div.row.justify-content-center.info {
-    padding: 0%;
-    margin: 0%;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
     /* margin-bottom: 700px; */
     position: relative;
     top: 30px;
@@ -376,7 +376,7 @@ body {
   
   .transparent_btn {
     position: relative;
-    top: 10px;
+    top: 0;
     width: 200px;
     height: 48px;
     padding: 14px 35px 12px 35px;
@@ -408,7 +408,7 @@ body {
     margin: 0%;
     position: relative;
     display: flex;
-    top: 530px
+    top: 500px
   }
 
 /* How-to Section Starts */
