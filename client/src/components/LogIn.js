@@ -9,7 +9,6 @@ class LogIn extends Component {
   }
 
   signIn(e) {
-
     e.preventDefault();
     Axios.get('/api/user', {
       user: document.getElementById('signup-email').value,

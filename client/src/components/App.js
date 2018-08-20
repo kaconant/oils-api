@@ -14,6 +14,7 @@ import Carousel from './Carousels.js';
 import Calculation from './Calculation.js'
 import Modal from './Modal';
 import Register from './Register';
+import { Router } from 'react-router';
 var smoothScroll = require('smoothscroll');
 
 // Nav bar > Jumbotron > MoodSelector > Base > Middle > Top > Combine > Calculation > Footer
@@ -132,30 +133,30 @@ console.log("setOil hit");
     let { history } = this.props;
     return (
       <div>
-          <Navbar isLoggedIn={this.state.isLoggedIn} signOut={this.signOut} getInfo={this.getInfo}/>
-          <Switch>
-            <Route exact path='/'render={ () => {return (
-              <div>
-                <Jumbotron handleMoodClick={this.handleMoodClick}/>
-                <div id='base'></div>
-                {this.state.toShow !== false && <Carousel mood={this.state.mood} setOil={this.setOil.bind(this)} levelLabel="base" currentLevel={this.state.baseLevel} toShow={this.state.toShow} />}
-                <div id='middle'></div>
-                {this.state.toShow !== false && <Carousel mood={this.state.mood} setOil={this.setOil.bind(this)} levelLabel="middle" currentLevel={this.state.midLevel} toShow={this.state.toShow} />}
-                <div id='top'></div>
-                {this.state.toShow !== false && <Carousel mood={this.state.mood} setOil={this.setOil.bind(this)} levelLabel="top" currentLevel={this.state.topLevel} toShow={this.state.toShow} />}
-                <div id="calculate"></div>
-                <Calculation history={history} selected={this.state.selected} toShow={this.state.toShow} setOil={this.setOil.bind(this)} loggedIn={this.state.isLoggedIn}/>
-                <Modal selected={this.state.selected} mood={this.state.mood}/>
-              </div>
-            )}} />
-            <Route path='/about' component={ About } />
-            <Route path='/FAQ' component={ FAQ } />
-            <Route path='/login' render={() => {return( <LogIn loggedIn={this.loggedIn} isLoggedIn={this.state.isLoggedIn} history={history} /> ) }}/>
-            <Route path='/register' component={ Register } />
-            <Route path='/user' render={() => {return( <User firstname={this.state.user.firstname} lastname={this.state.user.lastname} currentLevel={this.state.user.blends} loggedIn={this.loggedIn} isLoggedIn={this.state.isLoggedIn} history={history} /> ) }}/>
-          </Switch>
-          <Footer /> 
-        </div>
+        <Navbar isLoggedIn={this.state.isLoggedIn} signOut={this.signOut} getInfo={this.getInfo}/>
+        <Switch>
+          <Route exact path='/'render={ () => {return (
+            <div>
+              <Jumbotron handleMoodClick={this.handleMoodClick}/>
+              <div id='base'></div>
+              {this.state.toShow !== false && <Carousel mood={this.state.mood} setOil={this.setOil.bind(this)} levelLabel="base" currentLevel={this.state.baseLevel} toShow={this.state.toShow} />}
+              <div id='middle'></div>
+              {this.state.toShow !== false && <Carousel mood={this.state.mood} setOil={this.setOil.bind(this)} levelLabel="middle" currentLevel={this.state.midLevel} toShow={this.state.toShow} />}
+              <div id='top'></div>
+              {this.state.toShow !== false && <Carousel mood={this.state.mood} setOil={this.setOil.bind(this)} levelLabel="top" currentLevel={this.state.topLevel} toShow={this.state.toShow} />}
+              <div id="calculate"></div>
+              <Calculation history={history} mood={this.state.mood} selected={this.state.selected} toShow={this.state.toShow} setOil={this.setOil.bind(this)} loggedIn={this.state.isLoggedIn}/>
+              <Modal selected={this.state.selected} mood={this.state.mood}/>
+            </div>
+          )}} />
+          <Route path='/about' component={ About } />
+          <Route path='/FAQ' component={ FAQ } />
+          <Route path='/login' render={() => {return( <LogIn loggedIn={this.loggedIn} isLoggedIn={this.state.isLoggedIn} history={history} /> ) }}/>
+          <Route path='/register' component={ Register } />
+          <Route path='/user' render={() => {return( <User firstname={this.state.user.firstname} lastname={this.state.user.lastname} currentLevel={this.state.user.blends} loggedIn={this.loggedIn} isLoggedIn={this.state.isLoggedIn} history={history} /> ) }}/>
+        </Switch>
+        <Footer /> 
+      </div>
     )
   }
 }

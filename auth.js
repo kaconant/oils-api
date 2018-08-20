@@ -27,8 +27,8 @@ const setupAuth = (app) => {
                 google_id: profile.id
             },
             defaults: {
-                firstname: profile.name, givenName,
-                lastname: profile.name, familyName,
+                firstname: profile.name.givenName,
+                lastname: profile.name.familyName,
                 google_id: profile.id,
                 email: profile.email,
             }
@@ -103,8 +103,7 @@ const setupAuth = (app) => {
         { scope: ['https://www.googleapis.com/auth/plus.login'] }));
 
     app.get('/auth/google/callback',
-        passport.authenticate('google', 
-        { failureRedirect: '/login' }),
+        passport.authenticate('google', { failureRedirect: '/login' }),
         function(req,res) {
             console.log(req.user);
             res.redirect('/')
