@@ -14,6 +14,7 @@ const apiBlendRouter = require('./routes/api/blend');
 const setupAuth = require('./auth');
 
 const app = express();
+const cors = require('cors');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -31,9 +32,7 @@ app.all('*', (req, res, next) => {
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
   res.header("Access-Control-Allow-Credentials", true);
-
   next();
-
 })
 
 app.set('views', path.join(__dirname, 'views'));
@@ -46,7 +45,7 @@ var corsOption = {
   credentials: true,
   exposedHeaders: ['x-auth-token', 'authorization']
 };
-// app.use(cors(corsOption));
+app.use(cors(corsOption));
 
 // Make sure all request return CORS headers
 app.use(function (req, res, next) {
@@ -57,7 +56,6 @@ app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', origin);
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
     res.header('Access-Control-Allow-Headers', 'Content-Type, authorization, token');
-
     next();
 });
 

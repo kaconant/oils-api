@@ -3,10 +3,6 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 const models = require('../../models');
 
-
-// router.post at '/'
-// handle a new row with sequelize in the database 
-
 router.post('/new', (req, res, next) => {
   console.log(req.user);
   console.log(req.body);
