@@ -27,13 +27,8 @@ class Register extends Component {
 
   googleSubmit(e) {
     e.preventDefault();
-    Axios({
-    method: 'get',
-    url: '/auth/google',
-    // headers: {
-    //   'Access-Control-Allow-Origin': '*',
-    // }
-    }).then((res) => {
+    Axios.get('/auth/google'
+    ).then((res) => {
       console.log("google logged in")
       window.location = "/";
       // alert('This login is taken!')
