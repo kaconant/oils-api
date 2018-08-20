@@ -158,7 +158,7 @@ console.log("setOil hit");
                 <div id='top'></div>
                 {this.state.toShow !== false && <Carousel history={history} mood={this.state.mood} setOil={this.setOil.bind(this)} levelLabel="top" currentLevel={this.state.topLevel} toShow={this.state.toShow} />}
                 <div id="calculate"></div>
-                <Calculation mood={this.state.mood} saveBlends={this.saveBlends} history={history} selected={this.state.selected} toShow={this.state.toShow} setOil={this.setOil.bind(this)} loggedIn={this.state.isLoggedIn}/>
+                {this.state.toShow !== false && <Calculation mood={this.state.mood} saveBlends={this.saveBlends} history={history} selected={this.state.selected} toShow={this.state.toShow} setOil={this.setOil.bind(this)} loggedIn={this.state.isLoggedIn}/>}
                 <Modal selected={this.state.selected} mood={this.state.mood}/>
               </div>
             )}} />
