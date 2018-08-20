@@ -6,6 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     baseOil: DataTypes.STRING,
     middleOil: DataTypes.STRING,
     topOil: DataTypes.STRING,
+    mood: DataTypes.STRING
   }, {});
 
   Blend.associate = function(models) {

@@ -18,10 +18,12 @@ class Calculation extends Component {
             Axios.post('api/blend/new', {
                 baseOil: this.props.selected.base,
                 middleOil: this.props.selected.middle,
-                topOil: this.props.selected.top
+                topOil: this.props.selected.top, 
+                mood: this.props.mood
             }).then((res) => {
                 alert('Your blend has been saved!')
             })
+            this.props.updateBlends
         } else {
             // not logged in
             // go to login page
