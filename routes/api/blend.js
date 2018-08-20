@@ -12,7 +12,8 @@ router.post('/new', (req, res, next) => {
     baseOil: req.body.baseOil,
     middleOil: req.body.middleOil,
     topOil: req.body.topOil,
-    UserId: req.user.id 
+    mood: req.body.mood,
+    UserId: req.user.id,
   }).then(blend => {
     res.json('okay');
     // redirect to home page or whatever

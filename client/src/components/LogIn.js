@@ -27,8 +27,7 @@ class LogIn extends Component {
       email: document.getElementById('signup-email').value,
       password: document.getElementById('signup-password').value
     }).then(({data}) => {
-      localStorage.setItem('username', data.user.firstname)
-      this.props.loggedIn();
+      this.props.loggedIn(data);
       this.props.history.replace('/');
     // destructuring the data allows us not to type res.data
     // if successfully login > react router to user page
