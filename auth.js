@@ -123,8 +123,9 @@ const setupAuth = (app) => {
             if (currentUser) {
                 // return an error
                 return res.json({
-                    error: `Sorry, the email '${email}' is already taken.`;
-                    alert(`Sorry, the email '${email}' is already taken.`)
+                    error: `Sorry, the email '${email}' is already taken.`,
+                    // the below alert failed
+                    // alert(`Sorry, '${email}' is already taken.`)
                 });
             }
             // otherwise, create a new user and encrypt the password
