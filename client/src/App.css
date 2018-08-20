@@ -72,7 +72,7 @@ body {
       width: 25%;
       font-family: 'Josefin Sans', sans-serif;
       font-size: 18px;
-      padding: 20px 10px 40px 10px;
+      padding: 20px 10px 20px 10px;
       text-align: center;
       margin: 0px 25px;
       background-color: rgba(245, 245, 245, 0.781);
@@ -83,7 +83,7 @@ body {
         padding: 0%;
         margin: 0%;
         position: relative;
-        top: 70px;
+        top: 40px;
         display: flex;
     }
 
@@ -625,7 +625,7 @@ body {
     width: 250px;
     height: 48px;
     padding: 14px 35px 12px 35px;
-    color: whitesmoke;
+    color: whitesmoke !important;
     /* border: 3px solid rgba(245, 245, 245, 0.8); */
     text-decoration: none;
     line-height: 120%;
@@ -1159,7 +1159,7 @@ body {
   .card2 {
     float: left !important;
     text-align: left;
-    background: rgba(104, 99, 124, 0.884);
+    background: rgba(118, 101, 129, 0.623);
     width: 250px;
     max-width: 250px !important;
     position: relative;
