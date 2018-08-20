@@ -17,7 +17,7 @@ class User extends Component {
           <h2 className="tabTitle">Favorites</h2>
           <h2 className="tabTitle">My Profile</h2>
           </div>
-          {/* <Carousel currentLevel={this.props.currentLevel} /> */}
+          <Carousel currentLevel={this.props.currentLevel} />
         </div>
       </div>
     )

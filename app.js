@@ -10,6 +10,7 @@ dotenv.load();
 const apiRouter = require('./routes/api');
 const apiMailRouter = require('./routes/api/mail');
 const apiOilRouter = require('./routes/api/oils');
+const apiBlendRouter = require('./routes/api/blend');
 const setupAuth = require('./auth');
 
 const app = express();
@@ -37,6 +38,7 @@ app.all('*', (req, res, next) => {
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
 //auth
 var corsOption = {
   origin: true,
@@ -64,6 +66,7 @@ setupAuth(app);
 app.use('/api', apiRouter);
 app.use('/api/mail', apiMailRouter);
 app.use('/api/oils', apiOilRouter);
+app.use('/api/blend', apiBlendRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -78,7 +81,8 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  console.log(err.message)
+  // res.render('error');
 });
 
 module.exports = app;

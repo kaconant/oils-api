@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Axios from 'axios';
 var smoothScroll = require('smoothscroll');
 
 class Calculation extends Component {
@@ -6,6 +7,26 @@ class Calculation extends Component {
         super(props);
         this.state = {
             toShow: false,
+        }
+    }
+
+    saveBlend(e) {
+        e.preventDefault();
+        if (this.props.loggedIn) {
+            // logged in
+            // axios.post
+            Axios.post('api/blend/new', {
+                baseOil: this.props.selected.base,
+                middleOil: this.props.selected.middle,
+                topOil: this.props.selected.top
+            }).then((res) => {
+                alert('Your blend has been saved!')
+            })
+        } else {
+            // not logged in
+            // go to login page
+            this.props.history.replace('/login')
+            console.log('not logged in loser')
         }
     }
 
@@ -59,7 +80,7 @@ class Calculation extends Component {
             <div className="share-row">
             {/* <div className="row flex-row justify-content-center buttons"> */}
             {this.state.toShow === true && <a href="/" className="shareBlend transparent_btn" data-toggle="modal" data-target="#share">share your blend</a>}
-            {this.state.toShow === true && <a href="/login" className="shareBlend transparent_btn" data-target="#save">save your blend</a>}
+            {this.state.toShow === true && <a onClick={this.saveBlend.bind(this)} className="shareBlend transparent_btn" data-target="#save">save your blend</a>}
             {this.state.toShow === true && <a href="/" className="shareBlend transparent_btn"  onClick={this.refreshPage.bind(this)}>make a new blend</a>}
             </div>
         </div>

@@ -27,14 +27,14 @@ const setupAuth = (app) => {
                 google_id: profile.id
             },
             defaults: {
-                firstName: profile.name, givenName,
-                lastName: profile.name, familyName,
-                username: profile.login,
+                firstname: profile.name, givenName,
+                lastname: profile.name, familyName,
                 google_id: profile.id,
                 email: profile.email,
             }
         })
         .then(result => {
+            console.log('google weirdness')
             return done(null, result[0]);
         })
         .catch(done);
@@ -76,6 +76,7 @@ const setupAuth = (app) => {
     passport.serializeUser((user, done) => {
         done(null, {
             email: user.email,
+            id: user.id,
             start_date: user.user_create_date
         })
     });
@@ -103,7 +104,7 @@ const setupAuth = (app) => {
 
     app.get('/auth/google/callback',
         passport.authenticate('google', 
-        { successRedirect: '/', failureRedirect: '/login' }),
+        { failureRedirect: '/login' }),
         function(req,res) {
             console.log(req.user);
             res.redirect('/')

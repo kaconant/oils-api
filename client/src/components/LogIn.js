@@ -41,7 +41,6 @@ class LogIn extends Component {
     })
   }
 
-
   googleSubmit(e) {
     e.preventDefault();
     Axios.get('/auth/google')

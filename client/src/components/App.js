@@ -35,10 +35,10 @@ class App extends Component {
     toShow: false,
     isLoggedIn: false,
     user: {
-    firstname: '',
-    lastname: '',
-    email: '',
-    blends: []
+      firstname: '',
+      lastname: '',
+      email: '',
+      blends: []
     }
   }
   this.handleMoodClick = this.handleMoodClick.bind(this);
@@ -49,12 +49,28 @@ class App extends Component {
 
 loggedIn() {
   this.setState({isLoggedIn: !this.state.isLoggedIn});
+  this.updateBlends();
+}
+
+// make sure to call updateBlends after user creates a blend
+
+updateBlends() {
+  Axios.get('/api/blend/user')
+  .then(({data}) => {
+    console.log(data)
+    this.setState({
+      user: {
+        ...this.state.user,
+        blends: data
+      }
+    })
+  })
 }
 
 signOut(e) {
   e.preventDefault();
-  Axios.get('/auth/logout', {
-  }).then(({data}) => {
+  Axios.get('/auth/logout')
+    .then(({data}) => {
     localStorage.setItem('username', '')
     this.loggedIn();
     console.log('signed out')
@@ -67,10 +83,7 @@ signOut(e) {
   //   // alert message that something went wrong
   //   // sowwy
   })
-
 }
-
-
 
 handleMoodClick(e) {
   e.preventDefault();
@@ -131,7 +144,7 @@ console.log("setOil hit");
                 <div id='top'></div>
                 {this.state.toShow !== false && <Carousel mood={this.state.mood} setOil={this.setOil.bind(this)} levelLabel="top" currentLevel={this.state.topLevel} toShow={this.state.toShow} />}
                 <div id="calculate"></div>
-                <Calculation selected={this.state.selected} toShow={this.state.toShow} setOil={this.setOil.bind(this)} isLoggedIn={this.state.isLoggedIn}/>
+                <Calculation history={history} selected={this.state.selected} toShow={this.state.toShow} setOil={this.setOil.bind(this)} loggedIn={this.state.isLoggedIn}/>
                 <Modal selected={this.state.selected} mood={this.state.mood}/>
               </div>
             )}} />

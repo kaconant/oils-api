@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
   Oil.associate = function(models) {
     // associations can be defined here
     Oil.belongsToMany(models.Blend, {
-      through: 'BlendOil'
+      through: 'BlendUser'
     });
   };
   return Oil;
