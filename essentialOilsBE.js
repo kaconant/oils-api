@@ -12,7 +12,7 @@ const oils = [
         updatedAt: new Date()
     },
     { 
-        name: "Bergamont",
+        name: "Bergamot",
         desc: "This fresh smelling essential oil is great for creating a more relaxed and happy feeling, relieving urinary tract infections, boosting the liver, spleen and stomach, while fighting oily skin, acne, psoriasis, eczema, as well as cold sores.",
         url: './img/oil-img/bergamot.jpg',
         mood: "calm",
