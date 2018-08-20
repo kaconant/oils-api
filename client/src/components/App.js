@@ -34,10 +34,12 @@ class App extends Component {
     },
     toShow: false,
     isLoggedIn: false,
+    user: {
     firstname: '',
     lastname: '',
     email: '',
-    savedBlends: []
+    blends: []
+    }
   }
   this.handleMoodClick = this.handleMoodClick.bind(this);
   this.loggedIn = this.loggedIn.bind(this)
@@ -137,7 +139,7 @@ console.log("setOil hit");
             <Route path='/FAQ' component={ FAQ } />
             <Route path='/login' render={() => {return( <LogIn loggedIn={this.loggedIn} isLoggedIn={this.state.isLoggedIn} history={history} /> ) }}/>
             <Route path='/register' component={ Register } />
-            <Route path='/users/:id' component={ User } />
+            <Route path='/user' render={() => {return( <User firstname={this.state.user.firstname} lastname={this.state.user.lastname} currentLevel={this.state.user.blends} loggedIn={this.loggedIn} isLoggedIn={this.state.isLoggedIn} history={history} /> ) }}/>
           </Switch>
           <Footer /> 
         </div>

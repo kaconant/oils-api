@@ -1109,3 +1109,38 @@ body {
     padding-bottom: 20px;
     flex-wrap: wrap;
   }
+
+  .banner {
+    background-image: url('/img/oils4.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 190px;
+    /* display: flex; */
+  }
+
+  .title-text {
+    font-size: 28px;
+    position: relative;
+    top: 55%;
+    right: 10%;
+  }
+  .userPhoto {
+    height: 150px;
+    position: relative;
+    left: 3%;
+  }
+
+  .tabMenu {
+    display:flex;
+    /* flex-wrap: wrap; */
+    /* position: relative;
+    left: 60%; */
+    align-items: end;
+    justify-content: flex-end;
+  }
+
+  .tabTitle {
+    font-size: 16px;
+    font-family: "Josefin Sans", sans-serif;
+    padding: 20px 30px 10px 30px;
+  }

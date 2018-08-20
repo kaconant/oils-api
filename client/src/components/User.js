@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Carousel from './Carousels'
 
 class User extends Component {
 
@@ -7,19 +8,18 @@ class User extends Component {
     return (
       <div>
         <div className="user" id="user" >
-          <h4 className="title-text">Welcome User!</h4>
-          <div className="about" id="about" >
-            <div className='profile'>
-              <img className="photo" src="./img/krissy.png" />
-              <h4 className="profile-name">Krissy Conant</h4>
-              <h2 className="likes">Likes: tarot, long hikes, early mornings, rosemary, peonies & her cat Tallulah</h2>
-              <h2 className="likes">Dislikes: kiwi, a silo mentality, glass ceilings & camouflage</h2>
-            </div>
+          <div className="banner">
+            <h4 className="title-text">Blendologist {this.props.firstname} {this.props.lastname}</h4>
+            <img src="../img/default-user.png" className="userPhoto"/>
           </div>
-            <h4 className="comments">Questions? Comments? Concerns?</h4>
-            <h2 className="reach">Feel free to reach out to our email at <a href="mailto:hello@myblendology.com">hello@myblendology.com</a> or check out our instagram page today.</h2>
+          <div className="tabMenu">
+          <h2 className="tabTitle">Saved Blends</h2>
+          <h2 className="tabTitle">Favorites</h2>
+          <h2 className="tabTitle">My Profile</h2>
+          </div>
+          {/* <Carousel currentLevel={this.props.currentLevel} /> */}
         </div>
-          </div>
+      </div>
     )
   }
 }
