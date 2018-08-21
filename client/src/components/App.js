@@ -59,10 +59,11 @@ loggedIn(data) {
     }
   });
   // store user information in localStorage
+  let userData = this.state.user
+  localStorage.setItem('userData', JSON.stringify(userData))
+  localStorage.setItem('isLoggedIn', this.state.isLoggedIn)
   console.log(this.props.location.pathname)
 }
-
-// make sure to call updateBlends after user creates a blend
 
 updateBlends() {
   Axios.get('/api/blend/user')
@@ -85,6 +86,8 @@ signOut(e) {
     this.loggedIn();
     console.log('signed out')
     // remove user info from localStorage
+    localStorage.removeItem('userData');
+    localStorage.removeItem('isLoggedIn');
     this.setState({
       user: {
         ...this.state.user,
@@ -131,12 +134,25 @@ handleMoodClick(e) {
 }
 
 componentDidMount() {
+let checkData = localStorage.getItem('userData')
+let parsedData = JSON.parse(checkData)
+let loggedInData = localStorage.getItem('isLoggedIn')
+console.log(parsedData);
+
 Axios.get('/api/oils').then((res) => {
   this.setState({
-    oilData: res.data
+    oilData: res.data,
+    user: {
+      firstname: parsedData.firstname,
+      lastname: parsedData.lastname,
+      email: parsedData.email,
+      joined: parsedData.createdAt
+    },
+    isLoggedIn: loggedInData
   })
 })
 // check localStorage for user information and set state with this information
+
 console.log("app says: " +this.state.isLoggedIn)
 }
 
