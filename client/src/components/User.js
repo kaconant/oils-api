@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import Carousel from './Carousels'
 
 class User extends Component {
-  constructor() {
-    super();
-  }
 
   componentDidMount() {
     this.props.updateBlends()

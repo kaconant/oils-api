@@ -22,15 +22,15 @@ class Calculation extends Component {
                 mood: this.props.mood
             }).then((res) => {
                 alert('Your blend has been saved!')
+                this.props.history.replace('/user')
+                this.props.updateBlends
             })
-            this.props.updateBlends
         } else {
             // not logged in
             // go to login page
             this.props.history.replace('/login')
             console.log('not logged in')
         }
-        this.props.history.replace('/user')
     }
 
     refreshPage(e) {

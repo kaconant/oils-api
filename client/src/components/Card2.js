@@ -23,9 +23,7 @@ class Card extends React.Component {
           Axios.post('api/blend/update', {
             favorite: favorited ? false : true, 
             id: this.state.currentId
-          }).then((res) => {
           })
-          this.props.updateBlends
       } else {
           // not logged in
           // go to login page

@@ -23,9 +23,6 @@ router.post('/new', (req, res, next) => {
 })
 
 router.post('/update', (req, res, next) => {
-  console.log(req.user);
-  console.log("this is the body" + req.body);
-  res.json('okay');
   models.Blend.update(
     {favorite: req.body.favorite}, 
     {where: {id: req.body.id}})
