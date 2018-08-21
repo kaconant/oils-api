@@ -1,22 +1,39 @@
 import React from 'react';
+import Axios from 'axios'
 var smoothScroll = require('smoothscroll');
 
 class Card extends React.Component {
-  handleOilClick(e) {
+  constructor() {
+    super();
+    this.state = {
+      currentId: ''
+    }
+  }
+
+  handleFavoriteClick(e) {
+    console.log(this.props.isLoggedIn)
     e.preventDefault();
-    const oil = this.props.content.name;
-    this.props.toggleOil(oil);
-    let moveTo = ''
-    if (this.props.level === 'base' ) {
-      moveTo = document.getElementById("middle");
-    } 
-    if (this.props.level === "middle") {
-      moveTo = document.getElementById("top");
-    } 
-    if (this.props.level === "top") {
-      moveTo = document.getElementById("calculate");
-    } 
-    smoothScroll(moveTo)
+    let favorited = this.props.content.favorite
+    console.log(favorited)
+    this.setState({currentId: this.props.content.id}, () => {
+      if (this.props.isLoggedIn) {
+        console.log('favorite callback')
+          // logged in
+          // axios.post
+          Axios.post('api/blend/update', {
+            favorite: favorited ? false : true, 
+            id: this.state.currentId
+          }).then((res) => {
+          })
+          this.props.updateBlends
+      } else {
+          // not logged in
+          // go to login page
+          this.props.history.replace('/login')
+          console.log('not logged in')
+      }
+      this.props.updateBlends()
+    });
   }
 
   render() {
@@ -30,6 +47,7 @@ class Card extends React.Component {
     } else if (card.mood === 'sensual') {
       moodImage = './img/sensual.jpg'
     }
+    let favorited = card.favorite
     return (
       <div className="card2" id="card" style={this.props.cardStyle}>
         <img className="oil-photo" src={moodImage} height='200' />
@@ -37,7 +55,7 @@ class Card extends React.Component {
         <p className="recipeOil">{card.baseOil}: 5 drops</p>
         <p className="recipeOil">{card.middleOil}: 4 drops</p>
         <p className="recipeOil">{card.topOil}: 3 drops</p>
-        {/* <div className="recipeCard" onClick={this.handleOilClick.bind(this)}></div> */}
+        <div className={favorited === false ? "heartGray" : "heartPink"} onClick={this.handleFavoriteClick.bind(this)}></div>
       </div>
     )
   }

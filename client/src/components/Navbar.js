@@ -34,9 +34,9 @@ constructor(props) {
                 <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
                 {!isLoggedIn ? 
-                    <Link to='/register' className="nav-link hvr-hang" href="#"  data-target="#register">SIGN UP</Link>
+                    <Link to='/register' className="nav-link hvr-hang" href="#"  data-target="#register">Sign Up</Link>
                     : 
-                    <Link to='/user' className="nav-link hvr-hang"  >{username}'s Blends</Link>
+                    <Link to='/user' className="nav-link hvr-hang"  >{this.props.username}'s Blends</Link>
                 }
                     {/* <a className="nav-link hvr-hang" href="#"  data-target="#about">ABOUT</a> */}
                 </li>
@@ -46,9 +46,9 @@ constructor(props) {
                 </li>
                 <li className="nav-item">
                 {!isLoggedIn ? 
-                    <Link to='/login' className="nav-link hvr-hang" >LOGIN</Link>
+                    <Link to='/login' className="nav-link hvr-hang" >Login</Link>
                     : 
-                    <Link onClick={this.props.signOut} to='/logout' className="nav-link hvr-hang"  >LOG OUT</Link>
+                    <Link onClick={this.props.signOut} to='/logout' className="nav-link hvr-hang"  >Log Out</Link>
                 }
                 {/* <a className="nav-link hvr-hang" href="#" data-toggle="modal" data-target="#at-login">LOGIN</a> */}
                 </li>

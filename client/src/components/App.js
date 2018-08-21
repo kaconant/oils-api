@@ -14,7 +14,6 @@ import Carousel from './Carousels.js';
 import Calculation from './Calculation.js'
 import Modal from './Modal';
 import Register from './Register';
-import { Router } from 'react-router';
 var smoothScroll = require('smoothscroll');
 
 // Nav bar > Jumbotron > MoodSelector > Base > Middle > Top > Combine > Calculation > Footer
@@ -39,6 +38,7 @@ class App extends Component {
       firstname: '',
       lastname: '',
       email: '',
+      joined: '',
       blends: []
     }
   }
@@ -56,6 +56,8 @@ loggedIn(data) {
       ...this.state.user,
       firstname: data.user.firstname,
       lastname: data.user.lastname,
+      email: data.user.email,
+      joined: data.user.createdAt.substring(0, 4)
     }
   })
   console.log(this.props.location.pathname)
@@ -74,6 +76,7 @@ updateBlends() {
       }
     })
   })
+  // this.props.history.replace('/user')
 }
 
 signOut(e) {
@@ -147,17 +150,17 @@ console.log("setOil hit");
     let { history } = this.props;
     return (
       <div>
-          <Navbar isLoggedIn={this.state.isLoggedIn} signOut={this.signOut} getInfo={this.getInfo}/>
+          <Navbar username={this.state.user.firstname} isLoggedIn={this.state.isLoggedIn} signOut={this.signOut} getInfo={this.getInfo}/>
           <Switch>
             <Route exact path='/'render={ () => {return (
               <div>
                 <Jumbotron handleMoodClick={this.handleMoodClick}/>
                 <div id='base'></div>
-                {this.state.toShow !== false && <Carousel history={history} mood={this.state.mood} setOil={this.setOil.bind(this)} levelLabel="base" currentLevel={this.state.baseLevel} toShow={this.state.toShow} />}
+                {this.state.toShow !== false && <Carousel isLoggedIn={this.state.isLoggedIn} history={history} mood={this.state.mood} setOil={this.setOil.bind(this)} levelLabel="base" currentLevel={this.state.baseLevel} toShow={this.state.toShow} />}
                 <div id='middle'></div>
-                {this.state.toShow !== false && <Carousel history={history} mood={this.state.mood} setOil={this.setOil.bind(this)} levelLabel="middle" currentLevel={this.state.midLevel} toShow={this.state.toShow} />}
+                {this.state.toShow !== false && <Carousel isLoggedIn={this.state.isLoggedIn} history={history} mood={this.state.mood} setOil={this.setOil.bind(this)} levelLabel="middle" currentLevel={this.state.midLevel} toShow={this.state.toShow} />}
                 <div id='top'></div>
-                {this.state.toShow !== false && <Carousel history={history} mood={this.state.mood} setOil={this.setOil.bind(this)} levelLabel="top" currentLevel={this.state.topLevel} toShow={this.state.toShow} />}
+                {this.state.toShow !== false && <Carousel isLoggedIn={this.state.isLoggedIn} history={history} mood={this.state.mood} setOil={this.setOil.bind(this)} levelLabel="top" currentLevel={this.state.topLevel} toShow={this.state.toShow} />}
                 <div id="calculate"></div>
                 {this.state.toShow !== false && <Calculation mood={this.state.mood} saveBlends={this.saveBlends} history={history} selected={this.state.selected} toShow={this.state.toShow} setOil={this.setOil.bind(this)} loggedIn={this.state.isLoggedIn}/>}
                 <Modal selected={this.state.selected} mood={this.state.mood}/>
@@ -167,7 +170,7 @@ console.log("setOil hit");
             <Route path='/FAQ' component={ FAQ } />
             <Route path='/login' render={() => {return( <LogIn loggedIn={this.loggedIn} isLoggedIn={this.state.isLoggedIn} history={history} /> ) }}/>
             <Route path='/register' component={ Register } />
-            <Route path='/user' render={() => {return( <User history={history} firstname={this.state.user.firstname} lastname={this.state.user.lastname} currentLevel={this.state.user.blends} loggedIn={this.loggedIn} isLoggedIn={this.state.isLoggedIn} history={history} updateBlends={this.updateBlends.bind(this)} /> ) }}/>
+            <Route path='/user' render={() => {return( <User history={history} email={this.state.user.email} joined={this.state.user.joined} firstname={this.state.user.firstname} lastname={this.state.user.lastname} currentLevel={this.state.user.blends} isLoggedIn={this.state.isLoggedIn} history={history} updateBlends={this.updateBlends.bind(this)} /> ) }}/>
           </Switch>
           <Footer /> 
         </div>

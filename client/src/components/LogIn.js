@@ -15,25 +15,27 @@ class LogIn extends Component {
     // password: document.getElementById('signup-password').value
     }).then(({data}) => {
       console.log(data);
+      this.props.history.replace('/user');
     // destructuring the data allows us not to type res.data
     // if successfully login > react router to user page
     // else alert login taken on screen
     }).catch((err) => {
       console.log(err)
-    // alert message that something went wrong
+      // alert message that something went wrong
     })
-
+    
     Axios.post('/auth/login', {
       email: document.getElementById('signup-email').value,
       password: document.getElementById('signup-password').value
     }).then(({data}) => {
       this.props.loggedIn(data);
-      this.props.history.replace('/');
-    // destructuring the data allows us not to type res.data
-    // if successfully login > react router to user page
-    // else alert login taken on screen
+      this.props.history.replace('/user');
+      // destructuring the data allows us not to type res.data
+      // if successfully login > react router to user page
+      // else alert login taken on screen
     }).catch((err) => {
       console.log(err)
+      alert("Email and/or password do not match our records. Please try again or be sure to sign up!")
     // alert message that something went wrong
     // sowwy
     })

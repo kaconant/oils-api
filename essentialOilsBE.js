@@ -490,7 +490,7 @@ const oils = [
     },
     { 
         name: 'Clove',
-        desc: 'Although this warm, spicy essential oil is a very potent oil that should be used with great care, it does have wonderful properties - from stimulating the mind and lifting depression, to aiding digestion and relieving pain in arthritis and rheumatism.',
+        desc: 'Although this warm, spicy essential oil has many wonderful properties - from stimulating the mind and lifting depression, to aiding digestion, relieving pain in arthritis and rheumatism, easing respiratory problems and assisting leg ulcers.',
         url: './img/oil-img/clove.jpg',
         mood: 'awaken',
         level: "base",

@@ -6,15 +6,16 @@ module.exports = (sequelize, DataTypes) => {
     baseOil: DataTypes.STRING,
     middleOil: DataTypes.STRING,
     topOil: DataTypes.STRING,
-    mood: DataTypes.STRING
+    mood: DataTypes.STRING,
+    favorite: {type: DataTypes.BOOLEAN, allowNull: false, defaultValue: false}
   }, {});
 
   Blend.associate = function(models) {
     // associations can be defined here
     Blend.belongsTo(models.User);
-    // Blend.belongsToMany(models.Oil, {
-    //   through: 'BlendUser'
-    // });
+    Blend.belongsToMany(models.Oil, {
+      through: 'BlendUser'
+    });
   };
   return Blend;
 };
