@@ -30,6 +30,7 @@ class Calculation extends Component {
             this.props.history.replace('/login')
             console.log('not logged in')
         }
+        this.props.history.replace('/user')
     }
 
     refreshPage(e) {
