@@ -4,9 +4,6 @@ import Axios from 'axios';
 
 
 class LogIn extends Component {
-  constructor(props) {
-    super(props)
-  }
 
   signIn(e) {
     e.preventDefault();

@@ -6,9 +6,9 @@ class FAQ extends Component {
   render() {
 
     return (
-      <div>
-        <h4 className="title-text">Frequently Asked Questions</h4>
-        <div className="faq" id="faq" >
+      <div className="faqPage">
+        <h4 className="title-text-faq">Frequently Asked Questions</h4>
+        <div className="faq" id="faq">
           <h2 className="question" >Why did you start myBlendology?</h2>
           <h3 className="answer" >Frankly, we love essential oils and believe that everyone should have the ability to create basic blends without having to memorize the knowledge behind each oil. We hope this application can help beginners figure out what works for them and get them started with their essential oil journey!</h3>
 

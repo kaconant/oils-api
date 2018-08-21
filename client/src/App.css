@@ -600,7 +600,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(175, 148, 160, .4);
+    background-color: rgb(175, 148, 160, .3);
   }
 
   .blendCalc {
@@ -873,6 +873,7 @@ body {
     background-image: url("/img/oils2.jpg"); 
     background-position: center;
     background-size: cover;
+    margin: 0 auto;
   }
 
   .about {
@@ -914,9 +915,9 @@ body {
     color: rgb(253, 241, 252);
   }
 
-  .title-text {
+  .title-text-about {
     font-size: 40px;
-    padding: 25px 0 0 0 ;
+    padding: 25px 0 0 0;
   }
 
   .comments{
@@ -933,8 +934,18 @@ body {
 
 /* FAQ Section Starts */
 
+  .faqPage {
+    margin: 0 auto;
+    background-color: rgb(175, 148, 160, .3);
+  }
+
   .faq {
     padding: 20px;
+  }
+
+  .title-text-faq {
+    font-size: 40px;
+    padding: 25px 0 0 0;
   }
 
   .question {

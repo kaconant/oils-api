@@ -54,7 +54,6 @@ class Modal extends Component {
         return (
             <div>
                 <form action="/login" method="GET" id="modalDiv">
-                {/* <div className={ this.state.isModalOpen ? "modal fade show" : "modal fade"} id="share" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel"> */}
                     <div className="modal" id="share" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel">
                         <div className="modal-dialog" role="document">
                             <div className="modal-content">
@@ -63,7 +62,7 @@ class Modal extends Component {
                                     <button type="button" className="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" >×</span></button>
                                 </div>
                                 <div className="modal-body">
-                                    <form onSubmit={this.handleSubmit.bind(this)}id="formInfo">
+                                    <form onSubmit={this.handleSubmit.bind(this)} id="formInfo">
                                         <div className="form-group">
                                             <input type="text" className="form-control-form " required id="userName" name="userName" placeholder="Your Name" />                                            
                                         </div>
@@ -78,7 +77,7 @@ class Modal extends Component {
                                                 <input type="text" className="form-control-form " required id="recEmail" name="recEmail" placeholder="Recepient's Email" />
                                             </div>  
                                         </div>  
-                                        <p>By sharing my blends, I agree to Blendology's <a href="#">Terms of Service</a> & <a href="#">Privacy Policy</a>. </p>
+                                        <p>By sharing my blends, I agree to Blendology's <a href="./">Terms of Service</a> & <a href="./">Privacy Policy</a>.</p>
                                         {this.state.submitted ? (
                                             <button type="submit" className="modalBtn" id="signup-button" disabled="disabled" onClick={this.clearModal()}>Submitted</button> 
                                         ) : (
@@ -86,16 +85,6 @@ class Modal extends Component {
                                         )}
                                     </form>
                                 </div>
-                                {/* <div className="modal-footer">
-                                    <div className="row">   
-                                        <div className="col-md-6">
-                                            <p className="ta-r">Already a Blendologist? </p>
-                                        </div>  
-                                        <div className="col-md-4 col-md-offset-2">  
-                                            <button className="btn-gst"  data-toggle="modal"  data-dismiss="modal" data-target="#at-login">Login</button>
-                                        </div>
-                                    </div>
-                                </div> */}
                             </div>
                         </div>
                     </div>
