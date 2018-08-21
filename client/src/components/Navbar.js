@@ -17,7 +17,7 @@ constructor(props) {
 
     render() {
         let isLoggedIn = this.props.isLoggedIn
-        let username = localStorage.getItem('username')
+        // let username = localStorage.getItem('username')
         return(
         <div>
             <nav className="navbar navbar-expand-sm sticky-top" id="navbar">
@@ -28,21 +28,18 @@ constructor(props) {
                 <span className="sr-only">Toggle navigation</span>
             </button>
 
-            <Link to='/' className="navbar-brand" href="#"><img className="logo" src="./img/logo.png" height='55' /><img className="logo-small" src="./img/drop.png" height='40' /></Link>
-            {/* <a className="navbar-brand" href="#"><img className="logo" src="./img/logo.png" height='55' /><img className="logo-small" src="./img/drop.png" height='40' /></a>  */}
+            <Link to='/' className="navbar-brand" href="/"><img className="logo" src="./img/logo.png" alt="logo" height='55' /><img className="logo-small" src="./img/drop.png" alt="logo-small" height='40' /></Link>
             <div className="collapse navbar-collapse" id="navbarResponsive">
                 <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
                 {!isLoggedIn ? 
                     <Link to='/register' className="nav-link hvr-hang" href="#"  data-target="#register">Sign Up</Link>
                     : 
-                    <Link to='/user' className="nav-link hvr-hang"  >{this.props.username}'s Blends</Link>
+                    <Link to='/user' className="nav-link hvr-hang">{this.props.username}'s Blends</Link>
                 }
-                    {/* <a className="nav-link hvr-hang" href="#"  data-target="#about">ABOUT</a> */}
                 </li>
                 <li className="nav-item">
                     <Link to='/FAQ' className="nav-link hvr-hang" href="#" >FAQ</Link>
-                    {/* <a className="nav-link hvr-hang" href="#">FAQ</a> */}
                 </li>
                 <li className="nav-item">
                 {!isLoggedIn ? 
@@ -50,7 +47,6 @@ constructor(props) {
                     : 
                     <Link onClick={this.props.signOut} to='/logout' className="nav-link hvr-hang"  >Log Out</Link>
                 }
-                {/* <a className="nav-link hvr-hang" href="#" data-toggle="modal" data-target="#at-login">LOGIN</a> */}
                 </li>
                 </ul>
             </div>

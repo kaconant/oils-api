@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import '../App.css';
 import Axios from 'axios';
-import Home from './Home.js'
 import About from './About.js'
 import FAQ from './FAQ.js'
 import LogIn from './LogIn.js'
@@ -170,7 +169,7 @@ console.log("setOil hit");
             <Route path='/FAQ' component={ FAQ } />
             <Route path='/login' render={() => {return( <LogIn loggedIn={this.loggedIn} isLoggedIn={this.state.isLoggedIn} history={history} /> ) }}/>
             <Route path='/register' component={ Register } />
-            <Route path='/user' render={() => {return( <User history={history} email={this.state.user.email} joined={this.state.user.joined} firstname={this.state.user.firstname} lastname={this.state.user.lastname} currentLevel={this.state.user.blends} isLoggedIn={this.state.isLoggedIn} history={history} updateBlends={this.updateBlends.bind(this)} /> ) }}/>
+            <Route path='/user' render={() => {return( <User history={history} email={this.state.user.email} joined={this.state.user.joined} firstname={this.state.user.firstname} lastname={this.state.user.lastname} currentLevel={this.state.user.blends} isLoggedIn={this.state.isLoggedIn} updateBlends={this.updateBlends.bind(this)} /> ) }}/>
           </Switch>
           <Footer /> 
         </div>

@@ -24,7 +24,7 @@ class Card extends React.Component {
     const checked = this.props.checked;
     return (
       <div className="card" id="card" style={this.props.cardStyle}>
-        <img className="oil-photo" src={card.url} height='200' />
+        <img className="oil-photo" src={card.url} alt="oil" height='200' />
         <p className="title">{card.name}</p>
         <p className="desc">{card.desc}</p>
         <div className={checked ? 'checked' : 'check'} onClick={this.handleOilClick.bind(this)}></div>
