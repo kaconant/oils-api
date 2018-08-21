@@ -44,7 +44,6 @@ class App extends Component {
   this.handleMoodClick = this.handleMoodClick.bind(this);
   this.loggedIn = this.loggedIn.bind(this)
   this.signOut = this.signOut.bind(this)
-
 }
 
 loggedIn(data) {
@@ -58,7 +57,8 @@ loggedIn(data) {
       email: data.user.email,
       joined: data.user.createdAt.substring(0, 4)
     }
-  })
+  });
+  // store user information in localStorage
   console.log(this.props.location.pathname)
 }
 
@@ -84,6 +84,7 @@ signOut(e) {
     .then(({data}) => {
     this.loggedIn();
     console.log('signed out')
+    // remove user info from localStorage
     this.setState({
       user: {
         ...this.state.user,
@@ -135,6 +136,7 @@ Axios.get('/api/oils').then((res) => {
     oilData: res.data
   })
 })
+// check localStorage for user information and set state with this information
 console.log("app says: " +this.state.isLoggedIn)
 }
 

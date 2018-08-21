@@ -106,7 +106,7 @@ const setupAuth = (app) => {
         passport.authenticate('google', { failureRedirect: '/login' }),
         function(req,res) {
             console.log(req.user);
-            res.redirect('/')
+            res.redirect('/') //redirect after google login
         });
 
     app.post('/auth/signup', (req, res) => {
