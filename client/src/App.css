@@ -563,6 +563,7 @@ body {
     background-position: center;
     background-size: 100%;
     margin: 0px;
+    cursor: pointer;
   }
 
   .card div.checked {
@@ -576,6 +577,20 @@ body {
     background-position: center;
     background-size: 100%;
     margin: 0px;
+  }
+
+  .card div.checked:hover {
+    display: flex; 
+    position: relative;
+    width: 40px;
+    height: 40px;
+    left: 190px;
+    top: 5px;
+    background-image: url('/img/green-check.png');
+    background-position: center;
+    background-size: 100%;
+    margin: 0px;
+    cursor: pointer;
   }
 
 /* Calculation */
@@ -1182,4 +1197,97 @@ body {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 
+  }
+
+  .card2 div.heartGray {
+    display: flex; 
+    position: relative;
+    width: 40px;
+    height: 40px;
+    left: 190px;
+    top: -50px;
+    background-image: url('/img/heart-gray.png');
+    background-position: center;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0px;
+  }
+  
+  .card2 div.heartGray:hover {
+    display: flex; 
+    position: relative;
+    width: 40px;
+    height: 40px;
+    left: 190px;
+    top: -50px;
+    background-image: url('/img/heart-pink.png');
+    background-position: center;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0px;
+    cursor: pointer;
+  }
+
+  .card2 div.heartGray:visited {
+    display: flex; 
+    position: relative;
+    width: 40px;
+    height: 40px;
+    left: 190px;
+    top: -50px;
+    background-image: url('/img/heart-pink.png');
+    background-position: center;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0px;
+  }
+
+  .card2 div.heartPink {
+    display: flex; 
+    position: relative;
+    width: 40px;
+    height: 40px;
+    left: 190px;
+    top: -50px;
+    background-image: url('/img/heart-pink.png');
+    background-position: center;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0px;
+  }
+
+
+  .card2 div.heartPink:hover {
+    display: flex; 
+    position: relative;
+    width: 40px;
+    height: 40px;
+    left: 190px;
+    top: -50px;
+    background-image: url('/img/heart-pink.png');
+    background-position: center;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0px;
+    cursor: pointer;
+  }
+
+  .card2 div.heartPink:visited {
+    display: flex; 
+    position: relative;
+    width: 40px;
+    height: 40px;
+    left: 190px;
+    top: -50px;
+    background-image: url('/img/heart-pink.png');
+    background-position: center;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0px;
   }

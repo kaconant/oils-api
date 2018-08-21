@@ -152,11 +152,11 @@ console.log("setOil hit");
               <div>
                 <Jumbotron handleMoodClick={this.handleMoodClick}/>
                 <div id='base'></div>
-                {this.state.toShow !== false && <Carousel history={history} mood={this.state.mood} setOil={this.setOil.bind(this)} levelLabel="base" currentLevel={this.state.baseLevel} toShow={this.state.toShow} />}
+                {this.state.toShow !== false && <Carousel isLoggedIn={this.state.isLoggedIn} history={history} mood={this.state.mood} setOil={this.setOil.bind(this)} levelLabel="base" currentLevel={this.state.baseLevel} toShow={this.state.toShow} />}
                 <div id='middle'></div>
-                {this.state.toShow !== false && <Carousel history={history} mood={this.state.mood} setOil={this.setOil.bind(this)} levelLabel="middle" currentLevel={this.state.midLevel} toShow={this.state.toShow} />}
+                {this.state.toShow !== false && <Carousel isLoggedIn={this.state.isLoggedIn} history={history} mood={this.state.mood} setOil={this.setOil.bind(this)} levelLabel="middle" currentLevel={this.state.midLevel} toShow={this.state.toShow} />}
                 <div id='top'></div>
-                {this.state.toShow !== false && <Carousel history={history} mood={this.state.mood} setOil={this.setOil.bind(this)} levelLabel="top" currentLevel={this.state.topLevel} toShow={this.state.toShow} />}
+                {this.state.toShow !== false && <Carousel isLoggedIn={this.state.isLoggedIn} history={history} mood={this.state.mood} setOil={this.setOil.bind(this)} levelLabel="top" currentLevel={this.state.topLevel} toShow={this.state.toShow} />}
                 <div id="calculate"></div>
                 {this.state.toShow !== false && <Calculation mood={this.state.mood} saveBlends={this.saveBlends} history={history} selected={this.state.selected} toShow={this.state.toShow} setOil={this.setOil.bind(this)} loggedIn={this.state.isLoggedIn}/>}
                 <Modal selected={this.state.selected} mood={this.state.mood}/>
@@ -166,7 +166,7 @@ console.log("setOil hit");
             <Route path='/FAQ' component={ FAQ } />
             <Route path='/login' render={() => {return( <LogIn loggedIn={this.loggedIn} isLoggedIn={this.state.isLoggedIn} history={history} /> ) }}/>
             <Route path='/register' component={ Register } />
-            <Route path='/user' render={() => {return( <User history={history} firstname={this.state.user.firstname} lastname={this.state.user.lastname} currentLevel={this.state.user.blends} loggedIn={this.loggedIn} isLoggedIn={this.state.isLoggedIn} history={history} updateBlends={this.updateBlends.bind(this)} /> ) }}/>
+            <Route path='/user' render={() => {return( <User history={history} firstname={this.state.user.firstname} lastname={this.state.user.lastname} currentLevel={this.state.user.blends} isLoggedIn={this.state.isLoggedIn} history={history} updateBlends={this.updateBlends.bind(this)} /> ) }}/>
           </Switch>
           <Footer /> 
         </div>

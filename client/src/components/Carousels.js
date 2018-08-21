@@ -88,7 +88,7 @@ class Carousel extends Component {
             this.props.currentLevel.map((card, i) => (
               this.props.history.location.pathname === '/user' 
               ?
-              <Card2 mood={this.props.mood} content={card} checked={this.state.currentOil === card.name} toggleOil={this.toggleOil.bind(this)} key={i} level={this.props.levelLabel}/>
+              <Card2 updateBlends={this.props.updateBlends} isLoggedIn={this.props.isLoggedIn} history={this.props.history} mood={this.props.mood} content={card} checked={this.state.currentOil === card.name} toggleOil={this.toggleOil.bind(this)} key={i} level={this.props.levelLabel}/>
               :
               <Card content={card} checked={this.state.currentOil === card.name} toggleOil={this.toggleOil.bind(this)} key={i} level={this.props.levelLabel}/>
             ))

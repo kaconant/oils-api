@@ -22,7 +22,7 @@ class User extends Component {
           <h2 className="tabTitle">Favorites</h2>
           <h2 className="tabTitle">My Profile</h2>
           </div>
-          <Carousel history={this.props.history} currentLevel={this.props.currentLevel} />
+          <Carousel updateBlends={this.props.updateBlends} isLoggedIn={this.props.isLoggedIn} history={this.props.history} currentLevel={this.props.currentLevel} />
         </div>
       </div>
     )
