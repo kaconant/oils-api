@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import Card from './Card.js';
-import Router from 'react-router'
 import Card2 from './Card2.js';
-
-
 
 class Carousel extends Component {
     constructor(props) {

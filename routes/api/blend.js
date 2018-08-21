@@ -26,7 +26,7 @@ router.post('/update', (req, res, next) => {
   models.Blend.update(
     {favorite: req.body.favorite}, 
     {where: {id: req.body.id}})
-    .then(function([ rowsUpdate, [updatedBlend] ]) {
+  .then(function([ rowsUpdate, [updatedBlend] ]) {
     res.json(updatedBlend)
   })
   .catch(next)

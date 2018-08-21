@@ -4,9 +4,6 @@ import Axios from 'axios';
 
 
 class LogIn extends Component {
-  constructor(props) {
-    super(props)
-  }
 
   signIn(e) {
     e.preventDefault();
@@ -62,8 +59,8 @@ class LogIn extends Component {
       <div>
         <div className="login" id="login" >
           <form onSubmit={this.googleSubmit.bind(this)}>
-            <button className="btn-gp"> <i className="fa fa-fw fa-google-plus pull-left" aria-hidden="false"></i>
-              Login with Google  </button> <br />  
+            <a className="btn-gp" href="/auth/google"> <i className="fa fa-fw fa-google-plus pull-left" aria-hidden="false"></i>
+              Login with Google  </a> <br />  
             <div className="signup-or-separator">
               <span className="h6 signup-or-separator--text">or</span>
               <hr />

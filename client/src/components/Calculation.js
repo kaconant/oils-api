@@ -69,9 +69,9 @@ class Calculation extends Component {
                 {this.state.toShow === true && <h5 className="calcOils">3 Drops of <span className="calcColor">{ this.props.selected.top}</span> for your top oil</h5>}
             </div>
             <div className="share-row">
-                {this.state.toShow === true && <a href="#" className="shareBlend transparent_btn" data-toggle="modal" data-target="#share">share your blend</a>}
-                {this.state.toShow === true && <a href="#" className="shareBlend transparent_btn" onClick={this.saveBlend.bind(this)} data-target="save">save your blend</a>}
-                {this.state.toShow === true && <a href="#" className="shareBlend transparent_btn" onClick={this.refreshPage.bind(this)}>make a new blend</a>}
+                {this.state.toShow === true && <button href="#" className="shareBlend transparent_btn" data-toggle="modal" data-target="#share">share your blend</button>}
+                {this.state.toShow === true && <button href="#" className="shareBlend transparent_btn" onClick={this.saveBlend.bind(this)} data-target="save">save your blend</button>}
+                {this.state.toShow === true && <button href="#" className="shareBlend transparent_btn" onClick={this.refreshPage.bind(this)}>make a new blend</button>}
             </div>
         </div>
         )

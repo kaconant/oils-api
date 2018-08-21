@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import '../App.css';
 import Axios from 'axios';
-import Home from './Home.js'
 import About from './About.js'
 import FAQ from './FAQ.js'
 import LogIn from './LogIn.js'
@@ -45,7 +44,6 @@ class App extends Component {
   this.handleMoodClick = this.handleMoodClick.bind(this);
   this.loggedIn = this.loggedIn.bind(this)
   this.signOut = this.signOut.bind(this)
-
 }
 
 loggedIn(data) {
@@ -59,11 +57,13 @@ loggedIn(data) {
       email: data.user.email,
       joined: data.user.createdAt.substring(0, 4)
     }
-  })
+  });
+  // store user information in localStorage
+  let userData = this.state.user
+  localStorage.setItem('userData', JSON.stringify(userData))
+  localStorage.setItem('isLoggedIn', this.state.isLoggedIn)
   console.log(this.props.location.pathname)
 }
-
-// make sure to call updateBlends after user creates a blend
 
 updateBlends() {
   Axios.get('/api/blend/user')
@@ -85,6 +85,9 @@ signOut(e) {
     .then(({data}) => {
     this.loggedIn();
     console.log('signed out')
+    // remove user info from localStorage
+    localStorage.removeItem('userData');
+    localStorage.removeItem('isLoggedIn');
     this.setState({
       user: {
         ...this.state.user,
@@ -131,11 +134,25 @@ handleMoodClick(e) {
 }
 
 componentDidMount() {
+let checkData = localStorage.getItem('userData')
+let parsedData = JSON.parse(checkData)
+let loggedInData = localStorage.getItem('isLoggedIn')
+console.log(parsedData);
+
 Axios.get('/api/oils').then((res) => {
   this.setState({
-    oilData: res.data
+    oilData: res.data,
+    user: {
+      firstname: parsedData.firstname,
+      lastname: parsedData.lastname,
+      email: parsedData.email,
+      joined: parsedData.createdAt
+    },
+    isLoggedIn: loggedInData
   })
 })
+// check localStorage for user information and set state with this information
+
 console.log("app says: " +this.state.isLoggedIn)
 }
 
@@ -170,7 +187,7 @@ console.log("setOil hit");
             <Route path='/FAQ' component={ FAQ } />
             <Route path='/login' render={() => {return( <LogIn loggedIn={this.loggedIn} isLoggedIn={this.state.isLoggedIn} history={history} /> ) }}/>
             <Route path='/register' component={ Register } />
-            <Route path='/user' render={() => {return( <User history={history} email={this.state.user.email} joined={this.state.user.joined} firstname={this.state.user.firstname} lastname={this.state.user.lastname} currentLevel={this.state.user.blends} isLoggedIn={this.state.isLoggedIn} history={history} updateBlends={this.updateBlends.bind(this)} /> ) }}/>
+            <Route path='/user' render={() => {return( <User history={history} email={this.state.user.email} joined={this.state.user.joined} firstname={this.state.user.firstname} lastname={this.state.user.lastname} currentLevel={this.state.user.blends} isLoggedIn={this.state.isLoggedIn} updateBlends={this.updateBlends.bind(this)} /> ) }}/>
           </Switch>
           <Footer /> 
         </div>
