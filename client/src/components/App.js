@@ -14,7 +14,6 @@ import Carousel from './Carousels.js';
 import Calculation from './Calculation.js'
 import Modal from './Modal';
 import Register from './Register';
-import { Router } from 'react-router';
 var smoothScroll = require('smoothscroll');
 
 // Nav bar > Jumbotron > MoodSelector > Base > Middle > Top > Combine > Calculation > Footer
@@ -147,7 +146,7 @@ console.log("setOil hit");
     let { history } = this.props;
     return (
       <div>
-          <Navbar isLoggedIn={this.state.isLoggedIn} signOut={this.signOut} getInfo={this.getInfo}/>
+          <Navbar username={this.state.user.firstname} isLoggedIn={this.state.isLoggedIn} signOut={this.signOut} getInfo={this.getInfo}/>
           <Switch>
             <Route exact path='/'render={ () => {return (
               <div>
