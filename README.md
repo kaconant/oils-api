@@ -48,7 +48,7 @@ The FAQ page answers the basic questions any user might have about the functiona
 
 ## About Us Page
 
-The about us page allows users to see the authors of the site and show our playful side. 
+The about us page allows users to see the authors of the site and show our playful side. In addition, the user has the option to contact the authors at hello@myblendology.com (an active email account).
 
 ![About](https://github.com/kaconant/oils-api/blob/master/client/public/img/readme-img/aboutus.png)
 
