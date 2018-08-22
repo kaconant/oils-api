@@ -71,8 +71,6 @@ Axios, Radium, React, React-Bootstrap, React-Coverflow, React-Dom, React-Router-
 
 This project is licensed under the MIT License.
 
-## To 
-
 ## Acknowledgments
 
 * Our instructors, Adam Szaruga and Lachlan Haywood, at [DigitalCrafts](https://www.digitalcrafts.com/)
