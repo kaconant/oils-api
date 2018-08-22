@@ -35,7 +35,7 @@ constructor(props) {
                 {!isLoggedIn ? 
                     <Link to='/register' className="nav-link hvr-hang" href="#"  data-target="#register">Sign Up</Link>
                     : 
-                    <Link to='/user' className="nav-link hvr-hang">{this.props.username}'s Blends</Link>
+                    <Link to='/user' onClick={this.props.updateBlends} className="nav-link hvr-hang">{this.props.username}'s Blends</Link>
                 }
                 </li>
                 <li className="nav-item">
