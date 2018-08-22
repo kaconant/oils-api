@@ -29,6 +29,7 @@ class Register extends Component {
     e.preventDefault();
     Axios.get('/auth/google'
     ).then((res) => {
+      res.header("Access-Control-Allow-Origin", '*');
       console.log("google logged in")
       // alert('This login is taken!')
       // destructuring the data allows us not to type res.data

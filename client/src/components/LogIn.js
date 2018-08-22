@@ -4,6 +4,9 @@ import Axios from 'axios';
 
 
 class LogIn extends Component {
+  constructor(props) {
+    super(props)
+  }
 
   signIn(e) {
     e.preventDefault();
@@ -25,14 +28,14 @@ class LogIn extends Component {
       password: document.getElementById('signup-password').value
     }).then(({data}) => {
       this.props.loggedIn(data);
-      this.props.history.replace('/user');
+      this.props.history.replace('/');
       // destructuring the data allows us not to type res.data
       // if successfully login > react router to user page
       // else alert login taken on screen
     }).catch((err) => {
       console.log(err)
+      // alert message that something went wrong
       alert("Email and/or password do not match our records. Please try again or be sure to sign up!")
-    // alert message that something went wrong
     // sowwy
     })
   }
@@ -58,8 +61,8 @@ class LogIn extends Component {
       <div>
         <div className="login" id="login" >
           <form onSubmit={this.googleSubmit.bind(this)}>
-            <a className="btn-gp" href="/auth/google"> <i className="fa fa-fw fa-google-plus pull-left" aria-hidden="false"></i>
-              Login with Google  </a> <br />  
+            <button className="btn-gp"> <i className="fa fa-fw fa-google-plus pull-left" aria-hidden="false"></i>
+              Login with Google  </button> <br />  
             <div className="signup-or-separator">
               <span className="h6 signup-or-separator--text">or</span>
               <hr />
