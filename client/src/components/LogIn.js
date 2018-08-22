@@ -12,7 +12,6 @@ class LogIn extends Component {
     // password: document.getElementById('signup-password').value
     }).then(({data}) => {
       console.log(data);
-      this.props.history.replace('/user');
     // destructuring the data allows us not to type res.data
     // if successfully login > react router to user page
     // else alert login taken on screen
