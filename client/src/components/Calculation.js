@@ -62,11 +62,12 @@ class Calculation extends Component {
         return (
         <div className="Calc">
             {this.props.toShow === true && <button id="button" className="blendCalc" onClick={this.handleChange.bind(this)}>Calculate My Blend</button>}
-            {this.state.toShow === true && <h5 className="calcIntro">For this <span>{ this.props.mood }</span> blend, you'll need:</h5>}
             <div className="blendResults" id="results">
+                {this.state.toShow === true && <h5 className="calcIntro">For this <span>{ this.props.mood }</span> blend, you'll need:</h5>}    
                 {this.state.toShow === true && <h5 className="calcOils">5 Drops of <span className="calcColor">{ this.props.selected.base}</span> for your base oil</h5>}
                 {this.state.toShow === true && <h5 className="calcOils">4 Drops of <span className="calcColor">{ this.props.selected.middle}</span> for your middle oil</h5>}
                 {this.state.toShow === true && <h5 className="calcOils">3 Drops of <span className="calcColor">{ this.props.selected.top}</span> for your top oil</h5>}
+                {this.state.toShow === true && <div><h5 className="diffuserDesc">Diffuser Instructions: <br/> Fill your diffuser with clean, tap water that is room temperature to the fill line. Add your oils to the water one at a time. Close your diffuser, turn on, and enjoy. Perfume recommendations coming soon!</h5></div>}
             </div>
             <div className="share-row">
                 {this.state.toShow === true && <button href="#" className="shareBlend transparent_btn" data-toggle="modal" data-target="#share">share your blend</button>}
