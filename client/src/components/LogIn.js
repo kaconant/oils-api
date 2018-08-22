@@ -20,7 +20,7 @@ class LogIn extends Component {
     // else alert login taken on screen
     }).catch((err) => {
       console.log(err)
-      // alert message that something went wrong
+    // alert message that something went wrong
     })
     
     Axios.post('/auth/login', {

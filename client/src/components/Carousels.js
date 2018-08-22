@@ -62,13 +62,13 @@ class Carousel extends Component {
         var infoLabel = " "
         var infoBlurb = " "
         if (this.props.levelLabel === "base") {
-          infoLabel = `Choose your ${this.props.mood} base oil:`
+          infoLabel = `Choose your ${this.props.mood} base oil`
           infoBlurb = "Base oils provide the lasting impression of your blend. These oils are typically heavy and will provide the final note of your blend."
       } else if (this.props.levelLabel === "middle") {
-          infoLabel = `Choose your ${this.props.mood} middle oil:`
+          infoLabel = `Choose your ${this.props.mood} middle oil`
           infoBlurb = "Middle oils are the heart of your blend and will emerge after your top oil has faded. These oils will help balance your blend."
       } else if (this.props.levelLabel === "top") {
-          infoLabel = `Choose your ${this.props.mood} top oil:`
+          infoLabel = `Choose your ${this.props.mood} top oil`
           infoBlurb = "Top oils provide your first impression of your blend. These oils are often described as light and fresh, but tend to fade quickly."
         }
       return (
