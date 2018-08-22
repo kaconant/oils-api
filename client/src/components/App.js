@@ -97,7 +97,6 @@ signOut(e) {
     .then(({data}) => {
     this.loggedIn();
     console.log('signed out')
-    // remove user info from localStorage
     this.setState({
       user: {
         ...this.state.user,
