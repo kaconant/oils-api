@@ -15,7 +15,6 @@ const setupAuth = require('./auth');
 
 const app = express();
 const cors = require('cors');
-setupAuth(app);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -60,6 +59,7 @@ app.use(function (req, res, next) {
     next();
 });
 
+setupAuth(app);
 
 app.use('/api', apiRouter);
 app.use('/api/mail', apiMailRouter);
