@@ -98,6 +98,7 @@ const setupAuth = (app) => {
     })
     
     app.options('*', cors());
+    
     app.get('/auth/google', 
         passport.authenticate('google', 
         { scope: ['https://www.googleapis.com/auth/plus.login'] }));
@@ -171,7 +172,8 @@ const setupAuth = (app) => {
     app.get('/auth/logout', (req, res, next) => {
         if (req.user) {
             req.logout();
-            return res.json({ msg: 'user logged out' });
+            res.redirect('/');
+            return res.json({ msg: 'user logged out' })
         } else {
             return res.json({ msg: 'no user to log out' });
         }

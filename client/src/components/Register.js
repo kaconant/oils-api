@@ -30,7 +30,6 @@ class Register extends Component {
     Axios.get('/auth/google'
     ).then((res) => {
       console.log("google logged in")
-      window.location = "/";
       // alert('This login is taken!')
       // destructuring the data allows us not to type res.data
       // if successfully login > react router to user page
@@ -46,13 +45,13 @@ class Register extends Component {
       <div>
         <div className="register" id="register" >
           <form onSubmit={this.googleSubmit.bind(this)}> 
-          <a className="btn-gp" href="/auth/google"> <i className="fa fa-fw fa-google-plus pull-left" aria-hidden="false"></i>
-              Login with Google  </a> <br />  
+          <button className="btn-gp" href="/auth/google" > <i className="fa fa-fw fa-google-plus pull-left" ></i>
+              Login with Google  </button> <br />  
+          </form>
             <div className="signup-or-separator">
               <span className="h6 signup-or-separator--text">or</span>
               <hr />
             </div>
-          </form>
           <form onSubmit={this.signUp.bind(this)}>
             <div className="form-group">
               <input type="firstName" className="form-control-forms " id="firstName" placeholder="First Name" />

@@ -81,13 +81,13 @@ updateBlends() {
 
 signOut(e) {
   e.preventDefault();
+  localStorage.removeItem('userData');
+  localStorage.removeItem('isLoggedIn');
   Axios.get('/auth/logout')
     .then(({data}) => {
     this.loggedIn();
     console.log('signed out')
     // remove user info from localStorage
-    localStorage.removeItem('userData');
-    localStorage.removeItem('isLoggedIn');
     this.setState({
       user: {
         ...this.state.user,
@@ -95,7 +95,7 @@ signOut(e) {
         lastname: '',
       }
     })
-    this.props.history.replace('/');
+    
   //   // destructuring the data allows us not to type res.data
   //   // if successfully login > react router to user page
   //   // else alert login taken on screen
@@ -104,6 +104,7 @@ signOut(e) {
   //   // alert message that something went wrong
   //   // sowwy
   })
+  this.props.history.replace('/')
 }
 
 handleMoodClick(e) {
@@ -134,27 +135,35 @@ handleMoodClick(e) {
 }
 
 componentDidMount() {
-let checkData = localStorage.getItem('userData')
-let parsedData = JSON.parse(checkData)
-let loggedInData = localStorage.getItem('isLoggedIn')
-console.log(parsedData);
+  console.log(localStorage.getItem('userData'))
+  if (localStorage.getItem('userData') !== null) {
+    let checkData = localStorage.getItem('userData')
+    let parsedData = JSON.parse(checkData)
+    let loggedInData = localStorage.getItem('isLoggedIn')
+    console.log(parsedData);
 
-Axios.get('/api/oils').then((res) => {
-  this.setState({
-    oilData: res.data,
-    user: {
-      firstname: parsedData.firstname,
-      lastname: parsedData.lastname,
-      email: parsedData.email,
-      joined: parsedData.createdAt
-    },
-    isLoggedIn: loggedInData
-  })
-})
-// check localStorage for user information and set state with this information
-
-console.log("app says: " +this.state.isLoggedIn)
+    Axios.get('/api/oils').then((res) => {
+      this.setState({
+        oilData: res.data,
+        user: {
+          firstname: parsedData.firstname,
+          lastname: parsedData.lastname,
+          email: parsedData.email,
+          joined: parsedData.createdAt,
+          blends: parsedData.blends
+        },
+        isLoggedIn: loggedInData
+      })
+    })
+  } else {
+    Axios.get('/api/oils').then((res) => {
+      this.setState({
+        oilData: res.data
+      })
+    })
+  }
 }
+
 
 setOil(level, oil) {
 let state = { ...this.state };
