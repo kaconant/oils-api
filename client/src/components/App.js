@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import '../App.css';
 import Axios from 'axios';
+// import Home from './Home.js'
 import About from './About.js'
 import FAQ from './FAQ.js'
 import LogIn from './LogIn.js'
@@ -57,26 +58,31 @@ loggedIn(data) {
       email: data.user.email,
       joined: data.user.createdAt.substring(0, 4)
     }
+  }, function() {
+    let userData = this.state.user
+    localStorage.setItem('userData', JSON.stringify(userData))
+    localStorage.setItem('isLoggedIn', this.state.isLoggedIn)
   });
   // store user information in localStorage
-  let userData = this.state.user
-  localStorage.setItem('userData', JSON.stringify(userData))
-  localStorage.setItem('isLoggedIn', this.state.isLoggedIn)
-  console.log(this.props.location.pathname)
+  // console.log(this.props.location.pathname)
+
 }
 
 updateBlends() {
-  Axios.get('/api/blend/user')
-  .then(({data}) => {
-    console.log(data)
-    this.setState({
-      user: {
-        ...this.state.user,
-        blends: data
-      }
+  if (this.state.isLoggedIn) {
+    Axios.get('/api/blend/user')
+    .then(({data}) => {
+      console.log("done")
+      console.log(data)
+      this.setState({
+        user: {
+          ...this.state.user,
+          blends: data
+        }
+      })
     })
-  })
-  // this.props.history.replace('/user')
+  }
+
 }
 
 signOut(e) {
@@ -135,33 +141,31 @@ handleMoodClick(e) {
 }
 
 componentDidMount() {
-  console.log(localStorage.getItem('userData'))
+  console.log(localStorage.getItem('isLoggedIn'))
+  let loggedInData = localStorage.getItem('isLoggedIn')
+  if (localStorage.getItem('isLoggedIn') !== null) {
+    this.setState({isLoggedIn: loggedInData})
+  }
   if (localStorage.getItem('userData') !== null) {
     let checkData = localStorage.getItem('userData')
     let parsedData = JSON.parse(checkData)
-    let loggedInData = localStorage.getItem('isLoggedIn')
-    console.log(parsedData);
-
-    Axios.get('/api/oils').then((res) => {
-      this.setState({
-        oilData: res.data,
+    this.setState({
         user: {
           firstname: parsedData.firstname,
           lastname: parsedData.lastname,
           email: parsedData.email,
           joined: parsedData.createdAt,
           blends: parsedData.blends
-        },
-        isLoggedIn: loggedInData
-      })
-    })
-  } else {
-    Axios.get('/api/oils').then((res) => {
-      this.setState({
-        oilData: res.data
-      })
+        }
     })
   }
+    // console.log(parsedData);
+    Axios.get('/api/oils').then((res) => {
+      this.setState({
+        oilData: res.data,
+  
+      })
+    })
 }
 
 
@@ -169,14 +173,14 @@ setOil(level, oil) {
 let state = { ...this.state };
 state.selected[level] = oil;
 this.setState(state);
-console.log("setOil hit");
+
 }
 
   render() {
     let { history } = this.props;
     return (
       <div>
-          <Navbar username={this.state.user.firstname} isLoggedIn={this.state.isLoggedIn} signOut={this.signOut} getInfo={this.getInfo}/>
+          <Navbar username={this.state.user.firstname} isLoggedIn={this.state.isLoggedIn} signOut={this.signOut} updateBlends={this.updateBlends.bind(this)} getInfo={this.getInfo}/>
           <Switch>
             <Route exact path='/'render={ () => {return (
               <div>
@@ -194,7 +198,7 @@ console.log("setOil hit");
             )}} />
             <Route path='/about' component={ About } />
             <Route path='/FAQ' component={ FAQ } />
-            <Route path='/login' render={() => {return( <LogIn loggedIn={this.loggedIn} isLoggedIn={this.state.isLoggedIn} history={history} /> ) }}/>
+            <Route path='/login' render={() => {return( <LogIn loggedIn={this.loggedIn} isLoggedIn={this.state.isLoggedIn} history={history} updateBlends={this.updateBlends.bind(this)}/> ) }}/>
             <Route path='/register' component={ Register } />
             <Route path='/user' render={() => {return( <User history={history} email={this.state.user.email} joined={this.state.user.joined} firstname={this.state.user.firstname} lastname={this.state.user.lastname} currentLevel={this.state.user.blends} isLoggedIn={this.state.isLoggedIn} updateBlends={this.updateBlends.bind(this)} /> ) }}/>
           </Switch>
