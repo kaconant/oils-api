@@ -4,7 +4,7 @@ import Carousel from './Carousels'
 class User extends Component {
 
   componentDidMount() {
-    this.props.updateBlends
+    // this.props.updateBlends
   }
 
   relocate() {
@@ -21,7 +21,9 @@ class User extends Component {
             <h4 className="title-text">Blendologist {this.props.firstname} {this.props.lastname}</h4>
             <img src="../img/default-user.png" alt="defaultUser" className="userPhoto"/>
             <p className="joined">Member Since {this.props.joined}</p>
-            <a className="transparent_btn add" onClick={this.relocate.bind(this)}>+ blend</a>
+            <div className="add-button">
+              <a className="transparent_btn add" onClick={this.relocate.bind(this)}>+ blend</a>
+            </div>
           </div>
           <Carousel updateBlends={this.props.updateBlends} isLoggedIn={this.props.isLoggedIn} history={this.props.history} currentLevel={this.props.currentLevel} />
         </div>

@@ -1179,10 +1179,17 @@ body {
     font-size: 18px;
   }
 
+  .add-button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+
+  }
+
   a.transparent_btn.add {
-    position: fixed;
-    right: 0px;
-    top: 120px;
+    position: relative;
+    top: -200px;
+    /* justify-content: end; */
     color: whitesmoke;
     width: 120px;
     font-size: 14px;
