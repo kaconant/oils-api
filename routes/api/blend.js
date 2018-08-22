@@ -39,8 +39,11 @@ router.get('/user', (req, res, next) => {
 console.log(req.user.id)
   models.Blend.findAll({
     where: {
-      UserId: req.user.id
-    }
+      UserId: req.user.id, 
+    },
+      order: [
+        ['createdAt', 'DESC'],
+      ]
   }).then((blends) => {
     res.json(blends)
   })

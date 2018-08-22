@@ -106,6 +106,47 @@ body {
     top: 60px;
   } */
 
+  .joined {
+    position: relative;
+    text-align: right;
+    right: 40px;
+    bottom: 65px !important;
+    color: whitesmoke;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 12px !important;
+  }
+
+  a.transparent_btn.add {
+    position: relative;
+    top: -80px !important;
+    /* justify-content: end; */
+    color: whitesmoke;
+    width: 70px !important;
+    font-size: 10px !important;
+    padding: 8px 0 5px 0 !important;
+    height: 30px !important;
+  }
+
+  .userPhoto {
+    height: 80px !important;
+    position: relative;
+    left: 3%;
+    top: 100px !important;
+  }
+
+  #user .banner p.title-text {
+    font-size: 16px !important;
+    position: relative;
+    top: 8%;
+    right: 40px;
+    text-align: right !important;
+    /* width: 250px; */
+    margin: 0px !important;
+    padding-right: 0px !important;
+    font-family: "Julius Sans One", sans-serif;
+    /* display: inline-block; */
+  }
+
   img.logo {
       display: none;
   }
@@ -127,6 +168,7 @@ body {
       font-size: 28px;
       margin: 0 !important;
       padding: 0 !important;
+      width: 80%;
   }
 
   div.headline {
@@ -152,7 +194,7 @@ body {
       margin-top: 0px !important;
       margin-bottom: 10px !important;
       position: relative;
-      top: 540px !important;
+      top: 520px !important;
       background-color: transparent!important;
   }
 
@@ -183,7 +225,7 @@ body {
     margin: 0 0 0 0;
     /* margin-bottom: 700px; */
     position: relative;
-    top: 30px;
+    top: 0px;
     display: flex;
     flex-direction: column;
     /* margin-bottom: 300px; */
@@ -197,6 +239,13 @@ body {
     font-size: 30px;
     width: 35px;
   }
+}
+
+#contact-us {
+  border: 2px solid whitesmoke !important;
+  /* background-color: lightgray !important; */
+  color: whitesmoke !important;
+  border-radius: 15px !important;
 }
 
 /* Nav Bar Starts */
@@ -330,8 +379,8 @@ body {
     animation-delay: 0s, .3s;
     -webkit-animation-timing-function: ease-out, ease-in-out;
     animation-timing-function: ease-out, ease-in-out;
-    -webkit-animation-iteration-count: 1, infinite;
-    animation-iteration-count: 1, infinite;
+    /* animation-iteration-count: 1, infinite; */
+    /* -webkit-animation-iteration-count: 1, infinite; */
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
     -webkit-animation-direction: normal, alternate;
@@ -399,6 +448,30 @@ body {
     background-color: rgba(88, 109, 50, 0.863);
     text-decoration: none;
     color: whitesmoke;
+  }
+
+  button.transparent_btn:active {
+    background-color: rgba(88, 109, 50, 0.863);
+    text-decoration: none;
+    color: whitesmoke;
+    box-shadow: none;
+    outline: none;
+  }
+
+  button.transparent_btn:focus {
+    background-color: rgba(88, 109, 50, 0.863);
+    text-decoration: none;
+    color: whitesmoke;
+    box-shadow: none;
+    outline: none;
+  }
+
+  button.transparent_btn:visited {
+    background-color: rgba(88, 109, 50, 0.863);
+    text-decoration: none;
+    color: whitesmoke;
+    box-shadow: none;
+    outline: none;
   }
   
   /* mood buttons */
@@ -1162,11 +1235,17 @@ body {
     /* display: flex; */
   }
 
-  .title-text {
+  #user .banner p.title-text {
     font-size: 28px;
     position: relative;
-    top: 55%;
-    right: 10%;
+    top: 100px;
+    right: 90px;
+    text-align: center;
+    /* width: 250px; */
+    margin: 0px ;
+    padding-right: 0px ;
+    font-family: "Julius Sans One", sans-serif;
+    /* display: inline-block; */
   }
 
   .joined {

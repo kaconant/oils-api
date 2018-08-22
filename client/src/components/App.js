@@ -46,7 +46,8 @@ class App extends Component {
   this.handleMoodClick = this.handleMoodClick.bind(this);
   this.loggedIn = this.loggedIn.bind(this)
   this.signOut = this.signOut.bind(this)
-  this.setLocalStorage =  this.setLocalStorage.bind(this)
+  this.setLocalStorage =  this.setLocalStorage.bind(this), 
+  this.updateBlends = this.updateBlends.bind(this)
 }
 
 loggedIn(data) {
@@ -62,8 +63,6 @@ loggedIn(data) {
       id: data.user.id
     }
   });
-  
-  // store user information in localStorage
 }
 
 setLocalStorage() {
@@ -106,14 +105,8 @@ signOut(e) {
         lastname: '',
       }
     })
-    
-  //   // destructuring the data allows us not to type res.data
-  //   // if successfully login > react router to user page
-  //   // else alert login taken on screen
   }).catch((err) => {
     console.log(err)
-  //   // alert message that something went wrong
-  //   // sowwy
   })
   this.props.history.replace('/')
 }
@@ -205,7 +198,7 @@ this.setState(state);
             <Route path='/FAQ' component={ FAQ } />
             <Route path='/login' render={() => {return( <LogIn setLocalStorage={this.setLocalStorage} loggedIn={this.loggedIn} isLoggedIn={this.state.isLoggedIn} history={history} updateBlends={this.updateBlends.bind(this)}/> ) }}/>
             <Route path='/register' component={ Register } />
-            <Route path='/user' render={() => {return( <User history={history} email={this.state.user.email} joined={this.state.user.joined} firstname={this.state.user.firstname} lastname={this.state.user.lastname} currentLevel={this.state.user.blends} isLoggedIn={this.state.isLoggedIn} updateBlends={this.updateBlends.bind(this)} /> ) }}/>
+            <Route path='/user' render={() => {return( <User history={history} email={this.state.user.email} joined={this.state.user.joined} firstname={this.state.user.firstname} lastname={this.state.user.lastname} currentLevel={this.state.user.blends} isLoggedIn={this.state.isLoggedIn} updateBlends={this.updateBlends} /> ) }}/>
           </Switch>
           <Footer /> 
         </div>

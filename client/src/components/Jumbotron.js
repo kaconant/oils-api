@@ -26,7 +26,7 @@ class Jumbotron extends Component {
                 </div>
               </div>    
             </div>
-            <h6>what's your vibe today?</h6>
+            <h6>get started by choosing your mood</h6>
             <div className="row flex-row justify-content-center buttons">
               <button href="#" onClick={this.props.handleMoodClick} className="transparent_btn" data-mood="calm">CALM</button>
               <button href="#" onClick={this.props.handleMoodClick} className="transparent_btn" data-mood="awaken">AWAKEN</button>
