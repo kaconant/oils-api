@@ -89,13 +89,13 @@ const setupAuth = (app) => {
 
     app.use(passport.session());
     // this is a simple API to check if there is a user
-    app.get('/api/user', (req, res, next) => {
-        if (req.user) {
-            return res.json({ user: req.user })
-        } else {
-            return res.json({ user: null })
-        }
-    })
+    // app.get('/api/user', (req, res, next) => {
+    //     if (req.user) {
+    //         return res.json({ user: req.user })
+    //     } else {
+    //         return res.json({ user: null })
+    //     }
+    // })
     
     app.options('*', cors());
     app.get('/auth/google', 

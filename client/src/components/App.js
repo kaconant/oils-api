@@ -39,7 +39,8 @@ class App extends Component {
       lastname: '',
       email: '',
       joined: '',
-      blends: []
+      blends: [], 
+      id: ''
     }
   }
   this.handleMoodClick = this.handleMoodClick.bind(this);
@@ -57,7 +58,8 @@ loggedIn(data) {
       firstname: data.user.firstname,
       lastname: data.user.lastname,
       email: data.user.email,
-      joined: data.user.createdAt.substring(0, 4)
+      joined: data.user.createdAt.substring(0, 4),
+      id: data.user.id
     }
   });
   
@@ -158,7 +160,8 @@ componentDidMount() {
           lastname: parsedData.lastname,
           email: parsedData.email,
           joined: parsedData.joined,
-          blends: parsedData.blends
+          blends: parsedData.blends, 
+          id: parsedData.id
         }
     })
   }

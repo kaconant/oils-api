@@ -11,6 +11,7 @@ const apiRouter = require('./routes/api');
 const apiMailRouter = require('./routes/api/mail');
 const apiOilRouter = require('./routes/api/oils');
 const apiBlendRouter = require('./routes/api/blend');
+const apiUserRouter = require('./routes/api/users');
 const setupAuth = require('./auth');
 
 const app = express();
@@ -65,6 +66,7 @@ app.use('/api', apiRouter);
 app.use('/api/mail', apiMailRouter);
 app.use('/api/oils', apiOilRouter);
 app.use('/api/blend', apiBlendRouter);
+app.use('/api/user', apiUserRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
