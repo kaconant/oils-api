@@ -36,7 +36,7 @@ router.post('/update', (req, res, next) => {
   })
 
 router.get('/user', (req, res, next) => {
-
+console.log(req.user.id)
   models.Blend.findAll({
     where: {
       UserId: req.user.id

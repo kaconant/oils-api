@@ -155,6 +155,7 @@ const setupAuth = (app) => {
     app.post('/auth/login',
         passport.authenticate('local'),
         (req, res) => {
+            // console.log(req)
             // req.user will have been deserialized at this point, so we need
             // to get the values and remove any sensitive ones
             const cleanUser = {...req.user.get()};

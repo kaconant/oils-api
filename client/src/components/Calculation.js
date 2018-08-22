@@ -21,9 +21,9 @@ class Calculation extends Component {
                 topOil: this.props.selected.top, 
                 mood: this.props.mood
             }).then((res) => {
-                alert('Your blend has been saved!')
-                this.props.history.replace('/user')
+                alert('Your blend has been saved! Go to your blends to see it, or continue blending!')
                 this.props.updateBlends
+                this.props.history.replace('/user')
             })
         } else {
             // not logged in
