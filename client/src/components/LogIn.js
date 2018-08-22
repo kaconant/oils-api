@@ -9,7 +9,7 @@ class LogIn extends Component {
     e.preventDefault();
     Axios.get('/api/user', {
       user: document.getElementById('signup-email').value,
-    // password: document.getElementById('signup-password').value
+      password: document.getElementById('signup-password').value
     }).then(({data}) => {
       console.log(data);
     // destructuring the data allows us not to type res.data
@@ -17,7 +17,7 @@ class LogIn extends Component {
     // else alert login taken on screen
     }).catch((err) => {
       console.log(err)
-      // alert message that something went wrong
+    // alert message that something went wrong
     })
     
     Axios.post('/auth/login', {
