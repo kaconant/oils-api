@@ -45,10 +45,10 @@ class Register extends Component {
     return (
       <div>
         <div className="register" id="register" >
-          <form onSubmit={this.googleSubmit.bind(this)}> 
-          <button className="btn-gp" href="/auth/google" > <i className="fa fa-fw fa-google-plus pull-left" ></i>
-              Login with Google  </button> <br />  
-          </form>
+          {/* <form onSubmit={this.googleSubmit.bind(this)}>  */}
+          <a className="btn-gp" href="/auth/google" > <i className="fa fa-fw fa-google-plus pull-left" ></i>
+              Login with Google  </a> <br />  
+          {/* </form> */}
             <div className="signup-or-separator">
               <span className="h6 signup-or-separator--text">or</span>
               <hr />

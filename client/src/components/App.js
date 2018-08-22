@@ -58,14 +58,15 @@ loggedIn(data) {
       email: data.user.email,
       joined: data.user.createdAt.substring(0, 4)
     }
-  }, function() {
-    let userData = this.state.user
-    localStorage.setItem('userData', JSON.stringify(userData))
-    localStorage.setItem('isLoggedIn', this.state.isLoggedIn)
   });
   // store user information in localStorage
-  // console.log(this.props.location.pathname)
+}
 
+setLocalStorage() {
+  console.log(this.state.user)
+  let userData = this.state.user
+  localStorage.setItem('userData', JSON.stringify(userData))
+  localStorage.setItem('isLoggedIn', this.state.isLoggedIn)
 }
 
 updateBlends() {
@@ -149,6 +150,7 @@ componentDidMount() {
   if (localStorage.getItem('userData') !== null) {
     let checkData = localStorage.getItem('userData')
     let parsedData = JSON.parse(checkData)
+    console.log(parsedData.blends);
     this.setState({
         user: {
           firstname: parsedData.firstname,
@@ -159,7 +161,6 @@ componentDidMount() {
         }
     })
   }
-    // console.log(parsedData);
     Axios.get('/api/oils').then((res) => {
       this.setState({
         oilData: res.data,
@@ -198,7 +199,7 @@ this.setState(state);
             )}} />
             <Route path='/about' component={ About } />
             <Route path='/FAQ' component={ FAQ } />
-            <Route path='/login' render={() => {return( <LogIn loggedIn={this.loggedIn} isLoggedIn={this.state.isLoggedIn} history={history} updateBlends={this.updateBlends.bind(this)}/> ) }}/>
+            <Route path='/login' render={() => {return( <LogIn setLocalStorage={this.setLocalStorage} loggedIn={this.loggedIn} isLoggedIn={this.state.isLoggedIn} history={history} updateBlends={this.updateBlends.bind(this)}/> ) }}/>
             <Route path='/register' component={ Register } />
             <Route path='/user' render={() => {return( <User history={history} email={this.state.user.email} joined={this.state.user.joined} firstname={this.state.user.firstname} lastname={this.state.user.lastname} currentLevel={this.state.user.blends} isLoggedIn={this.state.isLoggedIn} updateBlends={this.updateBlends.bind(this)} /> ) }}/>
           </Switch>

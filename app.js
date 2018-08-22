@@ -58,8 +58,8 @@ app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Headers', 'Content-Type, authorization, token');
     next();
 });
-
 setupAuth(app);
+
 
 app.use('/api', apiRouter);
 app.use('/api/mail', apiMailRouter);
