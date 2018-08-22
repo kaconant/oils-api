@@ -14,7 +14,7 @@ class Footer extends Component {
                         <a href="./" className="logo"><img className="logo-footer" src="./img/drop.png" alt="footerLogo" height='85' /></a>
                     </div>
                     <div className="col-sm-2">
-                        <h5>Get started</h5>
+                        <h5>Get Started</h5>
                         <ul>
                             <li><Link to='/' href="#" >Home</Link></li>
                             <li><Link to='/login' href="#" >Log In</Link></li>

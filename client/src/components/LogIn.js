@@ -62,14 +62,15 @@ class LogIn extends Component {
     return (
       <div>
         <div className="login" id="login" >
-          <form onSubmit={this.googleSubmit.bind(this)}>
+          {/* <form onSubmit={this.googleSubmit.bind(this)}>
             <button className="btn-gp"> <i className="fa fa-fw fa-google-plus pull-left" aria-hidden="false"></i>
               Login with Google  </button> <br />  
             <div className="signup-or-separator">
               <span className="h6 signup-or-separator--text">or</span>
               <hr />
-            </div>
-          </form>
+            </div> */}
+          {/* </form> */}
+          <br/>
           <form onSubmit={this.signIn.bind(this)}>
             <div className="form-group">
               <input type="email" className="form-control-forms " id="signup-email" placeholder="Email" />

@@ -46,13 +46,14 @@ class Register extends Component {
       <div>
         <div className="register" id="register" >
           {/* <form onSubmit={this.googleSubmit.bind(this)}>  */}
-          <a className="btn-gp" href="/auth/google" > <i className="fa fa-fw fa-google-plus pull-left" ></i>
-              Login with Google  </a> <br />  
+          {/* <a className="btn-gp" href="/auth/google" > <i className="fa fa-fw fa-google-plus pull-left" ></i> */}
+              {/* Login with Google  </a> <br />   */}
           {/* </form> */}
-            <div className="signup-or-separator">
+            {/* <div className="signup-or-separator">
               <span className="h6 signup-or-separator--text">or</span>
               <hr />
-            </div>
+            </div> */}
+            <br />
           <form onSubmit={this.signUp.bind(this)}>
             <div className="form-group">
               <input type="firstName" className="form-control-forms " id="firstName" placeholder="First Name" />
@@ -66,7 +67,7 @@ class Register extends Component {
             <div className="form-group">
               <input type="password" className="form-control-forms " id="signup-password" placeholder="Password" />
             </div>  
-            <button type="submit" className="btn-lgin" data-toggle="modal"  data-dismiss="modal" data-target="#at-signup-filling">Signup with Email</button> <hr />   
+            <button type="submit" className="btn-lgin" data-toggle="modal"  data-dismiss="modal" data-target="#at-signup-filling">Sign Up</button> <hr />   
             <p className="sue"> By signing up, I agree to myBlendology's <a href="/">Terms of Service</a> & <a href="/">Privacy Policy</a>. myBlendology is not offering any medical advice and recommends consulting a doctor before use. </p>
             <div className="modal-footer">
               <div className="row">   

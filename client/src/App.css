@@ -11,11 +11,20 @@ body {
 
 /* Response Layout - FullScreen */
   @media (min-width: 451px){
-    .arrow {
+
+    #user .banner p.title-text {
+      font-size: 28px;
       position: relative;
-      top: 226px;
-      left: 49%;
+      top: 100px;
+      right: 90px;
+      text-align: center;
+      /* width: 250px; */
+      margin: 0px ;
+      padding-right: 0px ;
+      font-family: "Julius Sans One", sans-serif;
+      /* display: inline-block; */
     }
+
 
     .navbar li {
       margin-left : 4em;
@@ -1235,18 +1244,7 @@ body {
     /* display: flex; */
   }
 
-  #user .banner p.title-text {
-    font-size: 28px;
-    position: relative;
-    top: 100px;
-    right: 90px;
-    text-align: center;
-    /* width: 250px; */
-    margin: 0px ;
-    padding-right: 0px ;
-    font-family: "Julius Sans One", sans-serif;
-    /* display: inline-block; */
-  }
+
 
   .joined {
     position: relative;
