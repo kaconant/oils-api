@@ -46,7 +46,7 @@ class App extends Component {
   this.handleMoodClick = this.handleMoodClick.bind(this);
   this.loggedIn = this.loggedIn.bind(this)
   this.signOut = this.signOut.bind(this)
-  this.setLocalStorage =  this.setLocalStorage.bind(this), 
+  this.setLocalStorage =  this.setLocalStorage.bind(this) 
   this.updateBlends = this.updateBlends.bind(this)
 }
 
