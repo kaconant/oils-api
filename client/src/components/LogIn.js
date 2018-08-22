@@ -27,9 +27,9 @@ class LogIn extends Component {
       email: document.getElementById('signup-email').value,
       password: document.getElementById('signup-password').value
     }).then(({data}) => {
-      // this.props.updateBlends
+      this.props.updateBlends
       this.props.loggedIn(data);
-      this.props.history.replace('/');
+      this.props.history.replace('/user');
       // destructuring the data allows us not to type res.data
       // if successfully login > react router to user page
       // else alert login taken on screen
@@ -53,7 +53,7 @@ class LogIn extends Component {
     // else alert login taken on screen
     }).catch((err) => {
       console.log(err)
-      alert('Try again later!')
+      // alert('Try again later!')
     })
   }
 

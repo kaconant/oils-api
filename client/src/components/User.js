@@ -4,7 +4,7 @@ import Carousel from './Carousels'
 class User extends Component {
 
   componentDidMount() {
-    // this.props.updateBlends
+    this.props.updateBlends
   }
 
   relocate() {

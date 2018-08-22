@@ -65,21 +65,24 @@ loggedIn(data) {
   });
   // store user information in localStorage
   // console.log(this.props.location.pathname)
+
 }
 
 updateBlends() {
-  Axios.get('/api/blend/user')
-  .then(({data}) => {
-    console.log("done")
-    console.log(data)
-    this.setState({
-      user: {
-        ...this.state.user,
-        blends: data
-      }
+  if (this.state.isLoggedIn) {
+    Axios.get('/api/blend/user')
+    .then(({data}) => {
+      console.log("done")
+      console.log(data)
+      this.setState({
+        user: {
+          ...this.state.user,
+          blends: data
+        }
+      })
     })
-  })
-  // this.props.history.replace('/user')
+  }
+
 }
 
 signOut(e) {
