@@ -60,7 +60,7 @@ class Calculation extends Component {
     render() {
         return (
         <div className="Calc">
-            {this.props.toShow === true && <button id="button" className="blendCalc" onClick={this.handleChange.bind(this)}>Calculate My Blend</button>}
+            {this.props.toShow === true && <button id="button" className="blendCalc" onClick={this.handleChange.bind(this)}>Calculate</button>}
             <div className="blendResults" id="results">
                 {this.state.toShow === true && <h5 className="calcIntro">For this <span>{ this.props.mood }</span> blend, you'll need:</h5>}    
                 {this.state.toShow === true && <h5 className="calcOils">5 Drops of <span className="calcColor">{ this.props.selected.base}</span> for your base oil</h5>}

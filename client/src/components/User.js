@@ -18,7 +18,7 @@ class User extends Component {
       <div>
         <div className="user" id="user" >
           <div className="banner">
-            <h4 className="title-text">Blendologist {this.props.firstname} {this.props.lastname}</h4>
+            <p className="title-text">Blendologist<br/>{this.props.firstname} {this.props.lastname}</p>
             <img src="../img/default-user.png" alt="defaultUser" className="userPhoto"/>
             <p className="joined">Member Since {this.props.joined}</p>
             <div className="add-button">

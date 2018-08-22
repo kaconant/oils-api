@@ -6,29 +6,41 @@ class Card extends React.Component {
   constructor() {
     super();
     this.state = {
-      currentId: ''
+      currentId: '', 
     }
   }
 
   handleFavoriteClick(e) {
     e.preventDefault();
-    let favorited = this.props.content.favorite
+    let favorited = ''
+    if (e.target.className === "heartGray") {
+      favorited = true 
+    } else {
+      favorited =false
+    }
+    // let currentID = e.target.value.id
+    // console.log(currentID)
     this.setState({currentId: this.props.content.id}, () => {
       if (this.props.isLoggedIn) {
           // logged in
           // axios.post
           Axios.post('api/blend/update', {
-            favorite: favorited ? false : true, 
+            favorite: favorited,
             id: this.state.currentId
+          }).then(({data}) => {
+            this.getBlends()
           })
-      } else {
+        } else {
           // not logged in
           // go to login page
           this.props.history.replace('/login')
           console.log('not logged in')
-      }
-      this.props.updateBlends()
-    });
+        }
+      });
+    }
+
+  getBlends() {
+    this.props.updateBlends()
   }
 
   render() {

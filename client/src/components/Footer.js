@@ -40,7 +40,7 @@ class Footer extends Component {
                             <a href="https://www.instagram.com/myblendology" target="_blank" rel="noopener noreferrer" className="twitter"><i className="fa fa-instagram"></i></a>
                             <a href="https://plus.google.com" className="google"><i className="fa fa-google-plus"></i></a>
                         </div>
-                        <a href='mailto:hello@myblendology.com' type="button" className="btn btn-default">Contact Us</a>
+                        <a id="contact-us" href='mailto:hello@myblendology.com' className="btn btn-default">Contact Us</a>
                     </div>
                 </div>
             </div>
