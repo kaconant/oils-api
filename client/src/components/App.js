@@ -45,6 +45,7 @@ class App extends Component {
   this.handleMoodClick = this.handleMoodClick.bind(this);
   this.loggedIn = this.loggedIn.bind(this)
   this.signOut = this.signOut.bind(this)
+  this.setLocalStorage =  this.setLocalStorage.bind(this)
 }
 
 loggedIn(data) {
@@ -59,6 +60,7 @@ loggedIn(data) {
       joined: data.user.createdAt.substring(0, 4)
     }
   });
+  
   // store user information in localStorage
 }
 
@@ -80,7 +82,7 @@ updateBlends() {
           ...this.state.user,
           blends: data
         }
-      })
+      }, () => {this.setLocalStorage()})
     })
   }
 
@@ -150,13 +152,12 @@ componentDidMount() {
   if (localStorage.getItem('userData') !== null) {
     let checkData = localStorage.getItem('userData')
     let parsedData = JSON.parse(checkData)
-    console.log(parsedData.blends);
     this.setState({
         user: {
           firstname: parsedData.firstname,
           lastname: parsedData.lastname,
           email: parsedData.email,
-          joined: parsedData.createdAt,
+          joined: parsedData.joined,
           blends: parsedData.blends
         }
     })

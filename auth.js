@@ -2,13 +2,10 @@ const passport = require('passport');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const bcrypt = require('bcrypt');
-const path = require('path')
 const LocalStrategy = require('passport-local').Strategy;
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const models = require('./models');
 var cors = require('cors')
-const express = require('express');
-var logger = require('morgan');
 
 const setupAuth = (app) => {
     app.use(cookieParser());
@@ -18,28 +15,6 @@ const setupAuth = (app) => {
         resave: true,
         saveUninitialized: true,
     }));
-
-const cors = require('cors');
-// setupAuth(app);
-
-// view engine setup
-// app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'hbs');
-
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'client/build')));
-
-
-app.all('*', (req, res, next) => {
-  res.header("Access-Control-Allow-Origin", '*');
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-  res.header("Access-Control-Allow-Credentials", true);
-  next();
-})
 
     passport.use(new GoogleStrategy({
         clientID: process.env.GOOGLE_ID,
@@ -180,6 +155,7 @@ app.all('*', (req, res, next) => {
     app.post('/auth/login',
         passport.authenticate('local'),
         (req, res) => {
+            // console.log(req)
             // req.user will have been deserialized at this point, so we need
             // to get the values and remove any sensitive ones
             const cleanUser = {...req.user.get()};
