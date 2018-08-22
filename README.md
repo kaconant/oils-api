@@ -38,7 +38,7 @@ The userpage will allow users to see their previously created blends as well as 
 
 ![UserPage](https://github.com/kaconant/oils-api/blob/master/client/public/img/readme-img/userpage.png)
 
-# FAQ Page
+## FAQ Page
 
 The FAQ page answers the basic questions any user might have about the functionality of the site from a user experience perspective. 
 
