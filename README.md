@@ -62,6 +62,10 @@ The about us page allows users to see the authors of the site and show our playf
 Axios, Radium, React, React-Bootstrap, React-Coverflow, React-Dom, React-Router-Dom, SmoothScroll, Bcrypt, Cookie-Parser, Debug, Dotenv, Express, Express-Session, HBS, HTTP-Errors, Logger, LS, Morgan, Nodemailer, Nodemon, Passport, Passport-Google-OAuth, Passport-Local, Path, PG, React-Router, Sequelize, Sequelize-CLI
 ```
 
+### Port Information
+
+http://localhost:3000
+
 ## Authors
 
 * **Krissy Conant** - [kaconant](https://github.com/kaconant)
