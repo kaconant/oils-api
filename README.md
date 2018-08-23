@@ -2,7 +2,7 @@
 
 [myBlendology](https://www.myblendology/) is a responsive web application comprised of a PERN stack (Postgres, Express, React, & NodeJS) that allows you to create diffuser essential oil blends based off of a user's choice of mood. It also has local authentication as a feature.  
 
-![HomePage](https://github.com/kaconant/oils-api/blob/master/client/public/img/readme-img/homepage.png)
+<p align="center"><img src="https://github.com/kaconant/oils-api/blob/master/client/public/img/readme-img/homepage.png" width="630" height="400" alt="homepage"></p>
 
 # Functionality of myBlendology
 
@@ -14,11 +14,11 @@ The home page begins by urging a user to select one of three moods: Calm, Awaken
 * Middle oils are considered the heart of your blend and will emerge after your top oil has faded. These oils often balance your blend and are typically well-rounded.
 * Top oils provide your first impression of your blend. These oils are often described as light and fresh, but tend to fade quickly.
 
-![Carousel](https://github.com/kaconant/oils-api/blob/master/client/public/img/readme-img/carousel.png)
+<p align="center"><img src="https://github.com/kaconant/oils-api/blob/master/client/public/img/readme-img/carousel.png" width="630" height="400" alt="carousel"></p>
 
 After the user selects one oil from each carousel, they will be provided a calculation of the essential oils needed to create the right balance for their mood blend (via a diffuser). 
 
-![Calculation](https://github.com/kaconant/oils-api/blob/master/client/public/img/readme-img/calculation.png)
+<p align="center"><img src="https://github.com/kaconant/oils-api/blob/master/client/public/img/readme-img/calculation.png" width="630" height="400" alt="calculation"></p>
 
 After the blend has been created, the user has the option to either:
 
@@ -30,27 +30,27 @@ After the blend has been created, the user has the option to either:
 
 The user has the ability to create a local user account via the sign up page as well as return to their user page by logging into the site via the log in page. 
 
-![Signup](https://github.com/kaconant/oils-api/blob/master/client/public/img/readme-img/signup.png)
+<p align="center"><img src="https://github.com/kaconant/oils-api/blob/master/client/public/img/readme-img/signup.png" width="630" height="400" alt="signup"></p>
 
-![Login](https://github.com/kaconant/oils-api/blob/master/client/public/img/readme-img/login.png)
+<p align="center"><img src="https://github.com/kaconant/oils-api/blob/master/client/public/img/readme-img/login.png" width="630" height="400" alt="login"></p>
 
 ## UserPage
 
 The userpage will allow users to see their previously created blends as well as mark their favorite blends. In addition, it has the option to return to the home page to create another blend to add to their user collection. 
 
-![UserPage](https://github.com/kaconant/oils-api/blob/master/client/public/img/readme-img/userpage.png)
+<p align="center"><img src="https://github.com/kaconant/oils-api/blob/master/client/public/img/readme-img/userpage.png" width="650" height="400" alt="userpage"></p>
 
 ## FAQ Page
 
 The FAQ page answers the basic questions any user might have about the functionality of the site from a user experience perspective. 
 
-![FAQ](https://github.com/kaconant/oils-api/blob/master/client/public/img/readme-img/faq.png)
+<p align="center"><img src="https://github.com/kaconant/oils-api/blob/master/client/public/img/readme-img/faq.png" width="630" height="450" alt="faq"></p>
 
 ## About Us Page
 
 The about us page allows users to see the authors of the site and show our playful side. In addition, the user has the option to contact the authors at hello@myblendology.com (an active email account).
 
-![About](https://github.com/kaconant/oils-api/blob/master/client/public/img/readme-img/aboutus.png)
+<p align="center"><img src="https://github.com/kaconant/oils-api/blob/master/client/public/img/readme-img/aboutus.png" width="630" height="400" alt="aboutus"></p>
 
 # Additional Information
 
