@@ -3,9 +3,10 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+
 const dotenv = require('dotenv');
-// const smoothScroll = require('smoothscroll');
-dotenv.load();
+// dotenv.load();
+require(dotenv).config()
 
 const apiRouter = require('./routes/api');
 const apiMailRouter = require('./routes/api/mail');
@@ -38,27 +39,6 @@ app.all('*', (req, res, next) => {
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
-// //auth
-// var corsOption = {
-//   origin: true,
-//   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-//   credentials: true,
-//   exposedHeaders: ['x-auth-token', 'authorization']
-// };
-// app.use(cors(corsOption));
-
-// // Make sure all request return CORS headers
-// app.use(function (req, res, next) {
-//     var origin = req.get('origin');
-//     if (!origin || origin === 'undefined' || origin.length == 0) {
-//         origin = req.get('host');
-//     }
-//     res.header('Access-Control-Allow-Origin', origin);
-//     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-//     res.header('Access-Control-Allow-Headers', 'Content-Type, authorization, token');
-//     next();
-// });
 
 setupAuth(app);
 

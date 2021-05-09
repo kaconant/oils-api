@@ -1,11 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const models = require ('../../models');
-const ensureAuthenticated = require('../../auth').ensureAuthenticated;
-const bodyParser = require('body-parser');
-
-router.use(bodyParser({urlencoded:true}))
+// const ensureAuthenticated = require('../../auth').ensureAuthenticated;
+//const bodyParser = require('body-parser');
+// router.use(bodyParser({urlencoded:true}))
 // router.all('*', ensureAuthenticated);
+
+app.use(express.urlencoded({ extended: true }))
+
+router.use(express.json());
 
 router.get('/', (req, res, next) => {
   res.json({ 'status': 'success' });
