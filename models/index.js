@@ -15,7 +15,7 @@ if (process.env.DATABASE_URL) {
     var sequelize = new Sequelize(process.env.DATABASE_URL, { 
         dialect:  'postgres',
         protocol: 'postgres',
-        logging:  true,
+        logging:  false,
         operatorsAliases: false });
 } else if (config.use_env_variable) {
     var sequelize = new Sequelize(process.env[config.use_env_variable], config, { 
