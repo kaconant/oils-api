@@ -8,7 +8,7 @@
     "postinstall": "cd client && npm install && npm run build"
   },
   "dependencies": {
-    "bcrypt-nodejs": "0.0.3",
+    "bcrypt": "^3.0.8",
     "cookie-parser": "^1.4.3",
     "cors": "^2.8.4",
     "debug": "~2.6.9",
