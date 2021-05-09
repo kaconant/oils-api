@@ -22,5 +22,6 @@
     "eject": "react-scripts eject",
     "heroku-postbuild": "npm run build"
   },
-  "proxy": "http://localhost:3001"
+  "proxy": "http://localhost:3001",
+  "stack": "heroku-20"
 }
