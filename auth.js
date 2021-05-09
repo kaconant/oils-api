@@ -1,5 +1,5 @@
 const passport = require('passport');
-const session = require('express-session');
+const session = require('cookie-session');
 const cookieParser = require('cookie-parser');
 const bcrypt = require('bcrypt');
 const LocalStrategy = require('passport-local').Strategy;
