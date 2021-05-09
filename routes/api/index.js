@@ -6,7 +6,7 @@ const models = require ('../../models');
 // router.use(bodyParser({urlencoded:true}))
 // router.all('*', ensureAuthenticated);
 
-app.use(express.urlencoded({ extended: true }))
+router.use(express.urlencoded({ extended: true }))
 
 router.use(express.json());
 
