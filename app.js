@@ -4,9 +4,9 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
-const dotenv = require('dotenv');
+//const dotenv = require('dotenv');
 // dotenv.load();
-require(dotenv).config()
+require('dotenv').config()
 
 const apiRouter = require('./routes/api');
 const apiMailRouter = require('./routes/api/mail');
